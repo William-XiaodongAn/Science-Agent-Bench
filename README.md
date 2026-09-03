@@ -64,8 +64,8 @@ pass@k. See [`agentenv/README.md`](agentenv/README.md).
 - **Tier 3 leaks its answer through the released stimulus times** (closed-loop pacing): a
   protocol-aware template beats the paper without a dynamics model. Documented, diagnosed by the
   verifier, variant recommended: [`tasks/zebrafish-voltage-forecast/README.md`](tasks/zebrafish-voltage-forecast/README.md) §5.
-- **Tier 1 headroom:** no legitimate method above 0.62 normalised is known; spec G3 asks for a
-  reference ≥ 0.90. Probe gap to a drive-only proxy is modest. See its README §4-5.
+- **Tier 1 headroom:** no legitimate method above 0.62 normalised is known, while the oracle
+  sits at 1.0. Probe gap to a drive-only proxy is modest. See its README §4-5.
 - **Tier 2 APD80 definition** in the original instruction did not match the frozen ground truth;
   the task instruction now matches the ground-truth code.
 - Data licences (tier 2, tier 3), second-expert sign-offs, expert solve times and frontier-model

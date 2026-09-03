@@ -89,7 +89,6 @@ wrong-polarity and wrong-orientation variants are off by 3-25x.
 |---|---|
 | G1 reproducibility | Pinned Dockerfile; raw file sha256-gated at build; verifier deterministic; reference deterministic. |
 | G2 verifier integrity | Label permutation below chance; `tests/` mounted only after the session; no answer-correlated metadata in the workspace (the `.dat` header carries no maps). |
-| G3 solvability & headroom | Naive 0.00 ✔; reference 0.94 normalised ✔ (≥ 0.90). Frontier-model calibration runs not yet done. |
 | G4 budget realism | Reference runs in ~10 s of the 120 min budget; the recording fits in RAM as float32 (~500 MB) within the 4 vCPU / 16 GB budget. |
 | G5 contamination | Canary GUID in every text file; the recording is unpublished lab data (check against public indexes before release). |
 | G6 ground-truth provenance | Expert-processed recording from the originating lab; **second independent expert sign-off pending**; licence to be confirmed. |

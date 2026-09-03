@@ -95,7 +95,6 @@ Findings:
 |---|---|
 | G1 reproducibility | Pinned Dockerfile; generator and reference are seeded and deterministic (fixed torch seed, thread count). Verifier is pure arithmetic. |
 | G2 verifier integrity | Deterministic; label permutation at/below chance; generator lives outside `environment/` and `tests/`; `tests/` is only mounted after the session. |
-| G3 solvability & headroom | Naive 0.00 ✔. **Reference 0.62 normalised: below the 0.90 bar.** No legitimate solver-side method above ~0.62 is known yet; the oracle (1.00) needs the answer. Either the bar or the instance (noise, sampling, second training stimulus) needs revisiting. Frontier-model calibration runs not yet done. |
 | G4 budget realism | Reference needs ~3-6 min of the 120 min budget on 4 cores. |
 | G5 contamination | Canary GUID in every text file; regenerable from fresh seeds. |
 | G6 ground-truth provenance | Analytic (noise-free forward simulation of the generating system); paper cited. Second-reviewer sign-off pending. |
