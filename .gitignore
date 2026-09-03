@@ -1,0 +1,10 @@
+# Large source recordings live in Google Drive, not in git.
+# Fetch them with: python fetch_data.py
+2024-05-02_Exp000_Rec010_Cam0-PM1394Cam00.dat
+2024-05-02_Exp000_Rec010_Cam0-PM1394Cam00.mat
+
+# Build output
+/solver_package/
+out_tier2/
+__pycache__/
+*.pyc

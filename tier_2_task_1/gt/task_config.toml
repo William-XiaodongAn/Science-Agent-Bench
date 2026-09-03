@@ -1,0 +1,14 @@
+# Metric block for tier_2_task_1, measured by gt/make_gt.py.
+[metadata]
+taxonomy = "Data"
+main_benchmark = "per-pixel activation-time map, 17-beat mean, optical mapping"
+metric = "activation-time map RMSE (ms), per-map median offset removed"
+direction = "lower_better"
+baseline = 19.33          # constant prediction (spatial mean) -- the do-nothing reference
+noise_floor = 1.01        # beat-to-beat repeatability, from beats.json; not reachable
+
+[metadata.secondary]
+apd80_metric = "APD80 map RMSE (ms)"
+apd80_baseline = 12.17
+apd80_noise_floor = 2.27
+mask_coverage_min = 0.95  # below this the submission is invalid, not merely poor
