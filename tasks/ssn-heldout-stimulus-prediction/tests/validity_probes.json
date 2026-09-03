@@ -1,0 +1,10 @@
+{
+ "do_nothing (training mean per neuron)": 1.1060648172715577,
+ "perfect answer": 0.0,
+ "label permutation: neuron rows of the answer shuffled (mean of 20)": 1.3831437106453444,
+ "label permutation: time-reversed answer": 1.3748490858724767,
+ "proxy: replay the interpolated training response": 1.340736847852578,
+ "proxy: per-neuron static linear gain from drive (no recurrence)": 17143.264182669212,
+ "proxy: steady state with W=0 (r = k*[I]_+^n)": 0.5170256471957989,
+ "proxy: SSN dynamics with W=0 (drive only, no recurrence)": 0.49779699833336877
+}

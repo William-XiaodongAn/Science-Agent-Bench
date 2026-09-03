@@ -1,0 +1,3 @@
+# The 250 MB raw recording is fetched at image build time (environment/fetch_dat.py),
+# or placed here beforehand by ../../../../fetch_data.py / the agent-env adapter.
+*.dat

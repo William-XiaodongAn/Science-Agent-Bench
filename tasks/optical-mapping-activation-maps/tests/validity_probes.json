@@ -1,0 +1,79 @@
+{
+ "perfect (reference maps)": {
+  "rmse_ms": 0.0,
+  "coverage": 1.0,
+  "iou": 1.0,
+  "valid": true,
+  "normalized": 1.0
+ },
+ "do-nothing: constant activation in the reference mask": {
+  "rmse_ms": 19.339,
+  "coverage": 1.0,
+  "iou": 1.0,
+  "valid": true,
+  "normalized": 0.0
+ },
+ "label permutation: reference map spatially shuffled": {
+  "rmse_ms": 27.339,
+  "coverage": 1.0,
+  "iou": 1.0,
+  "valid": true,
+  "normalized": 0.0
+ },
+ "whole-frame mask with the reference map": {
+  "rmse_ms": 0.0,
+  "coverage": 1.0,
+  "iou": 0.373,
+  "valid": false,
+  "normalized": 1.0
+ },
+ "reference pipeline": {
+  "rmse_ms": 2.119,
+  "coverage": 1.0,
+  "iou": 0.657,
+  "valid": true,
+  "normalized": 0.939
+ },
+ "no temporal smoothing": {
+  "rmse_ms": 2.517,
+  "coverage": 1.0,
+  "iou": 0.518,
+  "valid": false,
+  "normalized": 0.918
+ },
+ "single beat": {
+  "rmse_ms": 3.555,
+  "coverage": 1.0,
+  "iou": 0.657,
+  "valid": true,
+  "normalized": 0.861
+ },
+ "wrong definition: argmax(dV/dt)": {
+  "rmse_ms": 51.506,
+  "coverage": 1.0,
+  "iou": 0.657,
+  "valid": true,
+  "normalized": 0.0
+ },
+ "wrong polarity (not inverted)": {
+  "rmse_ms": 6.998,
+  "coverage": 1.0,
+  "iou": 0.657,
+  "valid": true,
+  "normalized": 0.673
+ },
+ "no transpose": {
+  "rmse_ms": 31.195,
+  "coverage": 0.933,
+  "iou": 0.587,
+  "valid": false,
+  "normalized": 0.0
+ },
+ "frame 0 kept": {
+  "rmse_ms": 2.099,
+  "coverage": 0.992,
+  "iou": 0.719,
+  "valid": true,
+  "normalized": 0.94
+ }
+}
