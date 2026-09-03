@@ -1,11 +1,79 @@
 {
- "perfect answer": 0.0,
- "do-nothing: training mean": 0.3022363315377554,
- "persistence: last training value": 0.3581212720620376,
- "label permutation: answer time-shuffled (mean of 20)": 0.42735347604485696,
- "label permutation: answer reversed": 0.2692564920047348,
- "label permutation: answer circularly shifted by 200 ms": 0.49608160204267987,
- "proxy: mean-AP template at the released stimulus times": 0.11971305749286515,
- "proxy: nearest-interval AP template (grader diagnostic)": 0.05552972532776941,
- "corr(stimulus interval_n, APD_n) in training data": 0.9648944378635644
+ "perfect answer": {
+  "250": 0.0,
+  "500": 0.0,
+  "1000": 0.0,
+  "2000": 0.0,
+  "4113": 0.0
+ },
+ "do-nothing: training mean": {
+  "250": 0.3125,
+  "500": 0.3098,
+  "1000": 0.3032,
+  "2000": 0.3005,
+  "4113": 0.3022
+ },
+ "label permutation: answer time-shuffled (mean of 10)": {
+  "250": 0.432,
+  "500": 0.4353,
+  "1000": 0.4258,
+  "2000": 0.4269,
+  "4113": 0.4255
+ },
+ "label permutation: answer reversed": {
+  "250": 0.2912,
+  "500": 0.2864,
+  "1000": 0.2938,
+  "2000": 0.2704,
+  "4113": 0.2693
+ },
+ "label permutation: answer shifted by half a beat (60 ms)": {
+  "250": 0.4855,
+  "500": 0.5182,
+  "1000": 0.5312,
+  "2000": 0.5373,
+  "4113": 0.5374
+ },
+ "periodic mean-AP template at the median interval (first beat timed by the emulator)": {
+  "250": 0.2322,
+  "500": 0.2856,
+  "1000": 0.3474,
+  "2000": 0.4254,
+  "4113": 0.4373
+ },
+ "UNREACHABLE: the same periodic template given the TRUE first stimulus time": {
+  "250": 0.2035,
+  "500": 0.1775,
+  "1000": 0.2189,
+  "2000": 0.3118,
+  "4113": 0.4111
+ },
+ "shipped baseline: closed-loop ESN + protocol emulator (5 seeds)": {
+  "250": 0.1634,
+  "500": 0.2271,
+  "1000": 0.3207,
+  "2000": 0.4292,
+  "4113": 0.4296
+ },
+ "reference: method of analogues (k=3, 120 ms, phase-locked)": {
+  "250": 0.1513,
+  "500": 0.1935,
+  "1000": 0.243,
+  "2000": 0.2979,
+  "4113": 0.382
+ },
+ "UNREACHABLE: same ESN with the TRUE test stimulus (open loop)": {
+  "250": 0.0984,
+  "500": 0.1037,
+  "1000": 0.107,
+  "2000": 0.0933,
+  "4113": 0.1079
+ },
+ "UNREACHABLE: nearest-interval template with the TRUE stimulus (the old task's leak)": {
+  "250": 0.03,
+  "500": 0.0396,
+  "1000": 0.0563,
+  "2000": 0.0556,
+  "4113": 0.0555
+ }
 }

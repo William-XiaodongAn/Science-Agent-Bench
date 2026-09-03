@@ -13,7 +13,7 @@ programmatic verifier, and sealed ground truth (proposal + spec, Aug 2026).
 |---|---|---|---|---|---|---|
 | [`ssn-heldout-stimulus-prediction`](tasks/ssn-heldout-stimulus-prediction) | T1 controlled generator | neuroscience / nonlinear dynamics | held-out trajectory nRMSE | 1.104 | < 0.444 | 0.423 |
 | [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms) | 19.33 | < 3.0 | 2.12 |
-| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | forecast RMSE (paper's metric) | 0.302 | < 0.0784 (beat the paper) | 0.0555 (see its README §5) |
+| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | RMSE over the first 500 ms of a protocol-blind forecast | 0.310 | < 0.216 (beat the shipped ESN by 5%) | 0.194 (analogues) |
 
 All three are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
 (the task's normalised score in [0, 1], or 1.0/0.0 pass with `REWARD_MODE=binary`) and
@@ -61,9 +61,10 @@ pass@k. See [`agentenv/README.md`](agentenv/README.md).
 
 ### Known issues to resolve before acceptance
 
-- **Tier 3 leaks its answer through the released stimulus times** (closed-loop pacing): a
-  protocol-aware template beats the paper without a dynamics model. Documented, diagnosed by the
-  verifier, variant recommended: [`tasks/zebrafish-voltage-forecast/README.md`](tasks/zebrafish-voltage-forecast/README.md) §5.
+- **Tier 3 was redesigned (v0.2) to withhold the test-window stimulus.** Under the closed-loop pacing
+  protocol the released stimulus times encoded each beat's duration, and a template with no dynamics
+  model beat the paper (0.0555 vs 0.0784). The task now ships a closed-loop baseline forecaster the
+  agent must beat by 5% over the 500 ms predictability horizon. See its README §2.
 - **Tier 1 headroom:** no legitimate method above 0.62 normalised is known, while the oracle
   sits at 1.0. Probe gap to a drive-only proxy is modest. See its README §4-5.
 - **Tier 2 APD80 definition** in the original instruction did not match the frozen ground truth;
