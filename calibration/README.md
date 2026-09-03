@@ -48,10 +48,22 @@ and only works with `--executor docker` from the VPN.
 ```bash
 calibration/run_calibration.sh --env-file ~/.sciagent-keys.env --executor modal --k 3 \
     --extra-host litellm-proxy.ml.scale.com \
+    --extra-host raw.githubusercontent.com --extra-host github.com --extra-host nodejs.org --extra-host registry.npmjs.org \
     --agent "claude-code:anthropic/claude-fable-5-1" \
-    --agent "codex:gpt-5.6-sol:reasoning_effort=high" \
-    --agent "gemini-cli:gemini-3.7-flash"
+    --agent "codex:gpt-5.6-sol:reasoning_effort=high;config=$PWD/calibration/codex_gateway_chat.toml" \
+    --agent "gemini-cli:gemini/gemini-3.7-flash"
 ```
+
+Agent spec is `name:model[:kw=v;kw2=v2]`; each `kw=v` becomes a Harbor `--ak`. Two agent-specific
+gotchas found while smoke-testing, both handled above:
+
+- **codex**: current Codex releases attach an OpenAI-internal metadata field to Responses-API requests
+  that the gateway's Azure-backed GPT deployments reject (`unknown_parameter:
+  input[].internal_chat_message_metadata_passthrough`). `calibration/codex_gateway_chat.toml` defines a
+  provider that uses the Chat Completions wire API instead; pass it with `config=<absolute path>`.
+- **gemini-cli**: Harbor's Gemini agent installs Node through nvm at setup time even when the image
+  already has the CLI, so the four installer hosts above must be allowed; the model must be given as
+  `gemini/<model>` (Harbor strips the prefix for the CLI).
 
 ## Run
 
@@ -63,7 +75,7 @@ calibration/run_calibration.sh --env-file ~/.sciagent-keys.env --executor modal 
 python3 calibration/aggregate.py jobs --k 1 3 --markdown
 ```
 
-One Harbor job per agent, all three tasks, `k` attempts each (9 trials per agent at k=3). Each trial
+One Harbor job per (agent, task) with `k` attempts each (`harbor run -p` takes one task path); 9 jobs for 3 agents x 3 tasks. Each trial
 runs the full agent budget (2 h for tiers 1-2, 3 h for tier 3) on a 4 vCPU / 16 GB CPU sandbox; the
 dominant cost is model tokens. Use `--task tasks/<name>` to restrict, `--n-concurrent N` to cap
 parallelism, `--agent-timeout-multiplier 0.2` for a cheap smoke test of the plumbing.
