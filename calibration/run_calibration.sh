@@ -15,7 +15,7 @@
 # task directories themselves are not modified: a temporary copy is used.
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")/.." && pwd)
-ENV_FILE=""; EXECUTOR="modal"; K=3; AGENTS=(); TASKS=(); EXTRA_HOSTS=(); CONCURRENCY=""; JOBS_DIR="$HERE/jobs"; MULT=""
+ENV_FILE=""; EXECUTOR="modal"; K=3; AGENTS=(); TASKS=(); EXTRA_HOSTS=(); CONCURRENCY=""; JOBS_DIR="$HERE/jobs"; MULT=""; RETRIES=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --env-file) ENV_FILE="$2"; shift 2;;
@@ -27,6 +27,7 @@ while [ $# -gt 0 ]; do
     --n-concurrent) CONCURRENCY="$2"; shift 2;;
     --jobs-dir) JOBS_DIR="$2"; shift 2;;
     --agent-timeout-multiplier) MULT="$2"; shift 2;;
+    --max-retries) RETRIES="$2"; shift 2;;
     *) echo "unknown arg $1" >&2; exit 2;;
   esac
 done
@@ -46,6 +47,7 @@ for spec in "${AGENTS[@]}"; do
     done
     job="calib-$(echo "$agent-$model" | tr '/@:' '---')-$name-k$K-$(date +%Y%m%d-%H%M)"
     EXTRA=(); [ -n "$CONCURRENCY" ] && EXTRA+=(-n "$CONCURRENCY"); [ -n "$MULT" ] && EXTRA+=(--agent-timeout-multiplier "$MULT")
+    [ -n "$RETRIES" ] && EXTRA+=(--max-retries "$RETRIES" --retry-include ApiRateLimitError --retry-include NetworkConnectionError)
     [ "$EXECUTOR" = "modal" ] && EXTRA+=(-e modal)
     echo; echo "=== $agent / $model / $name -> $JOBS_DIR/$job ==="
     # ANTHROPIC_BASE_URL from an interactive Claude Code shell must not leak into the agents; the env file decides.
