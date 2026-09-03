@@ -50,7 +50,7 @@ REWARD_MODE = "normalized"
 
 [environment]
 network_mode = "allowlist"
-allowed_hosts = ["api.anthropic.com", "api.openai.com"]
+allowed_hosts = ["api.anthropic.com", "api.openai.com", "generativelanguage.googleapis.com"]
 build_timeout_sec = 3600.0
 cpus       = 4
 memory_mb  = 16384

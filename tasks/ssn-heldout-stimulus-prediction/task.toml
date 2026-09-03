@@ -50,7 +50,7 @@ REWARD_MODE = "normalized"
 
 [environment]
 network_mode = "allowlist"
-allowed_hosts = ["api.anthropic.com", "api.openai.com"]
+allowed_hosts = ["api.anthropic.com", "api.openai.com", "generativelanguage.googleapis.com"]
 build_timeout_sec = 3600.0
 # Resource requests. The task declares its own hardware, so `harbor run -p` is
 # all that is needed -- there is no job config. CPU only.
