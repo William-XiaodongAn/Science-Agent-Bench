@@ -1,0 +1,11 @@
+{
+ "perfect answer": 0.0,
+ "do-nothing: training mean": 0.3022363315377554,
+ "persistence: last training value": 0.3581212720620376,
+ "label permutation: answer time-shuffled (mean of 20)": 0.42735347604485696,
+ "label permutation: answer reversed": 0.2692564920047348,
+ "label permutation: answer circularly shifted by 200 ms": 0.49608160204267987,
+ "proxy: mean-AP template at the released stimulus times": 0.11971305749286515,
+ "proxy: nearest-interval AP template (grader diagnostic)": 0.05552972532776941,
+ "corr(stimulus interval_n, APD_n) in training data": 0.9648944378635644
+}

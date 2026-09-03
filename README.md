@@ -1,4 +1,79 @@
-# Science Agent Bench — tasks
+# Science Agent Bench
+
+Verifiable, agentic science tasks for **SciAgent Bench** (Scale AI x Georgia Tech). Each task
+ships as a sandboxed environment with data and tools, a compute/wall-clock budget, a frozen
+programmatic verifier, and sealed ground truth (proposal + spec, Aug 2026).
+
+## Harbor tasks (RSI Bench layout)
+
+`tasks/` holds the runnable tasks in the [RSI Bench](https://github.com/scaleapi/rsi-benchmark)
+/ [Harbor](https://www.harborframework.com) layout, one per tier of the proposal:
+
+| Task | Tier | Domain | Metric (lower is better) | Do-nothing | Pass bar | Reference |
+|---|---|---|---|---|---|---|
+| [`ssn-heldout-stimulus-prediction`](tasks/ssn-heldout-stimulus-prediction) | T1 controlled generator | neuroscience / nonlinear dynamics | held-out trajectory nRMSE | 1.104 | < 0.444 | 0.423 |
+| [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms) | 19.33 | < 3.0 | 2.12 |
+| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | forecast RMSE (paper's metric) | 0.302 | < 0.0784 (beat the paper) | 0.0555 (see its README §5) |
+
+All three are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
+(the task's normalised score in [0, 1], or 1.0/0.0 pass with `REWARD_MODE=binary`) and
+`/logs/verifier/result.json` (raw metric, normalised score, `passed`, `ranked`, flags, secondary
+metrics, diagnostics). "Pass" is the documented per-task rule (valid + `methods.md` + metric below
+the bar) and is what pass@k counts. Each task directory also carries `task.yaml` (spec §3.2
+metadata), a maintainer `README.md` (science background, provenance, anchors, validity probes, spec
+gate self-assessment) and a canary GUID in every text file.
+
+Layout of a task, and how it maps onto the spec's §3.1 anatomy:
+
+    tasks/<name>/
+      task.toml               Harbor task config: resources, timeouts, network allowlist, verifier anchors
+      task.yaml               spec §3.2 metadata (tier, domain, modality, budget, baselines, probes, canary)
+      instruction.md          agent-facing (spec: INSTRUCTIONS.md)
+      README.md               maintainer-facing (spec: README.md)
+      environment/            Dockerfile + workspace/ = exactly what the agent sees at t=0 (spec: environment/, assets/)
+      solution/               solve.sh (oracle = reference method) + baseline.sh (naive) (spec: baseline/)
+      tests/                  test.sh -> grade.py, SHA256SUMS, sealed/ ground truth, validity_probes.py (spec: verifier/, tests/)
+      generator/              Tier 1 only: seed -> instance (spec: generator/, private)
+
+### Running
+
+```bash
+pip install -e ".[runner]"           # harbor
+python fetch_data.py --only dat      # tier-2's 250 MB raw recording (or let its Dockerfile download it)
+ln tier_2_task_1/2024-05-02_Exp000_Rec010_Cam0-PM1394Cam00.dat tasks/optical-mapping-activation-maps/environment/workspace/data/
+
+harbor run -p tasks/zebrafish-voltage-forecast -a oracle -y                      # reference solution through the verifier
+export ANTHROPIC_API_KEY=...
+harbor run -p tasks/ssn-heldout-stimulus-prediction -a claude-code -m claude-opus-5 -y
+harbor run -p tasks/optical-mapping-activation-maps -a codex -m gpt-5.6-sol -y
+```
+
+Tasks declare `network_mode = "allowlist"` (model API hosts only), so the images bake in the
+scientific stack and the agent CLIs; on a Docker host without egress-control support Harbor will
+say so, and the tasks can be run with `network_mode = "public"` for local checks.
+
+### agent-env (pass@k on frontier models)
+
+[`agentenv/register_task.py`](agentenv/register_task.py) registers a task directory as a runnable
+agent-env `Task` (sandbox VM -> task container -> claude-code A2A agent -> `/tests/test.sh`),
+`agent-env eval run --k N` runs it, and [`agentenv/passk.py`](agentenv/passk.py) aggregates
+pass@k. See [`agentenv/README.md`](agentenv/README.md).
+
+### Known issues to resolve before acceptance
+
+- **Tier 3 leaks its answer through the released stimulus times** (closed-loop pacing): a
+  protocol-aware template beats the paper without a dynamics model. Documented, diagnosed by the
+  verifier, variant recommended: [`tasks/zebrafish-voltage-forecast/README.md`](tasks/zebrafish-voltage-forecast/README.md) §5.
+- **Tier 1 headroom:** no legitimate method above 0.62 normalised is known; spec G3 asks for a
+  reference ≥ 0.90. Probe gap to a drive-only proxy is modest. See its README §4-5.
+- **Tier 2 APD80 definition** in the original instruction did not match the frozen ground truth;
+  the task instruction now matches the ground-truth code.
+- Data licences (tier 2, tier 3), second-expert sign-offs, expert solve times and frontier-model
+  calibration runs are pending for all three.
+
+---
+
+## Author's copy (source data and ground truth)
 
 Three benchmark tasks. Each has a solver-facing `instruction.md`, input data, and
 frozen ground truth.

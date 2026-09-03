@@ -8,3 +8,8 @@
 out_tier2/
 __pycache__/
 *.pyc
+
+# Harbor job output and local virtualenvs
+/jobs/
+.venv*/
+out/
