@@ -50,17 +50,19 @@ calibration/run_calibration.sh --env-file ~/.sciagent-keys.env --executor modal 
     --extra-host litellm-proxy.ml.scale.com \
     --extra-host raw.githubusercontent.com --extra-host github.com --extra-host nodejs.org --extra-host registry.npmjs.org \
     --agent "claude-code:anthropic/claude-fable-5-1" \
-    --agent "codex:gpt-5.6-sol:reasoning_effort=high;config=$PWD/calibration/codex_gateway_chat.toml" \
+    --agent "codex:gpt-5.6-sol:reasoning_effort=high;config=$PWD/calibration/codex_gateway.toml" \
     --agent "gemini-cli:gemini/gemini-3.7-flash"
 ```
 
 Agent spec is `name:model[:kw=v;kw2=v2]`; each `kw=v` becomes a Harbor `--ak`. Two agent-specific
 gotchas found while smoke-testing, both handled above:
 
-- **codex**: current Codex releases attach an OpenAI-internal metadata field to Responses-API requests
-  that the gateway's Azure-backed GPT deployments reject (`unknown_parameter:
-  input[].internal_chat_message_metadata_passthrough`). `calibration/codex_gateway_chat.toml` defines a
-  provider that uses the Chat Completions wire API instead; pass it with `config=<absolute path>`.
+- **codex**: current Codex releases attach per-content-item classifications to Responses-API requests
+  (`input[].internal_chat_message_metadata_passthrough.content_item_kinds`), which the gateway's
+  Azure-backed GPT deployments reject with `unknown_parameter`. It is a Codex feature flag;
+  `calibration/codex_gateway.toml` disables it (`[features] content_item_kinds = false`). Pass it with
+  `config=<absolute path>`. (The Chat Completions wire API is no longer supported by Codex, so
+  `wire_api = "chat"` is not an option.)
 - **gemini-cli**: Harbor's Gemini agent installs Node through nvm at setup time even when the image
   already has the CLI, so the four installer hosts above must be allowed; the model must be given as
   `gemini/<model>` (Harbor strips the prefix for the CLI).
