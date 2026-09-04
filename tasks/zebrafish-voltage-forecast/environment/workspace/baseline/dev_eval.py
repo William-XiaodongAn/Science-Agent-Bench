@@ -8,7 +8,7 @@ one 4113 ms forecast from the end of the training recording, so treat these numb
 spread, not as the score.
 
     python3 /workspace/baseline/dev_eval.py                                   # the shipped ESN+ baseline
-    python3 /workspace/baseline/dev_eval.py --kb cn                           # the hybrid HESN+ baseline
+    python3 /workspace/baseline/dev_eval.py --kb cn                           # the hybrid baseline
     python3 /workspace/baseline/dev_eval.py --module /workspace/submission/forecaster.py --origins 4 --seeds 0,1
     python3 /workspace/baseline/dev_eval.py --module /workspace/submission/forecaster.py --as-verifier
 

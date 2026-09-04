@@ -2,7 +2,7 @@
 # SciAgent Bench task metadata (spec section 3.2). The runnable definition is task.toml.
 id: zebrafish-voltage-forecast
 title: "Beat the best published echo-state-network forecast of the zebrafish cardiac voltage series of Delshad & Cherry (2025) by at least 5%, with an echo state network"
-version: 0.7               # 0.1 beat-the-paper; 0.2 protocol-blind; 0.3 beat shipped baselines; 0.4 bar = paper's best; 0.5 causal roll-out (submission is a model); 0.6 ESN model class; 0.7 bar = 5% below the paper's best
+version: 0.8               # 0.1 beat-the-paper; 0.2 protocol-blind; 0.3 beat shipped baselines; 0.4 bar = paper's best; 0.5 causal roll-out (submission is a model); 0.6 ESN model class; 0.7 bar = 5% below the paper's best; 0.8 paper withheld from the agent
 tier: T3
 domain: nonlinear-dynamics-physics
 subdomain: cardiac-dynamics-forecasting
@@ -17,6 +17,7 @@ budget:
 environment:
   image: "built from environment/Dockerfile"
   network: "allowlist: [api.anthropic.com, api.openai.com, generativelanguage.googleapis.com]"
+  paper_withheld: "the PDF, citation, architecture names and results table are not in the environment or the instruction; no internet"
   ships_baselines: "/workspace/baseline: esn.py (the paper's whole ESN family: flat/deep/hybrid, -i/-o/+ connections, per-neuron leaks, optional voltage feedback, as a Forecaster), cn_model.py (Corrado-Niederer and Fenton-Karma steppers), causal_runner.py (the protocol), dev_eval.py; /workspace/selfcheck.py"
 data:
   source: public-dataset
