@@ -89,6 +89,18 @@ trial's submission to an LLM judge with the task's rubric and writes `verifier/m
 `aggregate.py --audit` then counts a pass only if the audit says compliant (flag `audit_non_compliant`
 otherwise). Borderline verdicts (low confidence) are for a human to settle; the judge's reasons are stored.
 
+**Tier 2 agent-as-a-judge and human-judge packages (GDPval-style secondary track).** The tier 2 verifier decides
+pass/fail (workflow reproduced within the measurement's resolution: activation within one frame, APD80 within two).
+Separately, `python3 calibration/pairwise_judge.py <jobs dirs> --task-dir tasks/optical-mapping-activation-maps
+--env-file ~/.sciagent-keys.env --out jobs/judge-t2 [--model anthropic/claude-fable-5-1 | gpt-5.6-sol]` renders the
+agent's and the expert's maps identically, computes the same reference-free QC card for both, blinds them as
+Deliverable A/B and asks an LLM judge for a forced choice (no ties) with confidence and reasons
+(`<trial>/verifier/pairwise_judge.<model>.json`, summary = agent win rate against the human expert). The same run writes
+a blinded package per trial for a human judge under `--out` (A.png, B.png, QC cards, raw maps, README with the scoring
+form) with the A/B keys kept apart in `--out/keys/`. Judge with a model from a different family than the agent being
+judged where possible (self-preference), and read the judge's verdicts as a quality signal, not as ground truth: the
+judge cannot know which map is closer to the true activation times.
+
 `aggregate.py` reads each trial's `verifier/result.json` (score, normalised, `passed`, `ranked`, flags)
 and reports runs / errored / valid / passed, the unbiased pass@k estimate, mean normalised score and
 the best raw metric per task and agent.

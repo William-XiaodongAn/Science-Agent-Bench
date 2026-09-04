@@ -100,6 +100,12 @@ the label's precision; when the second expert processes the recording (G6, pendi
 difference should be checked against the same bound, and the gate loosened only if two experts disagree
 by more than a frame.
 
+**Secondary track: forced-choice judgement against the expert.** `calibration/pairwise_judge.py` renders the
+agent's and the expert's maps identically, blinds them, and asks an LLM judge (and, via the packaged folders, a human
+judge) which deliverable an expert would trust more, with ties disallowed. This is the GDPval-style "did the agent's
+work beat the human's" signal; it is reported alongside the gates, never used for pass/fail, because a judge cannot
+know which map is closer to the true activation times and an LLM judge is only as reproducible as its frozen model.
+
 ## 4. Validity probes (spec G2 / G7)
 
 Every conceptual mistake fails: definition, polarity and orientation errors are off by 3–16× the
