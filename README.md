@@ -74,7 +74,7 @@ task with the paper withheld from the agent, Fable 3/3, Codex 1/3, Gemini 0/3, e
 ESN without voltage feedback found by experiment, with full tool-call digests of the passes in
 `calibration/trajectory-digests/` ([`RESULTS-2026-09-04-tier3-v08.md`](calibration/RESULTS-2026-09-04-tier3-v08.md));
 and under v0.9, the search-procedure protocol at the paper's size, budget and statistic with the paper's cell models
-still available, **Fable 3/3 (0.062-0.067)**, Gemini 0/3, Codex 0/1 before the run was stopped for v0.10
+still available, **Fable 3/3 (0.062-0.067)**, Gemini 0/3, Codex not scored (rate-limited, then stopped for v0.10)
 ([`RESULTS-2026-09-04-tier3-v09.md`](calibration/RESULTS-2026-09-04-tier3-v09.md)). v0.10 (cell models removed) is being
 calibrated.
 
