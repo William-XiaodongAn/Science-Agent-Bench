@@ -43,7 +43,7 @@ verifier:
   gate_rationale: "stated in units of the recording's temporal resolution, not of any pipeline's score; the 18-beat map's statistical noise is 0.3-0.7 ms (activation) and ~1.8 ms (APD80), so noise alone never fails a correct pipeline"
   runs_per_eval: 3
 ground_truth:
-  type: expert-consensus         # expert-processed recording -> frozen maps (tier_2_task_1/gt/make_gt.py)
+  type: expert-consensus         # expert-processed recording -> frozen maps (tier_2_task_1/gt/make_gt.py); the expert deliverable is the ground truth by design (GDPval-style: agent submission vs expert submission)
   reviewers: ["Flavio Fenton lab (Georgia Tech)", "<second reviewer TBD>"]
 validity_probes:
   - "label-permutation: spatially shuffled reference map scores at chance (tests/validity_probes.py)"
