@@ -59,6 +59,18 @@ feedback; Fable tried feedback once per run (dev RMSE 0.57) and abandoned it, th
 radius, leak ranges and input scaling. What no transcript check can rule out is a model's pretraining memory of the
 paper; what the transcripts show is that none was invoked.
 
+## Caveat: the margin is window-specific
+
+On four 4113-sample dev windows inside the training recording, the passing models score 0.082-0.085 (reference
+0.0835), above the paper's hidden-window 0.0784, while the paper-like feedback models do not degrade between the
+hidden window and the dev windows (ESN+ 0.124 vs 0.125, HESN+ 0.108 vs 0.113). The no-feedback models lose about 15%
+when warmed up on 8-12 s instead of 16 s of beats and when a window contains the recording's anomalous 180 ms beat. The
+paper's tuned network was never run on those windows, so the comparison there is unknown; against the paper-like
+models the agents' lead shrinks from ~34% to ~27%. The pass is the paper's own single-window claim, made on the same
+window, but it should not be read as a general 5-10% improvement over the paper's method; a paired multi-window
+comparison with the authors' model, or a margin covering the offset (>= 15-20%, which no v0.8 pass meets), would be
+needed for that.
+
 ## v0.7 (paper available) vs v0.8 (paper withheld)
 
 | | Fable 5.1 | GPT-5.6 Sol | Gemini 3.7 Flash |
