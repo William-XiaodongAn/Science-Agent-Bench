@@ -52,6 +52,10 @@ rubric (`calibration/method_audit.py`, an LLM judge whose reasons are stored for
 **The bar.** The paper's best published result, 0.0784, the mean over 5 seeds of the paper's RMSE over
 the 4113-sample test window. `MIN_IMPROVEMENT` (default 0) requires a relative margin if wanted.
 
+**Calibration under v0.6** (2026-09-04, k = 3, [`calibration/RESULTS-2026-09-04-tier3-v06.md`](../../calibration/RESULTS-2026-09-04-tier3-v06.md)):
+Fable 5.1 3/3 (0.069-0.078), GPT-5.6 Sol 0/3 (0.088-0.095), Gemini 3.7 Flash 0/3 (0.083-0.109); all nine
+submissions declared and audited as ESNs; every pass dropped the voltage feedback, as the reference does.
+
 Design history: **v0.1** beat-the-paper with the stimulus file released; **v0.2** withheld the test
 stimulus entirely; **v0.3** shipped templates as baselines; **v0.4** bar = paper's best; **v0.5** causal
 roll-out; **v0.6** (this version) model class restricted to ESNs.

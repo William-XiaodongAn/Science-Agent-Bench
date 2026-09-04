@@ -52,16 +52,18 @@ Tasks declare `network_mode = "allowlist"` (model API hosts only), so the images
 scientific stack and the agent CLIs; on a Docker host without egress-control support Harbor will
 say so, and the tasks can be run with `network_mode = "public"` for local checks.
 
-### Frontier-agent calibration (2026-09-03)
+### Frontier-agent calibration (2026-09-03 / 04)
 
 Fable 5.1 (claude-code), GPT-5.6 Sol (codex) and Gemini 3.7 Flash (gemini-cli), k = 3 on Modal via
-`calibration/run_calibration.sh`: tier 2 passed 3/3 by Fable and Codex, 0/3 by Gemini; tier 1 passed
-1/3 by each agent. Tier 3 was passed 3/3 by every agent **under v0.3, whose released test stimulus let
-every solution read beat durations off future stimulus times**; those results are not comparable to the
-paper and are superseded by the v0.5 re-run (causal roll-out), reported in
-[`calibration/RESULTS-2026-09-04-tier3-v05.md`](calibration/RESULTS-2026-09-04-tier3-v05.md), whose passes are
-in turn excluded by the v0.6 model-class rule (templates and tree ensembles, not ESNs). Full table,
-per-trial details and infrastructure notes in [`calibration/RESULTS-2026-09-03.md`](calibration/RESULTS-2026-09-03.md).
+`calibration/run_calibration.sh`. Tier 2 passed 3/3 by Fable and Codex, 0/3 by Gemini; tier 1 passed
+1/3 by each agent ([`RESULTS-2026-09-03.md`](calibration/RESULTS-2026-09-03.md)). Tier 3 was run three
+times as the task was tightened: 3/3 for every agent under v0.3 (whole test stimulus released; all
+solutions read beat durations off future stimulus times); 3/3 for Fable and Codex with beat templates
+and tree ensembles and 0/3 for Gemini under v0.5 (causal roll-out, any method;
+[`RESULTS-2026-09-04-tier3-v05.md`](calibration/RESULTS-2026-09-04-tier3-v05.md)); and under v0.6
+(causal roll-out, echo state networks only) **Fable 3/3, Codex 0/3, Gemini 0/3**, every pass a
+stimulus-driven ESN without voltage feedback, audited compliant
+([`RESULTS-2026-09-04-tier3-v06.md`](calibration/RESULTS-2026-09-04-tier3-v06.md)).
 
 ### agent-env (pass@k on frontier models)
 
