@@ -10,6 +10,10 @@ import argparse, glob, json, math, os
 from collections import defaultdict
 
 
+INFRA_EXCEPTIONS = {"ApiRateLimitError", "EnvironmentStartTimeoutError", "NetworkConnectionError", "AddTestsDirError",
+                    "EnvironmentBuildTimeoutError", "VerifierTimeoutError"}
+
+
 def pass_at_k(n, c, k):
     if n - c < k:
         return 1.0
@@ -43,11 +47,21 @@ def main():
                 exc = (json.load(open(tr_path)).get("exception_info") or {}).get("exception_type")
             except Exception:  # noqa: BLE001
                 exc = None
-        # errored = the trial finished with a Harbor exception (agent/env/API failure such as ApiRateLimitError)
-        # or without any verifier result; such trials are infrastructure errors, not scored attempts.
-        errored = finished and (exc is not None or res is None)
+        # Infrastructure errors (excluded from pass@k): rate limits, sandbox/network failures, and an agent
+        # process killed before it spent any tokens. An agent that used its budget without submitting
+        # (AgentTimeoutError) or exited non-zero after doing work is a FAILED ATTEMPT and is scored.
+        cost = None
+        if finished:
+            try:
+                cost = ((json.load(open(tr_path)).get("agent_result") or {}).get("cost_usd"))
+            except Exception:  # noqa: BLE001
+                cost = None
+        infra = exc in INFRA_EXCEPTIONS or (exc == "NonZeroAgentExitCodeError" and not cost)
+        errored = finished and (infra or (exc is None and res is None))
         if errored:
             res = None
+        elif finished and res is None:
+            res = {"status": "invalid", "flags": ["no_submission", exc or "no_verifier_result"], "passed": False}
         detail = {}
         if finished:
             try:
