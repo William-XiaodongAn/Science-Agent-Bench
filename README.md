@@ -69,10 +69,14 @@ every pass a stimulus-driven ESN without voltage feedback, audited compliant
 ([`RESULTS-2026-09-04-tier3-v06.md`](calibration/RESULTS-2026-09-04-tier3-v06.md)); and under v0.7
 (pass = at least 5% below the paper, RMSE < 0.0745) **Fable 2/3, Codex 2/3, Gemini 0/3**, pass@1 0.67 /
 0.67 / 0, all four passes stimulus-driven ESN ensembles or deep ESNs with cell-model inputs, audited
-compliant ([`RESULTS-2026-09-04-tier3-v07.md`](calibration/RESULTS-2026-09-04-tier3-v07.md)); and under v0.8, the same
-task with the paper withheld from the agent, **Fable 3/3, Codex 1/3, Gemini 0/3**, every pass again a stimulus-driven
+compliant ([`RESULTS-2026-09-04-tier3-v07.md`](calibration/RESULTS-2026-09-04-tier3-v07.md)); under v0.8, the same
+task with the paper withheld from the agent, Fable 3/3, Codex 1/3, Gemini 0/3, every pass again a stimulus-driven
 ESN without voltage feedback found by experiment, with full tool-call digests of the passes in
-`calibration/trajectory-digests/` ([`RESULTS-2026-09-04-tier3-v08.md`](calibration/RESULTS-2026-09-04-tier3-v08.md)).
+`calibration/trajectory-digests/` ([`RESULTS-2026-09-04-tier3-v08.md`](calibration/RESULTS-2026-09-04-tier3-v08.md));
+and under v0.9, the search-procedure protocol at the paper's size, budget and statistic with the paper's cell models
+still available, **Fable 3/3 (0.062-0.067)**, Gemini 0/3, Codex 0/1 before the run was stopped for v0.10
+([`RESULTS-2026-09-04-tier3-v09.md`](calibration/RESULTS-2026-09-04-tier3-v09.md)). v0.10 (cell models removed) is being
+calibrated.
 
 ### agent-env (pass@k on frontier models)
 
