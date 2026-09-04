@@ -60,8 +60,10 @@ Codex 0/3, Gemini 0/3.
 [`RESULTS-2026-09-04-tier3-v06.md`](../../calibration/RESULTS-2026-09-04-tier3-v06.md)): Fable 5.1 3/3
 (0.069-0.078), GPT-5.6 Sol 0/3 (0.088-0.095), Gemini 3.7 Flash 0/3 (0.083-0.109). Under v0.7 (bar 0.0745,
 [`RESULTS-2026-09-04-tier3-v07.md`](../../calibration/RESULTS-2026-09-04-tier3-v07.md)): Fable 2/3 (0.067,
-0.073; 0.076 fails), GPT-5.6 Sol 2/3 (0.065, 0.068; 0.104 fails), Gemini 0/3 (0.085-0.106). All eighteen
-submissions declared and audited as ESNs; every pass dropped the voltage feedback, as the reference does.
+0.073; 0.076 fails), GPT-5.6 Sol 2/3 (0.065, 0.068; 0.104 fails), Gemini 0/3 (0.085-0.106). Under v0.8 (paper withheld,
+[`RESULTS-2026-09-04-tier3-v08.md`](../../calibration/RESULTS-2026-09-04-tier3-v08.md)): Fable 3/3 (0.071-0.074),
+GPT-5.6 Sol 1/3 (0.071), Gemini 0/3 (0.081-0.105). All twenty-seven submissions declared and audited as ESNs; every
+pass dropped the voltage feedback, as the reference does, and the v0.8 passes did so with no access to the paper.
 
 Design history: **v0.1** beat-the-paper with the stimulus file released; **v0.2** withheld the test
 stimulus entirely; **v0.3** shipped templates as baselines; **v0.4** bar = paper's best; **v0.5** causal
