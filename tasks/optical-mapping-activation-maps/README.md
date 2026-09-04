@@ -88,16 +88,17 @@ unit, not in units of what any pipeline scored.
   (the whole frame scores 0.37 because tissue covers 37% of it; the gate rejects trivial and
   mis-oriented masks with margin); at least half of the selected activation pixels finite.
 
-**What the comparison means.** The reference maps are an expert's *annotation* of this recording, not
-an independent ground truth: the same frozen definitions applied to the expert's processed frames. A
-submission is therefore scored on how closely it reproduces the expert's processing, and "better than
-the expert" is not defined by this metric (a map closer to the unknowable true activation times but
-further from the expert's map scores worse). The right bar for an expert-workflow task is agreement
-within the measurement's resolution and the expert's own precision, which is what the gates encode.
-When a second expert processes the recording (G6, pending), the natural refinement is an inter-expert
-bar: pass if the submission is at least as close to expert A as expert B is. A genuine "beat the
-expert" task needs an independent truth, i.e. a synthetic recording with known activation times on
-which the expert pipeline's own error can be measured; that would be a separate tier-1-style variant.
+**What the comparison means.** By design the expert's maps are the ground truth: as in GDPval, the
+agent's deliverable is compared with the expert's deliverable for the same job, and the expert's judgement
+of how the recording should be processed is the standard. Two consequences follow. First, the best
+possible outcome is to be indistinguishable from the expert, and the gates define "indistinguishable" in
+the measurement's own units: within one frame for activation, two for APD80. "Better than the expert" is
+not a target here, unlike tier 3, where the paper's result is a score against a separately recorded truth.
+Second, how strict the gates may be is bounded by label noise. The expert's own beat-to-beat scatter
+(1.01 ms) and the 18-beat map noise (0.3–0.7 ms) are both below one frame, so the gate is not tighter than
+the label's precision; when the second expert processes the recording (G6, pending), the inter-expert
+difference should be checked against the same bound, and the gate loosened only if two experts disagree
+by more than a frame.
 
 ## 4. Validity probes (spec G2 / G7)
 
