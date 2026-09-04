@@ -7,12 +7,17 @@ Implements METRICS.md of the source repository verbatim, plus the documented nor
   d          = activation_sub[sel] - activation_ref[sel], finite entries only
   score      = RMSE(d - median(d))                          [ms, lower is better]
   normalized = clip((BASELINE - score) / (BASELINE - FLOOR), 0, 1)
-  passed     = valid AND methods.md present AND score < PASS_ACT_MS
+  apd_rmse   = RMSE(apd80_sub[sel] - apd80_ref[sel])          [ms, absolute: a duration has a meaningful zero]
+  passed     = valid AND methods.md present AND score < PASS_ACT_MS AND apd_rmse < PASS_APD_MS
   reward     = normalized (REWARD_MODE=normalized) | 1.0 if passed else 0.0 (REWARD_MODE=binary)
 
+Both pass gates are stated in units of the recording's temporal resolution (one frame = 1000/529.09 = 1.890 ms),
+not of what any pipeline scored: activation within ONE frame (the definitions interpolate between frames, so a
+correct pipeline agrees to sub-frame precision on average), APD80 within TWO frames (a duration is the difference
+of two crossings). Values come from task.toml [verifier.env].
 Validity gates (DNF, not a low score): shapes (128,128); non-empty mask; coverage of the
 reference mask >= COVERAGE_MIN; IoU >= IOU_MIN; at least half of the selected pixels finite.
-Secondary, reported not ranked: APD80 RMSE (no offset removal), coverage, IoU.
+Secondary, reported not ranked: coverage, IoU, APD80 bias, APD80 normalised score.
 """
 import json, os, sys
 import numpy as np
@@ -73,7 +78,7 @@ def methods_check():
 
 def main():
     baseline, floor, pass_bar = env_float("BASELINE_ACT_MS"), env_float("FLOOR_ACT_MS"), env_float("PASS_ACT_MS")
-    apd_baseline, apd_floor = env_float("BASELINE_APD_MS"), env_float("FLOOR_APD_MS")
+    apd_baseline, apd_floor, apd_pass_bar = env_float("BASELINE_APD_MS"), env_float("FLOOR_APD_MS"), env_float("PASS_APD_MS")
     cov_min, iou_min = env_float("COVERAGE_MIN"), env_float("IOU_MIN")
 
     gt_act = np.load(os.path.join(SEALED, "activation_ms.npy")).astype(np.float64)
@@ -119,7 +124,13 @@ def main():
         flags.append("apd80_worse_than_constant")
     if finite_frac < 0.95:
         flags.append("activation_partially_missing")
-    passed = bool(score < pass_bar and methods_ok)
+    act_ok = bool(score < pass_bar)
+    apd_ok = bool(apd_rmse is not None and len(d2f) >= 0.5 * sel.sum() and apd_rmse < apd_pass_bar)
+    if not act_ok:
+        flags.append("activation_above_gate")
+    if not apd_ok:
+        flags.append("apd80_above_gate")
+    passed = bool(act_ok and apd_ok and methods_ok)
     reward = normalized if REWARD_MODE == "normalized" else (1.0 if passed else 0.0)
 
     write({
@@ -138,13 +149,16 @@ def main():
             "apd80_rmse_ms": None if apd_rmse is None else round(apd_rmse, 4),
             "apd80_bias_ms": None if apd_bias is None else round(apd_bias, 3),
             "apd80_normalized": None if apd_normalized is None else round(apd_normalized, 4),
+            "activation_gate_passed": act_ok,
+            "apd80_gate_passed": apd_ok,
+            "frame_ms": 1.8900,
             "mask_coverage": round(coverage, 4),
             "mask_iou": round(iou, 4),
             "mask_pixels": int(sub_mask.sum()),
             "activation_finite_frac": round(finite_frac, 4),
         },
         "anchors": {"baseline_act_ms": baseline, "floor_act_ms": floor, "pass_act_ms": pass_bar,
-                    "baseline_apd_ms": apd_baseline, "floor_apd_ms": apd_floor,
+                    "baseline_apd_ms": apd_baseline, "floor_apd_ms": apd_floor, "pass_apd_ms": apd_pass_bar,
                     "coverage_min": cov_min, "iou_min": iou_min},
     }, reward)
 

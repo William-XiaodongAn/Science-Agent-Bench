@@ -12,7 +12,7 @@ programmatic verifier, and sealed ground truth (proposal + spec, Aug 2026).
 | Task | Tier | Domain | Metric (lower is better) | Do-nothing | Pass bar | Reference |
 |---|---|---|---|---|---|---|
 | [`ssn-heldout-stimulus-prediction`](tasks/ssn-heldout-stimulus-prediction) | T1 controlled generator | neuroscience / nonlinear dynamics | held-out trajectory nRMSE | 1.104 | < 0.444 | 0.423 |
-| [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms) | 19.33 | < 3.0 | 2.12 |
+| [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms), APD80 RMSE (ms) | 19.33 | < 1.89 (one frame) and APD80 < 3.78 (two frames) | 0.92 / 2.5 |
 | [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE, paper's split; the submitted echo state network is rolled out causally by the verifier (stimulus delivered one sample at a time), mean of 5 seeds | 0.302 | < 0.0745 (5% below the paper's best published result, with an ESN) | 0.071 (stimulus-driven multi-timescale ESN) |
 
 All three are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
