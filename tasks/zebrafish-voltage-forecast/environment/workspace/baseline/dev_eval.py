@@ -8,7 +8,6 @@ one 4113 ms forecast from the end of the training recording, so treat these numb
 spread, not as the score.
 
     python3 /workspace/baseline/dev_eval.py                                   # the shipped ESN+ baseline
-    python3 /workspace/baseline/dev_eval.py --kb cn                           # the hybrid baseline
     python3 /workspace/baseline/dev_eval.py --module /workspace/submission/forecaster.py --origins 4 --seeds 0,1
     python3 /workspace/baseline/dev_eval.py --module /workspace/submission/forecaster.py --as-verifier
 
@@ -25,7 +24,6 @@ import causal_runner  # noqa: E402
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--module", default=None, help="path to a forecaster.py; default: the shipped ESN baseline")
-    ap.add_argument("--kb", choices=["none", "cn"], default="none", help="(baseline only) knowledge-based input")
     ap.add_argument("--origins", type=int, default=4, help="forecast origins spread over the last 50%% of the training recording")
     ap.add_argument("--horizon", type=int, default=2000)
     ap.add_argument("--seeds", default="0,1,2")
@@ -37,7 +35,7 @@ def main():
         F = causal_runner.load_forecaster_class(a.module); make = lambda seed: F(seed)   # noqa: E731
     else:
         from esn import Forecaster
-        make = lambda seed: Forecaster(seed, kb="cn" if a.kb == "cn" else None)        # noqa: E731
+        make = lambda seed: Forecaster(seed)                                              # noqa: E731
     H = a.horizon
     origins = [int(o) for o in np.linspace(0.5 * len(x), len(x) - H, a.origins)]
     seeds = [int(v) for v in a.seeds.split(",")]

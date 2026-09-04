@@ -61,8 +61,8 @@ Inside `search`:
   `BudgetExhausted`. `evaluator.remaining`, `evaluator.history` and
   `evaluator.best()` are available.
 - `evaluator.train_voltage`, `evaluator.train_stim`: read-only copies of the
-  training recording for your own analysis (waveform statistics, fitting a cell
-  model's parameters, ...). Analysis that does not train a reservoir is free.
+  training recording for your own analysis. Analysis that does not train a
+  reservoir is free.
 - **Training a reservoir outside the evaluator is against the rules.** Calls to
   `Forecaster.warmup` not made by the evaluator are counted and make the
   submission unranked; so does shadowing the framework with your own copy, or
@@ -84,25 +84,22 @@ the framework enforces the study's conditions when it builds the model:
   makes the submission invalid;
 - reservoirs of leaky tanh units with random, fixed, seed-determined weights;
   the only trained parameters are the linear readout;
-- inputs limited to the model's own fed-back voltage (`voltage_feedback`,
-  optional), the raw stimulus channel, and the voltage of one or both shipped
-  mechanistic cell models (`kb`: `"cn"`, `"fk"`), whose parameters you may refit
-  (`kb_params`).
+- inputs: the raw stimulus channel and, optionally, the model's own fed-back
+  voltage (`voltage_feedback`). Nothing else enters the network.
 
 Everything the framework exposes is yours to explore: number and sizes of
-layers, the connections between them (`input_to_all_layers`,
-`all_layers_to_output`, `input_to_output`; `inter_scale=0` makes the layers a
+reservoirs, the connections between them (`input_to_all_layers`,
+`all_layers_to_output`, `input_to_output`; `inter_scale=0` makes them a
 parallel bank), spectral radius, connectivity, leak rates (one value, one per
-layer, or a per-neuron log-uniform range), per-channel input scaling, whether to
-feed the voltage back at all, which cell model with which parameters, ridge,
-washout, a recency-weighted readout. What you cannot do is add units, add a
-different kind of model, or write your own training loop.
+reservoir, or a per-neuron log-uniform range), per-channel input scaling,
+whether to feed the voltage back at all, ridge, washout, a recency-weighted
+readout. What you cannot do is add units, add input channels or a different
+kind of model, or write your own training loop.
 
 ## Your starting point (`/workspace/baseline/`)
 - `esn.py` — the configurable echo-state-network framework; read its docstring
   for every hyperparameter. Run as a script it installs a **do-nothing search**
   (returns its untuned default) as a submission you can edit.
-- `cn_model.py` — the two cell models with reference parameters, as steppers.
 - `search_api.py` — the protocol: the `Evaluator`, the size checks, the metering.
 - `causal_runner.py` — the roll-out protocol the evaluator and the verifier use.
 - `run_search.py` — runs your `search.py` exactly as the verifier will, for any
@@ -117,7 +114,6 @@ Anchors on the **hidden** test window (RMSE):
 |---|---|
 | do-nothing: training mean | 0.302 |
 | the framework's untuned default (one 368-unit reservoir, voltage feedback), seeds 0-4 | 0.120 (sd 0.004) |
-| same with the Corrado–Niederer input (`kb="cn"`) | 0.105 (sd 0.002) |
 | **the published result: best ESN design in the study, 368 units, mean over five optimised networks** | **0.0784** |
 
 ## Goal

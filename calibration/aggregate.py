@@ -11,7 +11,7 @@ from collections import defaultdict
 
 
 INFRA_EXCEPTIONS = {"ApiRateLimitError", "EnvironmentStartTimeoutError", "NetworkConnectionError", "AddTestsDirError",
-                    "EnvironmentBuildTimeoutError", "VerifierTimeoutError"}
+                    "EnvironmentBuildTimeoutError", "VerifierTimeoutError", "UnknownApiError"}   # UnknownApiError: gateway closed the connection mid-run
 
 
 def pass_at_k(n, c, k):

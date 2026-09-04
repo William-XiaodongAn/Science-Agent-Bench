@@ -77,7 +77,7 @@ def methods_check():
 def main():
     do_nothing, paper_best = env_float("DO_NOTHING_RMSE"), env_float("PAPER_BEST_RMSE")
     min_impr = float(os.environ.get("MIN_IMPROVEMENT", "0")); max_configs = int(env_float("MAX_CONFIGS"))
-    baselines = {k: env_float(k) for k in ("BASELINE_ESN_PLUS_RMSE", "BASELINE_HESN_PLUS_RMSE")}
+    baselines = {k: env_float(k) for k in ("BASELINE_ESN_PLUS_RMSE",)}
     target = np.load(os.path.join(SEALED, "test_data.npy")).astype(np.float64); n_te = len(target)
     stim_te = np.load(os.path.join(SEALED, "inputs/test_stim.npy")).astype(np.float64); assert len(stim_te) == n_te
 

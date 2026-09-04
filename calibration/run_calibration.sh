@@ -47,7 +47,7 @@ for spec in "${AGENTS[@]}"; do
     done
     job="calib-$(echo "$agent-$model" | tr '/@:' '---')-$name-k$K-$(date +%Y%m%d-%H%M)"
     EXTRA=(); [ -n "$CONCURRENCY" ] && EXTRA+=(-n "$CONCURRENCY"); [ -n "$MULT" ] && EXTRA+=(--agent-timeout-multiplier "$MULT")
-    [ -n "$RETRIES" ] && EXTRA+=(--max-retries "$RETRIES" --retry-include ApiRateLimitError --retry-include NetworkConnectionError)
+    [ -n "$RETRIES" ] && EXTRA+=(--max-retries "$RETRIES" --retry-include ApiRateLimitError --retry-include NetworkConnectionError --retry-include UnknownApiError)
     [ "$EXECUTOR" = "modal" ] && EXTRA+=(-e modal)
     echo; echo "=== $agent / $model / $name -> $JOBS_DIR/$job ==="
     # ANTHROPIC_BASE_URL from an interactive Claude Code shell must not leak into the agents; the env file decides.
