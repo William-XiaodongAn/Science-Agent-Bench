@@ -4,6 +4,45 @@ Verifiable, agentic science tasks for **SciAgent Bench** (Scale AI x Georgia Tec
 ships as a sandboxed environment with data and tools, a compute/wall-clock budget, a frozen
 programmatic verifier, and sealed ground truth (proposal + spec, Aug 2026).
 
+## What makes this different from other science agent benchmarks
+
+Most agentic-science suites (Terminal-Bench Science and similar) are built *from the literature*:
+a published paper plus its public repository is turned into a task, and the ground truth is the
+figure or number the paper already reports. SciAgent Bench is built *from the bench*.
+
+**1. Real experimental data, not literature reproduction.** Two of the three tiers are raw
+recordings from the labs that ran the experiments — a 239 MB 128x128 voltage-dye camera stream of
+beating cardiac tissue at 529.09 fps (Fenton lab, Georgia Tech), and the zebrafish cardiac voltage
+recording behind Delshad & Cherry 2025. The agent is handed the instrument output, not a cleaned
+array: a vendor binary stream with an under-exposed first frame, stored transposed relative to the
+analysis convention, with an inverted fluorescence polarity. Every one of those has a plausible
+shortcut that is quietly wrong, and the validity probes in each task's README §4 measure exactly
+how wrong. Tier 1 sits alongside them as a controlled generator, so difficulty is a dial rather
+than a lucky find.
+
+**2. Expert workflows published here for the first time.** The ground truth is not a published
+figure — it is what a lab's own analysis pipeline produces, frozen into code. Tier 2's activation
+and APD80 maps come from an expert-processed recording that has never been released; the frozen
+definitions in `tier_2_task_1/gt/make_gt.py` (beat detection on the field mean, 50% upstroke
+crossing, APD80 as time above the 20% level, mean over 18 beats) encode practice that until now
+existed only inside the lab. That also shrinks the contamination surface: there is no public repo
+carrying the answer, and every text file in every task carries a canary GUID so leakage is
+detectable. (Data licences and second-expert sign-offs are still pending — see *Known issues*.)
+
+**3. First Georgia Tech x Scale AI collaboration on a science agent benchmark.** The tasks come
+from the people who ran the experiments rather than from readers of their papers, so the metric
+definitions, validity gates and anchors were written with the experimentalists instead of being
+reverse-engineered from a figure caption. Where the paper's setup and a well-posed task disagreed,
+the authors were asked directly — Tier 3's v0.1 -> v0.3 history is that conversation.
+
+**4. Domain professors supervising the tasks, not just crowd annotators.** Each task is overseen by
+a faculty expert in its field; **Flavio Fenton** and **Elizabeth Cherry** (Georgia Tech) have
+already agreed to supervise, and both are principals of the science the cardiac tiers are built on
+— the Tier 2 recording comes from the Fenton lab, and Tier 3 is the zebrafish problem of Delshad &
+Cherry 2025. Supervision covers what a verifier cannot check by itself: that the metric is the one
+the field actually uses, that the pass bar corresponds to a result a working scientist would accept,
+and that the shortcuts the validity probes reject are the shortcuts that matter.
+
 ## Harbor tasks (RSI Bench layout)
 
 `tasks/` holds the runnable tasks in the [RSI Bench](https://github.com/scaleapi/rsi-benchmark)
