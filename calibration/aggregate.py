@@ -26,6 +26,7 @@ def main():
     ap.add_argument("--k", type=int, nargs="*", default=[1, 3, 5])
     ap.add_argument("--markdown", action="store_true")
     ap.add_argument("--details", action="store_true", help="also list every trial (score, passed, cost, duration, method)")
+    ap.add_argument("--min-improvement", type=float, default=None, help="re-derive 'passed' with this required relative improvement over the paper's best (anchors.paper_best_rmse in result.json), e.g. 0.05")
     ap.add_argument("--audit", action="store_true", help="use verifier/method_audit.json (calibration/method_audit.py): a pass counts only if the model-class audit says compliant")
     a = ap.parse_args()
     groups = defaultdict(list)
@@ -80,6 +81,13 @@ def main():
                 audit = (json.load(open(ap_)) or {}).get("verdict")
             except Exception:  # noqa: BLE001
                 audit = None
+        if a.min_improvement is not None and res is not None and isinstance(res.get("score"), (int, float)):
+            pb = (res.get("anchors") or {}).get("paper_best_rmse")
+            if pb:
+                res = dict(res); impr = (pb - res["score"]) / pb
+                methods_ok = not any(str(f).startswith("methods_md") for f in res.get("flags", []))
+                res["passed"] = bool(res.get("ranked") and methods_ok and impr >= a.min_improvement)
+                res["improvement_over_paper_best"] = round(impr, 4)
         if a.audit and res is not None and res.get("passed") is True:
             res = dict(res)
             res["passed_raw"] = True
