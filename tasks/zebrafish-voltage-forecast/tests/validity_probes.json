@@ -6,8 +6,8 @@
  "label permutation: answer shifted by half a beat (60 ms)": 0.5374,
  "shipped baseline ESN+ (5 seeds)": 0.1078,
  "shipped baseline HESN+ with CN input (5 seeds)": 0.1045,
- "shipped baseline template, time-warped mean shape": 0.0768,
- "shipped baseline template, nearest interval": 0.0555,
+ "naive (private) template, time-warped mean shape": 0.0768,
+ "naive (private) template, nearest interval": 0.0555,
  "reference: history-conditioned template (k=2)": 0.0404,
  "paper: ESN+ 368 / HESN+ (CN) 368 / DHESN-io+ (CN) 368": "0.1021 / 0.0879 / 0.0784",
  "corr(stimulus interval_n, APD_n) in training (why templates are strong)": 0.994

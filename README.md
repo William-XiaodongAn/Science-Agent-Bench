@@ -13,7 +13,7 @@ programmatic verifier, and sealed ground truth (proposal + spec, Aug 2026).
 |---|---|---|---|---|---|---|
 | [`ssn-heldout-stimulus-prediction`](tasks/ssn-heldout-stimulus-prediction) | T1 controlled generator | neuroscience / nonlinear dynamics | held-out trajectory nRMSE | 1.104 | < 0.444 | 0.423 |
 | [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms) | 19.33 | < 3.0 | 2.12 |
-| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE, paper's split and inputs, mean of 5 seeds | 0.302 | < 0.0527 (5% below the best shipped baseline, 0.0555) | 0.0404 (history-conditioned template) |
+| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE, paper's split and inputs, mean of 5 seeds | 0.302 | < 0.0784 (beat the paper's best published result) | 0.0404 (history-conditioned template) |
 
 All three are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
 (the task's normalised score in [0, 1], or 1.0/0.0 pass with `REWARD_MODE=binary`) and
@@ -68,12 +68,12 @@ pass@k. See [`agentenv/README.md`](agentenv/README.md).
 
 ### Known issues to resolve before acceptance
 
-- **Tier 3 (v0.3) follows the paper's setup** (stimulus schedule given as an input in training and
-  prediction, paper's split, metric and tuning budget) and ships the paper's ESN family plus two
-  stimulus-aligned templates as baselines; the agent must beat the best of them by 5%. Under the
-  closed-loop pacing protocol the stimulus intervals fix most of each beat (a template alone scores
-  0.0555, below the paper's best 0.0784), so the task is the residual beat-to-beat variation; the
-  measured frontier is ~0.040. See its README §2-4.
+- **Tier 3 (v0.4) follows the paper's setup** (stimulus schedule given as an input in training and
+  prediction, paper's split, metric and tuning budget) and ships the paper's ESN family as the starting
+  code; the bar is the paper's best published result (0.0784). Under the closed-loop pacing protocol the
+  stimulus intervals fix most of each beat, so a stimulus-aligned template alone already scores 0.0555;
+  the templates are therefore kept private in `solution/`, not shipped. Frontier agents reached
+  0.022-0.042 in the 2026-09-03 calibration. See its README §2-4.
 - **Tier 1 headroom:** no legitimate method above 0.62 normalised is known, while the oracle
   sits at 1.0. Probe gap to a drive-only proxy is modest. See its README §4-5.
 - **Tier 2 APD80 definition** in the original instruction did not match the frozen ground truth;
