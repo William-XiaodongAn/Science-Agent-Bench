@@ -52,6 +52,13 @@ Tasks declare `network_mode = "allowlist"` (model API hosts only), so the images
 scientific stack and the agent CLIs; on a Docker host without egress-control support Harbor will
 say so, and the tasks can be run with `network_mode = "public"` for local checks.
 
+### Frontier-agent calibration (2026-09-03)
+
+Fable 5.1 (claude-code), GPT-5.6 Sol (codex) and Gemini 3.7 Flash (gemini-cli), k = 3 on Modal via
+`calibration/run_calibration.sh`: tier 3 passed 3/3 by every agent; tier 2 passed 3/3 by Fable and
+Codex, 0/3 by Gemini; tier 1 passed 1/3 by each agent. Full table, per-trial details and
+infrastructure notes in [`calibration/RESULTS-2026-09-03.md`](calibration/RESULTS-2026-09-03.md).
+
 ### agent-env (pass@k on frontier models)
 
 [`agentenv/register_task.py`](agentenv/register_task.py) registers a task directory as a runnable
