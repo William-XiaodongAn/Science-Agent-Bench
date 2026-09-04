@@ -60,10 +60,13 @@ Fable 5.1 (claude-code), GPT-5.6 Sol (codex) and Gemini 3.7 Flash (gemini-cli), 
 times as the task was tightened: 3/3 for every agent under v0.3 (whole test stimulus released; all
 solutions read beat durations off future stimulus times); 3/3 for Fable and Codex with beat templates
 and tree ensembles and 0/3 for Gemini under v0.5 (causal roll-out, any method;
-[`RESULTS-2026-09-04-tier3-v05.md`](calibration/RESULTS-2026-09-04-tier3-v05.md)); and under v0.6
-(causal roll-out, echo state networks only) **Fable 3/3, Codex 0/3, Gemini 0/3**, every pass a
-stimulus-driven ESN without voltage feedback, audited compliant
-([`RESULTS-2026-09-04-tier3-v06.md`](calibration/RESULTS-2026-09-04-tier3-v06.md)).
+[`RESULTS-2026-09-04-tier3-v05.md`](calibration/RESULTS-2026-09-04-tier3-v05.md)); under v0.6
+(causal roll-out, echo state networks only, bar = the paper's 0.0784) Fable 3/3, Codex 0/3, Gemini 0/3,
+every pass a stimulus-driven ESN without voltage feedback, audited compliant
+([`RESULTS-2026-09-04-tier3-v06.md`](calibration/RESULTS-2026-09-04-tier3-v06.md)); and under v0.7
+(pass = at least 5% below the paper, RMSE < 0.0745) **Fable 2/3, Codex 2/3, Gemini 0/3**, pass@1 0.67 /
+0.67 / 0, all four passes stimulus-driven ESN ensembles or deep ESNs with cell-model inputs, audited
+compliant ([`RESULTS-2026-09-04-tier3-v07.md`](calibration/RESULTS-2026-09-04-tier3-v07.md)).
 
 ### agent-env (pass@k on frontier models)
 
