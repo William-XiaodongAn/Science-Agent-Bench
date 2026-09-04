@@ -4,11 +4,13 @@
  "label permutation: answer time-shuffled (mean of 10)": 0.4256,
  "label permutation: answer reversed": 0.2693,
  "label permutation: answer shifted by half a beat (60 ms)": 0.5374,
- "shipped baseline ESN+ (seeds 0-4, causal)": 0.1079,
- "shipped baseline HESN+ with CN input (seeds 0-4, causal)": 0.1046,
- "reference: causal history-matched template (k=5)": 0.0681,
+ "shipped framework: ESN+ 368 (defaults), seeds 0-4": 0.1203,
+ "shipped framework: HESN+ (CN) 368, seeds 0-4": 0.1052,
+ "shipped framework: DHESN-io+ (CN) 128/96/64/48/32, seeds 0-4": 0.103,
+ "reference: stimulus-driven multi-timescale ESN, 2000 units, no feedback, seeds 0-4": 0.0714,
  "paper: ESN+ 368 / HESN+ (CN) 368 / DHESN-io+ (CN) 368": "0.1021 / 0.0879 / 0.0784",
- "NON-causal nearest-interval template (needs the next stimulus time; disallowed)": 0.0555,
+ "for the record, NON-causal nearest-interval template (reads the next stimulus time; protocol forbids)": 0.0555,
+ "for the record, causal beat template (allowed by the protocol, NOT an ESN: model-class rule forbids)": 0.0681,
  "closed-loop protocol: repolarisation (0.22) -> next stimulus, mean / sd (ms)": "50.7 / 1.4",
- "corr(stimulus interval_n, APD_n) in training (why the next stimulus time must be hidden)": 0.994
+ "corr(stimulus interval_n, APD_n) in training": 0.994
 }

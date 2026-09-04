@@ -82,6 +82,13 @@ runs the full agent budget (2 h for tiers 1-2, 3 h for tier 3) on a 4 vCPU / 16 
 dominant cost is model tokens. Use `--task tasks/<name>` to restrict, `--n-concurrent N` to cap
 parallelism, `--agent-timeout-multiplier 0.2` for a cheap smoke test of the plumbing.
 
+**Tier 3 model-class audit (v0.6+).** The zebrafish task restricts submissions to echo state networks. The
+verifier checks the declaration and scans imports; whether the code is a reservoir computer is judged
+afterwards: `python3 calibration/method_audit.py <jobs dir> --env-file ~/.sciagent-keys.env` sends every
+trial's submission to an LLM judge with the task's rubric and writes `verifier/method_audit.json`;
+`aggregate.py --audit` then counts a pass only if the audit says compliant (flag `audit_non_compliant`
+otherwise). Borderline verdicts (low confidence) are for a human to settle; the judge's reasons are stored.
+
 `aggregate.py` reads each trial's `verifier/result.json` (score, normalised, `passed`, `ranked`, flags)
 and reports runs / errored / valid / passed, the unbiased pass@k estimate, mean normalised score and
 the best raw metric per task and agent.
