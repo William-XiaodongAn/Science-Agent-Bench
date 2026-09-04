@@ -13,7 +13,7 @@ programmatic verifier, and sealed ground truth (proposal + spec, Aug 2026).
 |---|---|---|---|---|---|---|
 | [`ssn-heldout-stimulus-prediction`](tasks/ssn-heldout-stimulus-prediction) | T1 controlled generator | neuroscience / nonlinear dynamics | held-out trajectory nRMSE | 1.104 | < 0.444 | 0.423 |
 | [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms), APD80 RMSE (ms) | 19.33 | < 1.89 (one frame) and APD80 < 3.78 (two frames) | 0.92 / 2.5 |
-| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE, paper's split; the submitted echo state network is rolled out causally by the verifier (stimulus delivered one sample at a time), mean of 5 seeds | 0.302 | < 0.0745 (5% below the paper's best published result, with an ESN) | 0.071 (stimulus-driven multi-timescale ESN) |
+| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE under the paper's conditions: the submitted search procedure is run five times with a metered 60-evaluation budget at ≤ 368 units, the five returned ESNs rolled out causally, mean RMSE | 0.302 | < 0.0784 (the paper's own statistic) | reference search, see task README |
 
 All three are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
 (the task's normalised score in [0, 1], or 1.0/0.0 pass with `REWARD_MODE=binary`) and
@@ -135,7 +135,7 @@ directory directly.
 |---|---|---|---|
 | **Task** | predict a 49-neuron SSN's response to a stimulus it never saw | recover per-pixel activation and APD80 maps from a raw optical mapping recording | forecast the last 20% of a zebrafish cardiac voltage trace |
 | **Input** | rates + drive under one stimulus; drive only under the held-out one | 128x128 16-bit camera stream, 529.09 fps | 16454 training samples; the test-window stimulus arrives one sample at a time |
-| **Submit** | `r_pred.npy` (49, 12001) | `mask.npy`, `activation_ms.npy`, `apd80_ms.npy`, each (128,128) | `forecaster.py` (an echo state network the verifier rolls out for 5 seeds) |
+| **Submit** | `r_pred.npy` (49, 12001) | `mask.npy`, `activation_ms.npy`, `apd80_ms.npy`, each (128,128) | `search.py` (a search procedure the verifier runs 5 times under the paper's size and budget) |
 | **Metric** | trajectory nRMSE | activation-time map RMSE (ms), median offset removed | RMSE, paper's definition |
 | **Do-nothing** | 1.104 | 19.33 ms | 0.3022 |
 | **Reference** | 0.008 (oracle floor) | 1.01 ms (noise floor) | **0.0784** (published baseline) |
