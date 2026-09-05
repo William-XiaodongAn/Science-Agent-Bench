@@ -53,8 +53,9 @@ and that the shortcuts the validity probes reject are the shortcuts that matter.
 | [`ssn-heldout-stimulus-prediction`](tasks/ssn-heldout-stimulus-prediction) | T1 controlled generator | neuroscience / nonlinear dynamics | held-out trajectory nRMSE | 1.104 | < 0.444 | 0.423 |
 | [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms), APD80 RMSE (ms) | 19.33 | < 1.89 (one frame) and APD80 < 3.78 (two frames) | 0.92 / 2.5 |
 | [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE under the paper's conditions: the submitted search procedure is run five times with a metered 60-evaluation budget at ≤ 368 units (inputs: stimulus and optional fed-back voltage only), the five returned ESNs rolled out causally, mean RMSE | 0.302 | < 0.0784 (the paper's own statistic) | reference search, see task README |
+| [`spiral-tip-patterns`](tasks/spiral-tip-patterns) | T3 open-ended discovery | cardiac dynamics / spiral-wave meander | pattern-class match of the pipeline's simulated tip trajectories (6 reference + 8 hidden parameter sets, higher is better) | 0 | 6/6 reference and >= 7/8 hidden | 14/14 (score 1.0) |
 
-All three are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
+All four are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
 (the task's normalised score in [0, 1], or 1.0/0.0 pass with `REWARD_MODE=binary`) and
 `/logs/verifier/result.json` (raw metric, normalised score, `passed`, `ranked`, flags, secondary
 metrics, diagnostics). "Pass" is the documented per-task rule (valid + `methods.md` + metric below
@@ -114,8 +115,14 @@ ESN without voltage feedback found by experiment, with full tool-call digests of
 `calibration/trajectory-digests/` ([`RESULTS-2026-09-04-tier3-v08.md`](calibration/RESULTS-2026-09-04-tier3-v08.md));
 and under v0.9, the search-procedure protocol at the paper's size, budget and statistic with the paper's cell models
 still available, **Fable 3/3 (0.062-0.067)**, Gemini 0/3, Codex not scored (rate-limited, then stopped for v0.10)
-([`RESULTS-2026-09-04-tier3-v09.md`](calibration/RESULTS-2026-09-04-tier3-v09.md)). v0.10 (cell models removed) is being
-calibrated.
+([`RESULTS-2026-09-04-tier3-v09.md`](calibration/RESULTS-2026-09-04-tier3-v09.md)); and under **v0.10** (cell-model inputs
+removed, so no borrowing from the paper is possible: inputs = stimulus + optional fed-back voltage only) **Fable 3/3
+(0.0730-0.0739), Codex 3/3 (0.0695-0.0748), Gemini 0/3**, every pass replayed in the clean image and audited (no hacking,
+no paper references, ESN-only; digests in `calibration/trajectory-digests/v10/`)
+([`RESULTS-2026-09-05-tier3-v10.md`](calibration/RESULTS-2026-09-05-tier3-v10.md)). The tier-3 task therefore separates the two
+leading agents from Gemini but not from each other; the second tier-3 task, `spiral-tip-patterns` (parameters -> automatic
+spiral initiation, tip tracking and pattern classification, judged on sealed hidden parameter sets; reference pipeline
+14/14 on Modal), is being calibrated with the same three agents.
 
 ### agent-env (pass@k on frontier models)
 
@@ -126,8 +133,9 @@ pass@k. See [`agentenv/README.md`](agentenv/README.md).
 
 ### Known issues to resolve before acceptance
 
-- **Tier 3 (v0.6) follows the paper's setup causally and restricts the method to the paper's model
-  class.** The stimulus is an input, as in the paper, but the paper's networks receive it one sample at
+- **Tier 3 (`zebrafish-voltage-forecast`, now v0.10) follows the paper's setup causally, at the paper's size, budget and
+  statistic, with the paper withheld and its hybrid idea removed; both leading agents beat the paper in 3/3 attempts, so
+  the task no longer discriminates at the top (see v0.10 results). History of the tightening:** The stimulus is an input, as in the paper, but the paper's networks receive it one sample at
   a time; under the closed-loop pacing protocol the *next* stimulus time reveals the current beat's
   duration (repolarisation-to-stimulus gap 51 ± 1.4 ms), so releasing the whole test stimulus (v0.1-v0.4)
   let a template score 0.0555 and frontier agents 0.022-0.042. v0.5 made the submission a model rolled out
