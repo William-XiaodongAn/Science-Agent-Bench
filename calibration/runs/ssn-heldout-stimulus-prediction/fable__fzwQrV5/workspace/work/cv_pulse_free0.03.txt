@@ -1,1 +1,0 @@
-pulse lam=0.03 free=True: fold nRMSE (all, peak) = [0.339 0.165 0.433 0.131 0.296 0.114]  mean all=0.356 mean peak=0.137

@@ -1,5 +1,0 @@
-add:0.005 eval max 0.801 mean 0.0544
-add:0.02 eval max 0.653 mean 0.0491
-add:0.1 eval max 0.604 mean 0.0460
-member spread rms 0.0127 (nRMSE-equiv 0.210)
-written (49, 12001) 0.6448302927610077

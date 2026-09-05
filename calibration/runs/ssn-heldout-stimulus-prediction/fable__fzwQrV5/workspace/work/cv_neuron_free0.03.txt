@@ -1,3 +1,0 @@
-/workspace/work/fit.py:41: RuntimeWarning: divide by zero encountered in scalar divide
-  e = (pred-true)[mask>0]; return np.sqrt((e**2).mean())/true[mask>0].std()
-neuron lam=0.03 free=True: fold nRMSE (all, peak) = [1.21    inf 0.398 0.234 0.778 1.337]  mean all=0.795 mean peak=inf

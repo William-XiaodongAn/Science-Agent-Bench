@@ -1,1 +1,0 @@
-./pred.npy	0.2 MB

@@ -1,3 +1,0 @@
-add lam 0.1 p4 {'nit': 123.0, 'train': 0.01734, 'eval_max': 0.60911, 'finite': True, 'test': 0.01719}
-add lam 0.1 p2 {'nit': 173.0, 'train': 0.01718, 'eval_max': 0.61368, 'finite': True, 'test': 0.01731}
-add lam 0.1 MEAN test 0.01725 time 238

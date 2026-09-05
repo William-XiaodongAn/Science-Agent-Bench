@@ -1,6 +1,0 @@
-seed 0: dev best portfolio 0.0798 -> after refinement 0.0798 | HOLDOUT returned 0.0892 vs portfolio[0] 0.0881 portfolio[1] 0.0867 | n_eval 60 258.8s unmetered 0 evaluated True
-seed 1: dev best portfolio 0.0803 -> after refinement 0.0799 | HOLDOUT returned 0.0882 vs portfolio[0] 0.0873 portfolio[1] 0.0874 | n_eval 60 253.4s unmetered 0 evaluated True
-seed 2: dev best portfolio 0.0800 -> after refinement 0.0794 | HOLDOUT returned 0.0898 vs portfolio[0] 0.0874 portfolio[1] 0.0897 | n_eval 60 258.5s unmetered 0 evaluated True
-seed 3: dev best portfolio 0.0799 -> after refinement 0.0799 | HOLDOUT returned 0.0879 vs portfolio[0] 0.0882 portfolio[1] 0.0879 | n_eval 60 252.7s unmetered 0 evaluated True
-seed 4: dev best portfolio 0.0800 -> after refinement 0.0792 | HOLDOUT returned 0.0892 vs portfolio[0] 0.0882 portfolio[1] 0.0874 | n_eval 60 259.6s unmetered 0 evaluated True
-mean holdout: returned 0.0889 portfolio0 0.0878 portfolio1 0.0878

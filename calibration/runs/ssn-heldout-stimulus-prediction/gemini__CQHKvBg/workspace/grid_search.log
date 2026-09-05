@@ -1,6 +1,0 @@
-Grid search over L2 regularization weights:
-Spatial: False | L2: 0.0e+00 | Best Val MSE: 0.000281 | Train MSE: 0.000287
-Spatial: False | L2: 1.0e-06 | Best Val MSE: 0.000277 | Train MSE: 0.000285
-Spatial: False | L2: 5.0e-06 | Best Val MSE: 0.000275 | Train MSE: 0.000288
-Spatial: False | L2: 1.0e-05 | Best Val MSE: 0.000278 | Train MSE: 0.000294
-Spatial: False | L2: 5.0e-05 | Best Val MSE: 0.000306 | Train MSE: 0.000323
