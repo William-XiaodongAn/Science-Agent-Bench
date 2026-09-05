@@ -1,0 +1,13 @@
+{
+ "model": "anthropic/claude-fable-5-1",
+ "expert_is": "B",
+ "winner_label": "B",
+ "winner": "expert",
+ "confidence": 0.66,
+ "activation_better": "B",
+ "apd80_better": "B",
+ "mask_better": "A",
+ "reasons": "Deliverable A's activation map has a saturated (>80 ms) block on the left protrusion with jagged, crowded isochrones and a coincident APD80 collapse to ~450 ms, plus an isolated late 'island' at the lower left \u2013 these co-located discontinuities look like poor-signal edge pixels rather than biology. A's APD80 also shows horizontal ripple/striping across the centre and an abrupt step to ~470 ms along the lower-right border, consistent with processing artefacts (QC roughness 1.4 ms, outliers 1.1%). Deliverable B shows a single coherent right-to-left wavefront with smooth, evenly spaced isochrones and a slowly varying APD80 field (515 ms median, 19 ms IQR, roughness 0.3 ms), physiologically plausible and internally consistent. B's weakness is its mask: a rounded, convex blob that drops the top-right notch and lateral extensions of the tissue that A's mask follows, so A wins on anatomical mask fidelity, though this costs it by admitting the artefactual left region. For downstream CV and repolarisation heterogeneity, B's cleaner, artefact-free maps over a conservative ROI are more trustworthy.",
+ "raw": "{\"winner\": \"B\", \"confidence\": 0.66, \"activation_better\": \"B\", \"apd80_better\": \"B\", \"mask_better\": \"A\", \"reasons\": \"Deliverable A's activation map has a saturated (>80 ms) block on the left protrusion with jagged, crowded isochrones and a coincident APD80 collapse to ~450 ms, plus an isolated late 'island' at the lower left \u2013 these co-located discontinuities look like poor-signal edge pixels rather than biology. A's APD80 also shows horizontal ripple/striping across the centre and an abrupt step to ~470 ms along the lower-right border, consistent with processing artefacts (QC roughness 1.4 ms, outliers 1.1%). Deliverable B shows a single coherent right-to-left wavefront with smooth, evenly spaced isochrones and a slowly varying APD80 field (515 ms median, 19 ms IQR, roughness 0.3 ms), physiologically plausible and internally consistent. B's weakness is its mask: a rounded, convex blob that drops the top-right notch and lateral extensions of the tissue that A's mask follows, so A wins on anatomical mask fidelity, though this costs it by admitting the artefactual left region. For downstream CV and repolarisation heterogeneity, B's cleaner, artefact-free maps over a conservative ROI are more trustworthy.\"}",
+ "judged_at": "2026-09-04T10:28:58Z"
+}

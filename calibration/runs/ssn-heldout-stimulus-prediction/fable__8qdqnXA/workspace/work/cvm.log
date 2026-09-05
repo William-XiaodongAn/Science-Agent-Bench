@@ -1,0 +1,8 @@
+kernel-only: {'train_rmse': np.float64(0.019427697656620765), 'test_rmse': np.float64(0.019320489515860812), 'eval_max': np.float64(0.555887308079869), 'eval_finite': True}
+/workspace/work/sim.py:12: RuntimeWarning: overflow encountered in multiply
+  r[:,t+1]=(1-a)*r[:,t]+a*k*up*up
+/workspace/work/sim.py:10: RuntimeWarning: invalid value encountered in matmul
+  u=W@r[:,t]+I[:,t]
+lam 0.002 nit 36 z rms 0.060 {'train_rmse': np.float64(0.017215407364676423), 'test_rmse': np.float64(0.017101142770141766), 'eval_max': np.float64(nan), 'eval_finite': False} time 15
+lam 0.01 nit 18 z rms 0.030 {'train_rmse': np.float64(0.0175608719129596), 'test_rmse': np.float64(0.017243518859551797), 'eval_max': np.float64(0.6284214424907516), 'eval_finite': True} time 13
+lam 0.05 nit 12 z rms 0.017 {'train_rmse': np.float64(0.0180258325670259), 'test_rmse': np.float64(0.01768028015903284), 'eval_max': np.float64(0.5679579763527445), 'eval_finite': True} time 3

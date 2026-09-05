@@ -1,0 +1,15 @@
+{
+    "task": {
+        "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.DBKDox/claude-code-anthropic-claude-fable-5-1/ssn-heldout-stimulus-prediction"
+    },
+    "trial_name": "ssn-heldout-stimulus-prediction__imeig8z",
+    "trials_dir": "/Users/guangzeluo/agent_task_generator/ai4science/jobs/calib/calib-claude-code-anthropic-claude-fable-5-1-ssn-heldout-stimulus-prediction-k1-20260903-1627",
+    "agent": {
+        "name": "claude-code",
+        "model_name": "anthropic/claude-fable-5-1"
+    },
+    "environment": {
+        "type": "modal"
+    },
+    "job_id": "ca53b00d-404f-427b-a9cd-8cedc0230aae"
+}

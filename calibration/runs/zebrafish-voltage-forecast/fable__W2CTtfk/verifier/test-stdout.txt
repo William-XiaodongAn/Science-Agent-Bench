@@ -1,0 +1,225 @@
+seed 0: search used 60 evaluations in 80.8 s -> [184, 184] inputs ['stimulus'] fb False (dev best 0.07943)
+seed 0: hidden-window RMSE 0.07256
+seed 1: search used 60 evaluations in 82.3 s -> [184, 184] inputs ['stimulus'] fb False (dev best 0.07998)
+seed 1: hidden-window RMSE 0.07395
+seed 2: search used 60 evaluations in 82.6 s -> [368] inputs ['stimulus'] fb False (dev best 0.07939)
+seed 2: hidden-window RMSE 0.07351
+seed 3: search used 60 evaluations in 84.5 s -> [368] inputs ['stimulus'] fb False (dev best 0.07915)
+seed 3: hidden-window RMSE 0.07133
+seed 4: search used 60 evaluations in 80.9 s -> [184, 184] inputs ['stimulus'] fb False (dev best 0.07956)
+seed 4: hidden-window RMSE 0.07366
+{
+ "score": 0.073,
+ "metric": "hidden-window RMSE, mean over five independently searched networks (seeds 0-4), causal roll-out",
+ "direction": "lower_better",
+ "normalized": 0.7584,
+ "improvement_over_paper_best": 0.0689,
+ "improvement_over_best_baseline": 0.3932,
+ "passed": true,
+ "ranked": true,
+ "status": "ok",
+ "flags": [],
+ "reward_mode": "normalized",
+ "metrics": {
+  "rmse_mean_over_searches": 0.073,
+  "rmse_per_search": [
+   0.07256,
+   0.07395,
+   0.07351,
+   0.07133,
+   0.07366
+  ],
+  "rmse_sd_over_searches": 0.00096,
+  "beats_paper_best": true,
+  "meets_5pct_stretch": true,
+  "n_searches": 5,
+  "evaluations_used": [
+   60,
+   60,
+   60,
+   60,
+   60
+  ],
+  "search_wall_sec": [
+   80.8,
+   82.3,
+   82.6,
+   84.5,
+   80.9
+  ],
+  "dev_best_per_search": [
+   0.07943,
+   0.07998,
+   0.07939,
+   0.07915,
+   0.07956
+  ],
+  "configurations": [
+   {
+    "seed": 0,
+    "layers": [
+     184,
+     184
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": [
+     0.2,
+     0.05
+    ],
+    "ridge": 1e-07,
+    "spectral_radius": 0.9,
+    "input_scale": {
+     "bias": 0.2,
+     "stimulus": 25.0
+    }
+   },
+   {
+    "seed": 1,
+    "layers": [
+     184,
+     184
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": [
+     0.2,
+     0.05
+    ],
+    "ridge": 1e-07,
+    "spectral_radius": 0.9,
+    "input_scale": {
+     "bias": 0.1,
+     "stimulus": 50.0
+    }
+   },
+   {
+    "seed": 2,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": [
+     0.03,
+     0.3
+    ],
+    "ridge": 3e-07,
+    "spectral_radius": 0.9734400000000001,
+    "input_scale": {
+     "bias": 0.1,
+     "stimulus": 20.0
+    }
+   },
+   {
+    "seed": 3,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": [
+     0.03,
+     0.3
+    ],
+    "ridge": 3.3333333333333334e-08,
+    "spectral_radius": 0.9,
+    "input_scale": {
+     "bias": 0.05,
+     "stimulus": 20.0
+    }
+   },
+   {
+    "seed": 4,
+    "layers": [
+     184,
+     184
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": [
+     0.2,
+     0.05
+    ],
+    "ridge": 1e-07,
+    "spectral_radius": 0.936,
+    "input_scale": {
+     "bias": 0.2,
+     "stimulus": 10.0
+    }
+   }
+  ],
+  "profile": {
+   "rmse_first_500ms": 0.04498,
+   "rmse_first_1000ms": 0.04375,
+   "rmse_first_2000ms": 0.04543
+  },
+  "rollout": {
+   "user": "nobody",
+   "per_seed": [
+    {
+     "warmup_sec": 0.62,
+     "steps_sec": 0.58,
+     "seed": 0
+    },
+    {
+     "warmup_sec": 0.62,
+     "steps_sec": 0.58,
+     "seed": 1
+    },
+    {
+     "warmup_sec": 0.66,
+     "steps_sec": 0.6,
+     "seed": 2
+    },
+    {
+     "warmup_sec": 0.65,
+     "steps_sec": 0.57,
+     "seed": 3
+    },
+    {
+     "warmup_sec": 0.61,
+     "steps_sec": 0.57,
+     "seed": 4
+    }
+   ]
+  },
+  "size_limits": {
+   "max_units": 368,
+   "max_layers": 5
+  }
+ },
+ "anchors": {
+  "do_nothing_rmse": 0.3022,
+  "paper_best_rmse": 0.0784,
+  "baselines": {
+   "BASELINE_ESN_PLUS_RMSE": 0.1203
+  },
+  "min_improvement": 0.0,
+  "max_configs": 60,
+  "search_timeout_sec": 900.0
+ },
+ "reward": 0.7584
+}
+=== reward.txt ===
+0.7584

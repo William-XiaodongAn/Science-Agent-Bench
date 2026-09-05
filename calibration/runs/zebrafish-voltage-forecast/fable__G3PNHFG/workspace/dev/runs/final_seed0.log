@@ -1,0 +1,2 @@
+seed 0: 60/60 evaluations in 87.6 s | returned [72, 88, 128, 80] (368 units) inputs ['stimulus'] feedback False | dev RMSE of the returned config 0.07983 | best dev seen 0.07983
+(the verifier repeats this for seeds 0-4, builds the five configurations and averages their hidden-window RMSE)

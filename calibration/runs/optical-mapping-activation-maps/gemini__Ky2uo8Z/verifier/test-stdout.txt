@@ -1,0 +1,40 @@
+{
+ "score": 1.5406,
+ "metric": "activation-time map RMSE (ms), median offset removed",
+ "direction": "lower_better",
+ "normalized": 0.9447,
+ "passed": false,
+ "ranked": true,
+ "status": "ok",
+ "flags": [
+  "apd80_above_gate"
+ ],
+ "reward_mode": "normalized",
+ "metrics": {
+  "activation_rmse_ms": 1.5406,
+  "activation_median_offset_ms": -105.378,
+  "apd80_rmse_ms": 3.8941,
+  "apd80_bias_ms": -3.345,
+  "apd80_normalized": 0.7982,
+  "activation_gate_passed": true,
+  "apd80_gate_passed": false,
+  "frame_ms": 1.89,
+  "mask_coverage": 1.0,
+  "mask_iou": 0.586,
+  "mask_pixels": 10417,
+  "activation_finite_frac": 1.0
+ },
+ "anchors": {
+  "baseline_act_ms": 19.334,
+  "floor_act_ms": 0.5,
+  "pass_act_ms": 1.89,
+  "baseline_apd_ms": 12.175,
+  "floor_apd_ms": 1.8,
+  "pass_apd_ms": 3.78,
+  "coverage_min": 0.95,
+  "iou_min": 0.55
+ },
+ "reward": 0.9447
+}
+=== reward.txt ===
+0.9447

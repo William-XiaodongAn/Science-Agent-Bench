@@ -1,0 +1,1 @@
+add full lam 0.1 {'nit': 201, 'train': np.float64(0.01721613725114938), 'eval_max': np.float64(0.4740176702956461), 'finite': True} time 149

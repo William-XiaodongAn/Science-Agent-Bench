@@ -1,0 +1,1138 @@
+[
+  {
+    "i": 0,
+    "name": "fb_sr0.0",
+    "score": 0.29139815733797214,
+    "per": [
+      0.28745038848172133,
+      0.28736007428023724,
+      0.29938400925195785
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.0,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 1,
+    "name": "fb_sr0.1",
+    "score": 0.20302097778689476,
+    "per": [
+      0.20826800577769253,
+      0.19979345176243535,
+      0.20100147582055644
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.1,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 2,
+    "name": "fb_sr0.3",
+    "score": 0.11537305113240776,
+    "per": [
+      0.10942448940488972,
+      0.11386850160893425,
+      0.1228261623833993
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.3,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 3,
+    "name": "fb_sr0.5",
+    "score": 0.11234700391642273,
+    "per": [
+      0.10442799304231082,
+      0.11177991366977048,
+      0.12083310503718693
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.5,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 4,
+    "name": "fb_sr0.7",
+    "score": 0.11550989629826547,
+    "per": [
+      0.10923137057021702,
+      0.1142307446643194,
+      0.12306757366026
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.7,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 5,
+    "name": "fb_sr0.9",
+    "score": 0.11090314462822422,
+    "per": [
+      0.10460740011997081,
+      0.11063525888879054,
+      0.11746677487591134
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 6,
+    "name": "fb_sr1.1",
+    "score": 0.2302532509092913,
+    "per": [
+      0.12133820616235902,
+      0.4310209136539323,
+      0.1384006329115825
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 1.1,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 7,
+    "name": "fb_sr1.3",
+    "score": 0.47751266750643745,
+    "per": [
+      0.50603476618432,
+      0.45316598564890276,
+      0.47333725068608967
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 1.3,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 8,
+    "name": "fb_sr1.5",
+    "score": 0.4923140844525314,
+    "per": [
+      0.513474834865629,
+      0.5234564596213535,
+      0.4400109588706118
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 1.5,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 9,
+    "name": "fb_scale0.005",
+    "score": 0.14842086008763972,
+    "per": [
+      0.15467665115482868,
+      0.14555320032798355,
+      0.14503272878010692
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.005,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 10,
+    "name": "fb_scale0.01",
+    "score": 0.12177503903355262,
+    "per": [
+      0.12039570038088361,
+      0.11893178371740955,
+      0.12599763300236472
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.01,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 11,
+    "name": "fb_scale0.03",
+    "score": 0.11519668679023166,
+    "per": [
+      0.10818808947469376,
+      0.11517038285045843,
+      0.12223158804554282
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.03,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 12,
+    "name": "fb_scale0.05",
+    "score": 0.11659584088950538,
+    "per": [
+      0.11210142077913089,
+      0.1158432891183353,
+      0.12184281277104997
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.05,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 13,
+    "name": "fb_scale0.1",
+    "score": 0.11090314462822422,
+    "per": [
+      0.10460740011997081,
+      0.11063525888879054,
+      0.11746677487591134
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 14,
+    "name": "fb_scale0.2",
+    "score": 0.10834120547736285,
+    "per": [
+      0.10171835593342887,
+      0.10782855691325706,
+      0.11547670358540263
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.2,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 15,
+    "name": "fb_scale0.4",
+    "score": 0.1541045972318724,
+    "per": [
+      0.15378399768830428,
+      0.140223233298866,
+      0.16830656070844685
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.4,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 16,
+    "name": "fb_scale0.7",
+    "score": 0.12857068592396292,
+    "per": [
+      0.1352928809132541,
+      0.12220534687051392,
+      0.12821382998812073
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.7,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 17,
+    "name": "fb_scale1.0",
+    "score": 0.14678174027682026,
+    "per": [
+      0.15160165031866832,
+      0.13851054832615486,
+      0.15023302218563764
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 1.0,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 18,
+    "name": "fb_scale2.0",
+    "score": 0.13176881712794403,
+    "per": [
+      0.1321376175432189,
+      0.12632922055150186,
+      0.13683961328911132
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 2.0,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 19,
+    "name": "fb_ridge1e-08",
+    "score": 0.6537702337611325,
+    "per": [
+      0.6615253346248543,
+      0.6558335870411135,
+      0.6439517796174297
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 1e-08
+    }
+  },
+  {
+    "i": 20,
+    "name": "fb_ridge1e-07",
+    "score": 0.6615712017467076,
+    "per": [
+      0.8180152524694513,
+      0.5903604042944682,
+      0.5763379484762032
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 1e-07
+    }
+  },
+  {
+    "i": 21,
+    "name": "fb_ridge1e-06",
+    "score": 0.798888543350432,
+    "per": [
+      0.8174984819538634,
+      0.7666007920663376,
+      0.8125663560310954
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 1e-06
+    }
+  },
+  {
+    "i": 22,
+    "name": "fb_ridge1e-05",
+    "score": 0.6842799803784007,
+    "per": [
+      0.6229657215056881,
+      0.6596571198617175,
+      0.7702170997677964
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 1e-05
+    }
+  },
+  {
+    "i": 23,
+    "name": "fb_ridge0.0001",
+    "score": 0.11489715522550352,
+    "per": [
+      0.10134295593561243,
+      0.11867446376432275,
+      0.12467404597657535
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 0.0001
+    }
+  },
+  {
+    "i": 24,
+    "name": "fb_ridge0.001",
+    "score": 0.11090314462822422,
+    "per": [
+      0.10460740011997081,
+      0.11063525888879054,
+      0.11746677487591134
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 25,
+    "name": "fb_ridge0.01",
+    "score": 0.12397854212113897,
+    "per": [
+      0.12270803546257812,
+      0.12009270486983822,
+      0.1291348860310006
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 0.01
+    }
+  },
+  {
+    "i": 26,
+    "name": "fb_ridge0.1",
+    "score": 0.13006784308916775,
+    "per": [
+      0.1300605571908937,
+      0.12592073362733236,
+      0.13422223844927716
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 0.1
+    }
+  },
+  {
+    "i": 27,
+    "name": "fb_ridge1.0",
+    "score": 0.22054491520544695,
+    "per": [
+      0.23541838175127086,
+      0.2161892524155177,
+      0.21002711144955227
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": 0.1,
+      "ridge": 1.0
+    }
+  },
+  {
+    "i": 28,
+    "name": "fb_v0.005_s0.1",
+    "score": 0.11727243002577974,
+    "per": [
+      0.11046814991297016,
+      0.1163651456178453,
+      0.12498399454652373
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.005,
+        "stimulus": 0.1
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 29,
+    "name": "fb_v0.005_s1.0",
+    "score": 0.11582257488282487,
+    "per": [
+      0.11205374568002201,
+      0.11433080648420785,
+      0.12108317248424472
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.005,
+        "stimulus": 1.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 30,
+    "name": "fb_v0.005_s5.0",
+    "score": 0.11046195904095278,
+    "per": [
+      0.10543995659507296,
+      0.1099049731848391,
+      0.11604094734294627
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.005,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 31,
+    "name": "fb_v0.01_s0.1",
+    "score": 0.11724631300026482,
+    "per": [
+      0.11016249858210138,
+      0.11654847413174228,
+      0.12502796628695081
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.01,
+        "stimulus": 0.1
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 32,
+    "name": "fb_v0.01_s1.0",
+    "score": 0.11088714568417941,
+    "per": [
+      0.10501398571843305,
+      0.11061466090533978,
+      0.1170327904287654
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.01,
+        "stimulus": 1.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 33,
+    "name": "fb_v0.01_s5.0",
+    "score": 0.10480367241537923,
+    "per": [
+      0.09545117614948012,
+      0.10666451866410902,
+      0.11229532243254854
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 34,
+    "name": "fb_v0.03_s0.1",
+    "score": 0.12004116879627764,
+    "per": [
+      0.11358715738647458,
+      0.11918972895319226,
+      0.12734662004916614
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.03,
+        "stimulus": 0.1
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 35,
+    "name": "fb_v0.03_s1.0",
+    "score": 0.10847290736614217,
+    "per": [
+      0.09935559771684283,
+      0.10986290764157824,
+      0.1162002167400054
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.03,
+        "stimulus": 1.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 36,
+    "name": "fb_v0.03_s5.0",
+    "score": 0.1025838505250658,
+    "per": [
+      0.08947618656593226,
+      0.10602718530274292,
+      0.11224817970652225
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 37,
+    "name": "fb_v0.05_s0.1",
+    "score": 0.11527793339751703,
+    "per": [
+      0.11058548892732534,
+      0.11442539087250828,
+      0.12082292039271751
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.05,
+        "stimulus": 0.1
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 38,
+    "name": "fb_v0.05_s1.0",
+    "score": 0.10776469981566432,
+    "per": [
+      0.0989690179666008,
+      0.10894199319425324,
+      0.11538308828613891
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.05,
+        "stimulus": 1.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 39,
+    "name": "fb_v0.05_s5.0",
+    "score": 0.10387784481590016,
+    "per": [
+      0.09074243385276941,
+      0.10729315147248591,
+      0.11359794912244514
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.05,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 40,
+    "name": "fb_v0.1_s0.1",
+    "score": 0.11090314462822422,
+    "per": [
+      0.10460740011997081,
+      0.11063525888879054,
+      0.11746677487591134
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.1,
+        "stimulus": 0.1
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 41,
+    "name": "fb_v0.1_s1.0",
+    "score": 0.1072059332144179,
+    "per": [
+      0.09831935381897566,
+      0.1083004402514308,
+      0.11499800557284723
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.1,
+        "stimulus": 1.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 42,
+    "name": "fb_v0.1_s5.0",
+    "score": 0.10507880510892553,
+    "per": [
+      0.09432556218757232,
+      0.10738601381698391,
+      0.11352483932222036
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.1,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 43,
+    "name": "fb_v0.2_s0.1",
+    "score": 0.4430967870833286,
+    "per": [
+      0.4396356726769655,
+      0.4840791644353113,
+      0.40557552413770914
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.2,
+        "stimulus": 0.1
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 44,
+    "name": "fb_v0.2_s1.0",
+    "score": 0.4630588241347399,
+    "per": [
+      0.3021559988065429,
+      0.5647701312327221,
+      0.5222503423649546
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.2,
+        "stimulus": 1.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 45,
+    "name": "fb_v0.2_s5.0",
+    "score": 0.12938894596159067,
+    "per": [
+      0.1274826376993346,
+      0.12668679591467946,
+      0.13399740427075796
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.2,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 46,
+    "name": "fb_v0.5_s0.1",
+    "score": 0.4123856191343078,
+    "per": [
+      0.3934851559210271,
+      0.3993631535703705,
+      0.4443085479115258
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.5,
+        "stimulus": 0.1
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 47,
+    "name": "fb_v0.5_s1.0",
+    "score": 0.5361639051125096,
+    "per": [
+      0.532700944942304,
+      0.5345754413773431,
+      0.5412153290178815
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.5,
+        "stimulus": 1.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 48,
+    "name": "fb_v0.5_s5.0",
+    "score": 0.4982675630874072,
+    "per": [
+      0.6247029535066022,
+      0.4507830876475513,
+      0.4193166481080682
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 0.5,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 49,
+    "name": "fb_v1.0_s0.1",
+    "score": 0.377083446155744,
+    "per": [
+      0.37258613607171565,
+      0.3747285156418323,
+      0.3839356867536842
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 1.0,
+        "stimulus": 0.1
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 50,
+    "name": "fb_v1.0_s1.0",
+    "score": 0.769059405886403,
+    "per": [
+      0.7794435823902257,
+      0.7854169290846377,
+      0.7423177061843454
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 1.0,
+        "stimulus": 1.0
+      },
+      "ridge": 0.001
+    }
+  },
+  {
+    "i": 51,
+    "name": "fb_v1.0_s5.0",
+    "score": 0.5971773210847006,
+    "per": [
+      0.8119814546724518,
+      0.5454497025125347,
+      0.4341008060691152
+    ],
+    "config": {
+      "layers": [
+        368
+      ],
+      "voltage_feedback": true,
+      "leak": 0.35,
+      "spectral_radius": 0.9,
+      "input_scale": {
+        "bias": 0.1,
+        "voltage": 1.0,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001
+    }
+  }
+]

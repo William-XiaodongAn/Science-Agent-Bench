@@ -1,0 +1,5 @@
+/workspace/work/sim.py:23: RuntimeWarning: overflow encountered in multiply
+  r[:,t+1]=(1-a)*r[:,t]+a*k*up*up
+/workspace/work/sim.py:21: RuntimeWarning: invalid value encountered in matmul
+  u=W@r[:,t]+I[:,t]; U[:,t]=u
+add full lam 0.1 {'nit': 133, 'train': np.float64(0.017177487775692606), 'eval_max': np.float64(0.5860336753082387), 'finite': True} time 69

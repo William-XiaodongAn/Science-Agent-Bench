@@ -1,0 +1,117 @@
+{
+    "id": "532ebae4-c0e3-440e-94a2-0c5fdfc26449",
+    "task_name": "sciagent-bench/zebrafish-voltage-forecast",
+    "trial_name": "zebrafish-voltage-forecast__n3d5iUi",
+    "trial_uri": "file:///Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t3v10/calib-claude-code-anthropic-claude-fable-5-1-zebrafish-voltage-forecast-k2-20260905-0945/zebrafish-voltage-forecast__n3d5iUi",
+    "task_id": {
+        "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.ClH3co/claude-code-anthropic-claude-fable-5-1/zebrafish-voltage-forecast"
+    },
+    "source": null,
+    "task_checksum": "180bfc37c1f5ff228cf80a403c9a7bca093812afb7182a9297de59ab9435537f",
+    "config": {
+        "task": {
+            "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.ClH3co/claude-code-anthropic-claude-fable-5-1/zebrafish-voltage-forecast",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "zebrafish-voltage-forecast__n3d5iUi",
+        "trials_dir": "/Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t3v10/calib-claude-code-anthropic-claude-fable-5-1-zebrafish-voltage-forecast-k2-20260905-0945",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "claude-code",
+            "import_path": null,
+            "model_name": "anthropic/claude-fable-5-1",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "modal",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "b9751e1a-36da-4e66-ab92-050bfe5d26de",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "claude-code",
+        "version": "2.1.261",
+        "model_info": {
+            "name": "claude-fable-5-1",
+            "provider": "anthropic"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 4940729,
+        "n_cache_tokens": 4672614,
+        "n_output_tokens": 53550,
+        "cost_usd": 7.193166,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.7576
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-09-05T16:45:39.844381Z",
+    "finished_at": "2026-09-05T17:55:20.881184Z",
+    "environment_setup": {
+        "started_at": "2026-09-05T16:45:39.848169Z",
+        "finished_at": "2026-09-05T16:45:42.899101Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-09-05T16:45:46.151814Z",
+        "finished_at": "2026-09-05T16:45:47.157931Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-09-05T16:45:47.158048Z",
+        "finished_at": "2026-09-05T17:48:08.361874Z"
+    },
+    "verifier": {
+        "started_at": "2026-09-05T17:48:14.107576Z",
+        "finished_at": "2026-09-05T17:55:19.844861Z"
+    },
+    "step_results": null
+}

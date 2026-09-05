@@ -1,0 +1,2102 @@
+[
+  {
+    "i": 0,
+    "name": "partition00",
+    "score": 0.08517764951644956,
+    "per": [
+      0.05764236903310569,
+      0.09686386143159126,
+      0.10102671808465172
+    ],
+    "config": {
+      "layers": [
+        149,
+        117,
+        102
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 1,
+    "name": "partition01",
+    "score": 0.08483962381453573,
+    "per": [
+      0.05552518627375054,
+      0.09795506098963622,
+      0.10103862418022044
+    ],
+    "config": {
+      "layers": [
+        84,
+        160,
+        124
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 2,
+    "name": "partition02",
+    "score": 0.08058207397564587,
+    "per": [
+      0.05532527120929356,
+      0.09143438059613439,
+      0.09498657012150967
+    ],
+    "config": {
+      "layers": [
+        166,
+        108,
+        94
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 3,
+    "name": "partition03",
+    "score": 0.08228844871583778,
+    "per": [
+      0.05596984874981181,
+      0.09307074760927131,
+      0.09782474978843018
+    ],
+    "config": {
+      "layers": [
+        110,
+        103,
+        155
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 4,
+    "name": "partition04",
+    "score": 0.08078248209783713,
+    "per": [
+      0.05539455202154924,
+      0.09169244779107867,
+      0.09526044648088348
+    ],
+    "config": {
+      "layers": [
+        140,
+        118,
+        110
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 5,
+    "name": "partition05",
+    "score": 0.0837129267156669,
+    "per": [
+      0.05659541013142883,
+      0.09598774569616894,
+      0.09855562431940293
+    ],
+    "config": {
+      "layers": [
+        145,
+        144,
+        79
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 6,
+    "name": "partition06",
+    "score": 0.08241184453917375,
+    "per": [
+      0.05682767737586002,
+      0.09338804898926858,
+      0.09701980725239265
+    ],
+    "config": {
+      "layers": [
+        145,
+        148,
+        75
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 7,
+    "name": "partition07",
+    "score": 0.08411379828723774,
+    "per": [
+      0.054208064552542345,
+      0.09777836024702473,
+      0.1003549700621461
+    ],
+    "config": {
+      "layers": [
+        144,
+        146,
+        78
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 8,
+    "name": "partition08",
+    "score": 0.08419747261875998,
+    "per": [
+      0.05587383476199669,
+      0.09675803308064855,
+      0.09996055001363471
+    ],
+    "config": {
+      "layers": [
+        170,
+        99,
+        99
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 9,
+    "name": "partition09",
+    "score": 0.08657780000163702,
+    "per": [
+      0.056524083263786634,
+      0.10134407687239709,
+      0.10186523986872739
+    ],
+    "config": {
+      "layers": [
+        93,
+        146,
+        129
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 10,
+    "name": "partition10",
+    "score": 0.08188139636683077,
+    "per": [
+      0.05639033977217331,
+      0.09244947997538079,
+      0.0968043693529382
+    ],
+    "config": {
+      "layers": [
+        141,
+        115,
+        112
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 11,
+    "name": "partition11",
+    "score": 0.08349021505883504,
+    "per": [
+      0.05746079899250833,
+      0.0943582278130691,
+      0.09865161837092772
+    ],
+    "config": {
+      "layers": [
+        128,
+        75,
+        165
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 12,
+    "name": "partition12",
+    "score": 0.07975007380015774,
+    "per": [
+      0.0548492757239743,
+      0.09045038002128455,
+      0.09395056565521433
+    ],
+    "config": {
+      "layers": [
+        127,
+        137,
+        104
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 13,
+    "name": "partition13",
+    "score": 0.08396585960001889,
+    "per": [
+      0.05581238496040792,
+      0.09732070569755048,
+      0.09876448814209823
+    ],
+    "config": {
+      "layers": [
+        108,
+        128,
+        132
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 14,
+    "name": "partition14",
+    "score": 0.08126676130325398,
+    "per": [
+      0.0574815257593346,
+      0.09105173475873553,
+      0.0952670233916918
+    ],
+    "config": {
+      "layers": [
+        102,
+        125,
+        141
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 15,
+    "name": "partition15",
+    "score": 0.08228817584157146,
+    "per": [
+      0.057895508049957224,
+      0.09239190666761982,
+      0.09657711280713736
+    ],
+    "config": {
+      "layers": [
+        95,
+        96,
+        177
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 16,
+    "name": "partition16",
+    "score": 0.0835396270637145,
+    "per": [
+      0.05675467257998287,
+      0.09477116490075428,
+      0.09909304371040631
+    ],
+    "config": {
+      "layers": [
+        116,
+        95,
+        157
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 17,
+    "name": "partition17",
+    "score": 0.08233839174986123,
+    "per": [
+      0.05628603823539034,
+      0.09327758653076541,
+      0.0974515504834279
+    ],
+    "config": {
+      "layers": [
+        106,
+        120,
+        142
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 18,
+    "name": "partition18",
+    "score": 0.08370563702695755,
+    "per": [
+      0.0555775302952721,
+      0.0970067023318198,
+      0.09853267845378073
+    ],
+    "config": {
+      "layers": [
+        116,
+        105,
+        147
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 19,
+    "name": "partition19",
+    "score": 0.0831676559826439,
+    "per": [
+      0.05588566082766197,
+      0.09544920164741706,
+      0.09816810547285268
+    ],
+    "config": {
+      "layers": [
+        154,
+        90,
+        124
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 20,
+    "name": "partition20",
+    "score": 0.08280953670593917,
+    "per": [
+      0.05725973557369776,
+      0.09341986751500522,
+      0.09774900702911453
+    ],
+    "config": {
+      "layers": [
+        144,
+        169,
+        55
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 21,
+    "name": "partition21",
+    "score": 0.08228471828620895,
+    "per": [
+      0.05474240220597046,
+      0.09455603919742987,
+      0.09755571345522654
+    ],
+    "config": {
+      "layers": [
+        159,
+        141,
+        68
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 22,
+    "name": "partition22",
+    "score": 0.08167728387022603,
+    "per": [
+      0.0568462439249651,
+      0.0918847372929713,
+      0.09630087039274171
+    ],
+    "config": {
+      "layers": [
+        76,
+        138,
+        154
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 23,
+    "name": "partition23",
+    "score": 0.08208343529808501,
+    "per": [
+      0.056502826997073645,
+      0.0932431146738559,
+      0.09650436422332548
+    ],
+    "config": {
+      "layers": [
+        94,
+        148,
+        126
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 24,
+    "name": "partition24",
+    "score": 0.08206653620797048,
+    "per": [
+      0.05576261737009363,
+      0.09314260296511404,
+      0.09729438828870379
+    ],
+    "config": {
+      "layers": [
+        117,
+        132,
+        119
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 25,
+    "name": "partition25",
+    "score": 0.08464532271879459,
+    "per": [
+      0.05635004458783535,
+      0.09819967408799588,
+      0.09938624948055254
+    ],
+    "config": {
+      "layers": [
+        135,
+        161,
+        72
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 26,
+    "name": "partition26",
+    "score": 0.0810265021892388,
+    "per": [
+      0.056337581297911506,
+      0.09142815531245686,
+      0.09531376995734803
+    ],
+    "config": {
+      "layers": [
+        160,
+        102,
+        106
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 27,
+    "name": "partition27",
+    "score": 0.08240682351518669,
+    "per": [
+      0.0557822857020832,
+      0.09423897516554995,
+      0.0971992096779269
+    ],
+    "config": {
+      "layers": [
+        165,
+        91,
+        112
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 28,
+    "name": "partition28",
+    "score": 0.08199351474405547,
+    "per": [
+      0.056970604516361954,
+      0.0928254511459399,
+      0.09618448856986457
+    ],
+    "config": {
+      "layers": [
+        83,
+        142,
+        143
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 29,
+    "name": "partition29",
+    "score": 0.08767365865413645,
+    "per": [
+      0.05735724263615488,
+      0.10312535744315825,
+      0.10253837588309625
+    ],
+    "config": {
+      "layers": [
+        100,
+        97,
+        171
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 30,
+    "name": "partition30",
+    "score": 0.08089339658019264,
+    "per": [
+      0.05648677862871272,
+      0.09167084324028121,
+      0.09452256787158395
+    ],
+    "config": {
+      "layers": [
+        115,
+        87,
+        166
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 31,
+    "name": "partition31",
+    "score": 0.08192694946068342,
+    "per": [
+      0.056021124816407974,
+      0.09311717780518063,
+      0.09664254576046165
+    ],
+    "config": {
+      "layers": [
+        164,
+        104,
+        100
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 32,
+    "name": "partition32",
+    "score": 0.084833079565515,
+    "per": [
+      0.059259776642475295,
+      0.09547866243867009,
+      0.09976079961539965
+    ],
+    "config": {
+      "layers": [
+        95,
+        117,
+        156
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 33,
+    "name": "partition33",
+    "score": 0.08420742636566902,
+    "per": [
+      0.05689305563529442,
+      0.09576667504470115,
+      0.09996254841701152
+    ],
+    "config": {
+      "layers": [
+        132,
+        114,
+        122
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 34,
+    "name": "partition34",
+    "score": 0.08243413998291038,
+    "per": [
+      0.05740821108147892,
+      0.0928629255732923,
+      0.09703128329395992
+    ],
+    "config": {
+      "layers": [
+        156,
+        129,
+        83
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 35,
+    "name": "partition35",
+    "score": 0.08267813507621169,
+    "per": [
+      0.05749784106853618,
+      0.09328281235431697,
+      0.0972537518057819
+    ],
+    "config": {
+      "layers": [
+        149,
+        84,
+        135
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 36,
+    "name": "partition36",
+    "score": 0.08196347610762202,
+    "per": [
+      0.05694249281266395,
+      0.09225850070741956,
+      0.09668943480278255
+    ],
+    "config": {
+      "layers": [
+        149,
+        123,
+        96
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 37,
+    "name": "partition37",
+    "score": 0.08481897547689082,
+    "per": [
+      0.055168155345984814,
+      0.09799152596234204,
+      0.10129724512234563
+    ],
+    "config": {
+      "layers": [
+        129,
+        164,
+        75
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 38,
+    "name": "partition38",
+    "score": 0.08112693761953087,
+    "per": [
+      0.0551564215844502,
+      0.09209500727140342,
+      0.09612938400273895
+    ],
+    "config": {
+      "layers": [
+        113,
+        107,
+        148
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 39,
+    "name": "partition39",
+    "score": 0.08221933337067046,
+    "per": [
+      0.0572883971253355,
+      0.09238190890139254,
+      0.09698769408528336
+    ],
+    "config": {
+      "layers": [
+        123,
+        84,
+        161
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 40,
+    "name": "partition40",
+    "score": 0.0805649001002024,
+    "per": [
+      0.05407573054681979,
+      0.09161971002438954,
+      0.09599925972939787
+    ],
+    "config": {
+      "layers": [
+        132,
+        131,
+        105
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 41,
+    "name": "partition41",
+    "score": 0.0824682384842994,
+    "per": [
+      0.05582956281955811,
+      0.09447885777968966,
+      0.09709629485365046
+    ],
+    "config": {
+      "layers": [
+        135,
+        140,
+        93
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 42,
+    "name": "partition42",
+    "score": 0.08280560828684319,
+    "per": [
+      0.05621570210033237,
+      0.09383613788604128,
+      0.09836498487415594
+    ],
+    "config": {
+      "layers": [
+        153,
+        81,
+        134
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 43,
+    "name": "partition43",
+    "score": 0.08180295740732788,
+    "per": [
+      0.056025455714260375,
+      0.0927591480571935,
+      0.09662426845052977
+    ],
+    "config": {
+      "layers": [
+        142,
+        88,
+        138
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 44,
+    "name": "partition44",
+    "score": 0.08265812207157108,
+    "per": [
+      0.05467443065441706,
+      0.09449894650095164,
+      0.09880098905934452
+    ],
+    "config": {
+      "layers": [
+        151,
+        103,
+        114
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 45,
+    "name": "partition45",
+    "score": 0.08198068543236517,
+    "per": [
+      0.054841103850090375,
+      0.09389489044759891,
+      0.09720606199940621
+    ],
+    "config": {
+      "layers": [
+        117,
+        89,
+        162
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 46,
+    "name": "partition46",
+    "score": 0.08530635641199609,
+    "per": [
+      0.05998337776013876,
+      0.09628158669606987,
+      0.09965410477977964
+    ],
+    "config": {
+      "layers": [
+        83,
+        127,
+        158
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 47,
+    "name": "partition47",
+    "score": 0.08578565822259587,
+    "per": [
+      0.05653322695979129,
+      0.09994565448195245,
+      0.10087809322604391
+    ],
+    "config": {
+      "layers": [
+        93,
+        109,
+        166
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 48,
+    "name": "partition48",
+    "score": 0.08557433732667301,
+    "per": [
+      0.0606791070409736,
+      0.09640226630734061,
+      0.09964163863170483
+    ],
+    "config": {
+      "layers": [
+        77,
+        158,
+        133
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 49,
+    "name": "partition49",
+    "score": 0.0823851626857895,
+    "per": [
+      0.05584250388594185,
+      0.0945340993879786,
+      0.09677888478344808
+    ],
+    "config": {
+      "layers": [
+        148,
+        132,
+        88
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 50,
+    "name": "partition50",
+    "score": 0.08221093632007165,
+    "per": [
+      0.05699199971295512,
+      0.09286980036374276,
+      0.09677100888351704
+    ],
+    "config": {
+      "layers": [
+        145,
+        130,
+        93
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 51,
+    "name": "partition51",
+    "score": 0.08195928585421507,
+    "per": [
+      0.05771550656299909,
+      0.09204889362173431,
+      0.09611345737791177
+    ],
+    "config": {
+      "layers": [
+        102,
+        90,
+        176
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 52,
+    "name": "partition52",
+    "score": 0.08533020224055617,
+    "per": [
+      0.05618857436090016,
+      0.09842104665400232,
+      0.10138098570676601
+    ],
+    "config": {
+      "layers": [
+        132,
+        85,
+        151
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 53,
+    "name": "partition53",
+    "score": 0.08171983947143235,
+    "per": [
+      0.05661320284977471,
+      0.09198250054748587,
+      0.09656381501703648
+    ],
+    "config": {
+      "layers": [
+        81,
+        155,
+        132
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 54,
+    "name": "partition54",
+    "score": 0.08340400753081001,
+    "per": [
+      0.05541088163546199,
+      0.09638078653581317,
+      0.09842035442115489
+    ],
+    "config": {
+      "layers": [
+        155,
+        136,
+        77
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 55,
+    "name": "partition55",
+    "score": 0.0854892466126187,
+    "per": [
+      0.055012498520521196,
+      0.09956182825167571,
+      0.10189341306565919
+    ],
+    "config": {
+      "layers": [
+        108,
+        110,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 56,
+    "name": "partition56",
+    "score": 0.08106750685044853,
+    "per": [
+      0.056367121055753464,
+      0.09126276758435727,
+      0.09557263191123486
+    ],
+    "config": {
+      "layers": [
+        100,
+        98,
+        170
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 57,
+    "name": "partition57",
+    "score": 0.08333058800563319,
+    "per": [
+      0.05595916217960138,
+      0.0952737393309262,
+      0.09875886250637196
+    ],
+    "config": {
+      "layers": [
+        87,
+        165,
+        116
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 58,
+    "name": "partition58",
+    "score": 0.08057713404594971,
+    "per": [
+      0.055818223611513174,
+      0.09097221190265534,
+      0.09494096662368062
+    ],
+    "config": {
+      "layers": [
+        163,
+        124,
+        81
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 59,
+    "name": "partition59",
+    "score": 0.08380874191235776,
+    "per": [
+      0.05649624643148477,
+      0.09606352429039948,
+      0.09886645501518904
+    ],
+    "config": {
+      "layers": [
+        80,
+        152,
+        136
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 3.1622776601683795e-09,
+      "washout": 1000
+    }
+  }
+]

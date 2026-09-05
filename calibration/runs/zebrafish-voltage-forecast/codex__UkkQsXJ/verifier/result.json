@@ -1,0 +1,225 @@
+{
+ "score": 0.07479,
+ "metric": "hidden-window RMSE, mean over five independently searched networks (seeds 0-4), causal roll-out",
+ "direction": "lower_better",
+ "normalized": 0.7525,
+ "improvement_over_paper_best": 0.0461,
+ "improvement_over_best_baseline": 0.3783,
+ "passed": true,
+ "ranked": true,
+ "status": "ok",
+ "flags": [],
+ "reward_mode": "normalized",
+ "metrics": {
+  "rmse_mean_over_searches": 0.07479,
+  "rmse_per_search": [
+   0.07618,
+   0.07204,
+   0.07317,
+   0.07785,
+   0.0747
+  ],
+  "rmse_sd_over_searches": 0.00207,
+  "beats_paper_best": true,
+  "meets_5pct_stretch": false,
+  "n_searches": 5,
+  "evaluations_used": [
+   60,
+   60,
+   60,
+   60,
+   60
+  ],
+  "search_wall_sec": [
+   66.0,
+   67.3,
+   65.7,
+   65.3,
+   66.0
+  ],
+  "dev_best_per_search": [
+   0.0798,
+   0.07996,
+   0.07986,
+   0.08002,
+   0.07986
+  ],
+  "configurations": [
+   {
+    "seed": 0,
+    "layers": [
+     74,
+     74,
+     74,
+     73,
+     73
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": [
+     0.45784546127878056,
+     0.1516604198425067,
+     0.044645881359243,
+     0.2779710432967935,
+     0.06343280403081282
+    ],
+    "ridge": 1.6723102778648208e-09,
+    "spectral_radius": 0.9751142238451121,
+    "input_scale": {
+     "bias": 0.12418299369459748,
+     "stimulus": 1.1947949305905488
+    }
+   },
+   {
+    "seed": 1,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": 0.18217619495247128,
+    "ridge": 1.7329050731967887e-08,
+    "spectral_radius": 1.0451412118513306,
+    "input_scale": {
+     "bias": 0.10860439518446523,
+     "stimulus": 3.0302821714069026
+    }
+   },
+   {
+    "seed": 2,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": 0.08614694554680428,
+    "ridge": 3.961693225258166e-08,
+    "spectral_radius": 1.0000581179853596,
+    "input_scale": {
+     "bias": 0.201677694171583,
+     "stimulus": 2.533358860906095
+    }
+   },
+   {
+    "seed": 3,
+    "layers": [
+     74,
+     74,
+     74,
+     73,
+     73
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": [
+     0.07244390122066047,
+     0.43657144474319565,
+     0.046698946552962695,
+     0.19196338628714124,
+     0.04043885184590019
+    ],
+    "ridge": 3.987327015204122e-10,
+    "spectral_radius": 0.9801551472611116,
+    "input_scale": {
+     "bias": 0.08438339828367913,
+     "stimulus": 1.1398502255739924
+    }
+   },
+   {
+    "seed": 4,
+    "layers": [
+     74,
+     74,
+     74,
+     73,
+     73
+    ],
+    "units": 368,
+    "inputs": [
+     "stimulus"
+    ],
+    "voltage_feedback": false,
+    "kb": null,
+    "leak": [
+     0.09683136010214365,
+     0.061278532857321606,
+     0.14374779149586345,
+     0.03970175860211274,
+     0.10532940739660823
+    ],
+    "ridge": 8.263663288110423e-08,
+    "spectral_radius": 0.9218197608151778,
+    "input_scale": {
+     "bias": 0.11485717972056046,
+     "stimulus": 3.9520933387215558
+    }
+   }
+  ],
+  "profile": {
+   "rmse_first_500ms": 0.04752,
+   "rmse_first_1000ms": 0.04652,
+   "rmse_first_2000ms": 0.0474
+  },
+  "rollout": {
+   "user": "nobody",
+   "per_seed": [
+    {
+     "warmup_sec": 0.49,
+     "steps_sec": 0.27,
+     "seed": 0
+    },
+    {
+     "warmup_sec": 0.45,
+     "steps_sec": 0.24,
+     "seed": 1
+    },
+    {
+     "warmup_sec": 0.44,
+     "steps_sec": 0.23,
+     "seed": 2
+    },
+    {
+     "warmup_sec": 0.46,
+     "steps_sec": 0.25,
+     "seed": 3
+    },
+    {
+     "warmup_sec": 0.46,
+     "steps_sec": 0.25,
+     "seed": 4
+    }
+   ]
+  },
+  "size_limits": {
+   "max_units": 368,
+   "max_layers": 5
+  }
+ },
+ "anchors": {
+  "do_nothing_rmse": 0.3022,
+  "paper_best_rmse": 0.0784,
+  "baselines": {
+   "BASELINE_ESN_PLUS_RMSE": 0.1203
+  },
+  "min_improvement": 0.0,
+  "max_configs": 60,
+  "search_timeout_sec": 900.0
+ },
+ "reward": 0.7525
+}

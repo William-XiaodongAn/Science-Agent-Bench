@@ -1,0 +1,8 @@
+  fit done 240 evals 137s  fit=0.8994 pen=0.0153  J=[376.435   0.503   0.447   0.655] sig=[0.283 1.161 1.393 1.097]
+train nRMSE (all obs) 0.4727460747458091
+spectral radius 2.2606031345285706
+/workspace/work/ssn.py:24: RuntimeWarning: overflow encountered in square
+  r = r + a*(-r + K*np.maximum(u, 0)**NPOW)
+/workspace/work/ssn.py:23: RuntimeWarning: invalid value encountered in matmul
+  u = W @ r + I[:, s-1]
+eval sim max nan finite False

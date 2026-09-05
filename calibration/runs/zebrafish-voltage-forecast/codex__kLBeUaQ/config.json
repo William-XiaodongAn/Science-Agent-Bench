@@ -1,0 +1,19 @@
+{
+    "task": {
+        "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.j5u4ji/codex-gpt-5.6-sol/zebrafish-voltage-forecast"
+    },
+    "trial_name": "zebrafish-voltage-forecast__kLBeUaQ",
+    "trials_dir": "/Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t3v10/calib-codex-gpt-5.6-sol-zebrafish-voltage-forecast-k3-20260904-1413",
+    "agent": {
+        "name": "codex",
+        "model_name": "gpt-5.6-sol",
+        "kwargs": {
+            "reasoning_effort": "high",
+            "config": "/Users/guangzeluo/agent_task_generator/ai4science/Science-Agent-Bench/calibration/codex_gateway.toml"
+        }
+    },
+    "environment": {
+        "type": "modal"
+    },
+    "job_id": "86380a8e-4020-4f18-b157-de9b99434235"
+}

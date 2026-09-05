@@ -1,0 +1,18 @@
+{
+ "score": null,
+ "metric": "activation-time map RMSE (ms), median offset removed",
+ "direction": "lower_better",
+ "status": "invalid",
+ "flags": [
+  "invalid_submission",
+  "mask_coverage_below_gate"
+ ],
+ "passed": false,
+ "note": "invalid submission (DNF); exclude from ranking",
+ "coverage": 0.9237,
+ "iou": 0.7716,
+ "gate": 0.95,
+ "reward": 0.0
+}
+=== reward.txt ===
+0.0000

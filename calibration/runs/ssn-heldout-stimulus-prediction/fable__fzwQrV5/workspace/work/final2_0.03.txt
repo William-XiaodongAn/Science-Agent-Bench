@@ -1,0 +1,2 @@
+  fit done 184 evals 237s  fit=0.7661 pen=0.0342  w1=[0.666 0.38  0.387 0.564] sig=[0.5   1.138 1.402 1.04 ]
+final2 lam 0.03 train nRMSE 0.4375885624145916 eval max 0.5801084754648236 finite True time 239.0657045841217

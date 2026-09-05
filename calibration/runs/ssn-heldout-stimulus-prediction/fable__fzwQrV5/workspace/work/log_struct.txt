@@ -1,0 +1,11 @@
+  fit done 264 evals 150s  fit=nan pen=0.0000  J=[nan nan nan nan] sig=[nan nan nan nan]
+train nRMSE (all obs) nan
+Traceback (most recent call last):
+  File "/workspace/work/exp1.py", line 6, in <module>
+    W = m().detach().numpy(); print('spectral radius', np.abs(np.linalg.eigvals(W)).max())
+                                                              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/numpy/linalg/_linalg.py", line 1206, in eigvals
+    _assert_finite(a)
+  File "/usr/local/lib/python3.12/site-packages/numpy/linalg/_linalg.py", line 207, in _assert_finite
+    raise LinAlgError("Array must not contain infs or NaNs")
+numpy.linalg.LinAlgError: Array must not contain infs or NaNs
