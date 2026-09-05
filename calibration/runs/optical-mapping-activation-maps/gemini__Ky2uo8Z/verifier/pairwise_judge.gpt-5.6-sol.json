@@ -1,0 +1,13 @@
+{
+ "model": "gpt-5.6-sol",
+ "expert_is": "B",
+ "winner_label": "B",
+ "winner": "expert",
+ "confidence": 0.94,
+ "activation_better": "B",
+ "apd80_better": "B",
+ "mask_better": "B",
+ "reasons": "B shows smooth, continuous activation isochrones consistent with a coherent propagating wavefront, whereas A has jagged contours, peripheral fragmentation, and marked noise near the left edge. B\u2019s APD80 field varies gradually in space with complete coverage, while A has a conspicuous dark inferior band, mottling, and 18.3% missing pixels inside its mask. B\u2019s single-component, hole-free mask is conservative but internally consistent with both maps; A\u2019s mask has 18 components, irregular protrusions, and poorly supported peripheral regions. The much lower roughness and outlier rates in B support the visual impression without appearing to erase the principal activation or repolarisation gradients.",
+ "raw": "{\"winner\":\"B\",\"confidence\":0.94,\"activation_better\":\"B\",\"apd80_better\":\"B\",\"mask_better\":\"B\",\"reasons\":\"B shows smooth, continuous activation isochrones consistent with a coherent propagating wavefront, whereas A has jagged contours, peripheral fragmentation, and marked noise near the left edge. B\u2019s APD80 field varies gradually in space with complete coverage, while A has a conspicuous dark inferior band, mottling, and 18.3% missing pixels inside its mask. B\u2019s single-component, hole-free mask is conservative but internally consistent with both maps; A\u2019s mask has 18 components, irregular protrusions, and poorly supported peripheral regions. The much lower roughness and outlier rates in B support the visual impression without appearing to erase the principal activation or repolarisation gradients.\"}",
+ "judged_at": "2026-09-04T10:31:09Z"
+}

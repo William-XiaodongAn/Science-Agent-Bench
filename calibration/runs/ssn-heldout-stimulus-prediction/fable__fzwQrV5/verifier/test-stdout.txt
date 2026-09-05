@@ -1,0 +1,27 @@
+{
+ "score": 0.44947,
+ "metric": "held-out trajectory nRMSE",
+ "direction": "lower_better",
+ "normalized": 0.5971,
+ "passed": false,
+ "ranked": true,
+ "status": "ok",
+ "flags": [],
+ "reward_mode": "normalized",
+ "metrics": {
+  "nrmse": 0.44947,
+  "peak_region_nrmse": 0.75023,
+  "per_neuron_nrmse_median": 0.3459,
+  "per_neuron_nrmse_max": 1.6403,
+  "frac_neurons_better_than_constant": 0.9796,
+  "max_pred": 0.45599
+ },
+ "anchors": {
+  "baseline_nrmse": 1.1035,
+  "oracle_nrmse": 0.0082,
+  "pass_nrmse": 0.444
+ },
+ "reward": 0.5971
+}
+=== reward.txt ===
+0.5971

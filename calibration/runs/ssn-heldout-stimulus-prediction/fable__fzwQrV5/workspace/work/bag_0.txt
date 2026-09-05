@@ -1,0 +1,2 @@
+  fit done 63 evals 76s  fit=1.5061 pen=0.0206  w1=[0.265 0.412 0.5   0.433] sig=[1.079 0.512 1.359 1.491]
+bag 0 0.1 train nRMSE (unweighted) 0.48712702538212976 eval max 0.4788363342361854 finite True time 77.40827870368958

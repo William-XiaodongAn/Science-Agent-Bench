@@ -1,0 +1,213 @@
+seed 0: search used 42 evaluations in 56.8 s -> [368] inputs ['voltage', 'stimulus'] fb True (dev best 0.08354)
+seed 0: hidden-window RMSE 0.08289
+seed 1: search used 42 evaluations in 57.8 s -> [368] inputs ['voltage', 'stimulus'] fb True (dev best 0.08552)
+seed 1: hidden-window RMSE 0.08477
+seed 2: search used 42 evaluations in 57.5 s -> [368] inputs ['voltage', 'stimulus'] fb True (dev best 0.08275)
+seed 2: hidden-window RMSE 0.52020
+seed 3: search used 42 evaluations in 56.8 s -> [368] inputs ['voltage', 'stimulus'] fb True (dev best 0.0842)
+seed 3: hidden-window RMSE 0.09044
+seed 4: search used 42 evaluations in 57.0 s -> [368] inputs ['voltage', 'stimulus'] fb True (dev best 0.08574)
+seed 4: hidden-window RMSE 0.08726
+{
+ "score": 0.17311,
+ "metric": "hidden-window RMSE, mean over five independently searched networks (seeds 0-4), causal roll-out",
+ "direction": "lower_better",
+ "normalized": 0.4272,
+ "improvement_over_paper_best": -1.208,
+ "improvement_over_best_baseline": -0.439,
+ "passed": false,
+ "ranked": true,
+ "status": "ok",
+ "flags": [],
+ "reward_mode": "normalized",
+ "metrics": {
+  "rmse_mean_over_searches": 0.17311,
+  "rmse_per_search": [
+   0.08289,
+   0.08477,
+   0.5202,
+   0.09044,
+   0.08726
+  ],
+  "rmse_sd_over_searches": 0.17356,
+  "beats_paper_best": false,
+  "meets_5pct_stretch": false,
+  "n_searches": 5,
+  "evaluations_used": [
+   42,
+   42,
+   42,
+   42,
+   42
+  ],
+  "search_wall_sec": [
+   56.8,
+   57.8,
+   57.5,
+   56.8,
+   57.0
+  ],
+  "dev_best_per_search": [
+   0.08354,
+   0.08552,
+   0.08275,
+   0.0842,
+   0.08574
+  ],
+  "configurations": [
+   {
+    "seed": 0,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.1,
+    "ridge": 2e-07,
+    "spectral_radius": 0.6,
+    "input_scale": {
+     "bias": 0.05,
+     "voltage": 0.1,
+     "stimulus": 0.3
+    }
+   },
+   {
+    "seed": 1,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.1,
+    "ridge": 1.5e-07,
+    "spectral_radius": 0.6,
+    "input_scale": {
+     "bias": 0.05,
+     "voltage": 0.1,
+     "stimulus": 0.3
+    }
+   },
+   {
+    "seed": 2,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.1,
+    "ridge": 1.5e-07,
+    "spectral_radius": 0.6,
+    "input_scale": {
+     "bias": 0.05,
+     "voltage": 0.1,
+     "stimulus": 0.3
+    }
+   },
+   {
+    "seed": 3,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.08,
+    "ridge": 3e-07,
+    "spectral_radius": 0.5,
+    "input_scale": {
+     "bias": 0.1,
+     "voltage": 0.1,
+     "stimulus": 0.3
+    }
+   },
+   {
+    "seed": 4,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.08,
+    "ridge": 3e-07,
+    "spectral_radius": 0.5,
+    "input_scale": 0.1
+   }
+  ],
+  "profile": {
+   "rmse_first_500ms": 0.04918,
+   "rmse_first_1000ms": 0.05677,
+   "rmse_first_2000ms": 0.0583
+  },
+  "rollout": {
+   "user": "nobody",
+   "per_seed": [
+    {
+     "warmup_sec": 0.6,
+     "steps_sec": 0.58,
+     "seed": 0
+    },
+    {
+     "warmup_sec": 0.6,
+     "steps_sec": 0.57,
+     "seed": 1
+    },
+    {
+     "warmup_sec": 0.6,
+     "steps_sec": 0.55,
+     "seed": 2
+    },
+    {
+     "warmup_sec": 0.6,
+     "steps_sec": 0.54,
+     "seed": 3
+    },
+    {
+     "warmup_sec": 0.6,
+     "steps_sec": 0.58,
+     "seed": 4
+    }
+   ]
+  },
+  "size_limits": {
+   "max_units": 368,
+   "max_layers": 5
+  }
+ },
+ "anchors": {
+  "do_nothing_rmse": 0.3022,
+  "paper_best_rmse": 0.0784,
+  "baselines": {
+   "BASELINE_ESN_PLUS_RMSE": 0.1203
+  },
+  "min_improvement": 0.0,
+  "max_configs": 60,
+  "search_timeout_sec": 900.0
+ },
+ "reward": 0.4272
+}
+=== reward.txt ===
+0.4272

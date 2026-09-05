@@ -1,0 +1,15 @@
+{
+    "task": {
+        "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.cX06XV/claude-code-anthropic-claude-fable-5-1/zebrafish-voltage-forecast"
+    },
+    "trial_name": "zebrafish-voltage-forecast__r2Er4ki",
+    "trials_dir": "/Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t3v10/calib-claude-code-anthropic-claude-fable-5-1-zebrafish-voltage-forecast-k3-20260904-1413",
+    "agent": {
+        "name": "claude-code",
+        "model_name": "anthropic/claude-fable-5-1"
+    },
+    "environment": {
+        "type": "modal"
+    },
+    "job_id": "fc54d263-05de-45e9-a4fd-b6778a3c2a88"
+}

@@ -1,0 +1,13 @@
+{
+ "model": "gpt-5.6-sol",
+ "expert_is": "A",
+ "winner_label": "A",
+ "winner": "expert",
+ "confidence": 0.94,
+ "activation_better": "A",
+ "apd80_better": "A",
+ "mask_better": "A",
+ "reasons": "A shows a coherent left-to-right propagating wave with smooth, continuous isochrones and only modest biologically plausible curvature. B has suspicious edge hot spots, closed contour distortions, and irregular activation structure at the left, lower, and right margins that could bias conduction-velocity estimates. A\u2019s APD80 varies gradually, whereas B shows mottled texture, a very dark left wedge, and a dark diagonal band suggestive of processing or edge artefacts; its higher roughness and IQR support this concern. A\u2019s single, hole-free mask is cleaner and better aligned with both maps, while B\u2019s mask has irregular protrusions, a hole, and frame-clipped extensions despite offering greater nominal coverage.",
+ "raw": "{\"winner\":\"A\",\"confidence\":0.94,\"activation_better\":\"A\",\"apd80_better\":\"A\",\"mask_better\":\"A\",\"reasons\":\"A shows a coherent left-to-right propagating wave with smooth, continuous isochrones and only modest biologically plausible curvature. B has suspicious edge hot spots, closed contour distortions, and irregular activation structure at the left, lower, and right margins that could bias conduction-velocity estimates. A\u2019s APD80 varies gradually, whereas B shows mottled texture, a very dark left wedge, and a dark diagonal band suggestive of processing or edge artefacts; its higher roughness and IQR support this concern. A\u2019s single, hole-free mask is cleaner and better aligned with both maps, while B\u2019s mask has irregular protrusions, a hole, and frame-clipped extensions despite offering greater nominal coverage.\"}",
+ "judged_at": "2026-09-04T10:30:36Z"
+}

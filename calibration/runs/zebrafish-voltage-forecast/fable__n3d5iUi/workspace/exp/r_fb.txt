@@ -1,0 +1,11 @@
+0.0966  {"input_scale": {"bias": 0.1, "stimulus": 2.0, "voltage": 0.1}, "layers": [368], "leak": 0.2}  per-seed [0.0998, 0.0934]
+0.0991  {"input_scale": {"bias": 0.1, "stimulus": 2.0, "voltage": 0.03}, "layers": [368], "leak": [0.05, 0.5]}  per-seed [0.1044, 0.0939]
+0.1000  {"input_scale": {"bias": 0.1, "stimulus": 2.0, "voltage": 0.03}, "layers": [368], "leak": 0.2}  per-seed [0.1084, 0.0916]
+0.1029  {"input_scale": {"bias": 0.1, "stimulus": 2.0, "voltage": 0.03}, "layers": [368], "leak": [0.02, 0.5], "ridge": 0.01}  per-seed [0.1087, 0.0971]
+0.1061  {"layers": [368], "leak": 0.25}  per-seed [0.1104, 0.1018]
+0.1163  {"layers": [368], "leak": 0.2, "spectral_radius": 0.6}  per-seed [0.118, 0.1146]
+0.1189  {"input_scale": 0.05, "layers": [368], "leak": 0.2, "spectral_radius": 0.6}  per-seed [0.1204, 0.1174]
+0.1229  {"input_scale": 0.05, "layers": [368], "leak": 0.2}  per-seed [0.1248, 0.121]
+0.1266  {"layers": [368], "leak": 0.2, "ridge": 0.01}  per-seed [0.1349, 0.1184]
+0.1845  {"layers": [368], "leak": 0.15}  per-seed [0.256, 0.1131]
+[c_fb.json] 20 evals in 22s

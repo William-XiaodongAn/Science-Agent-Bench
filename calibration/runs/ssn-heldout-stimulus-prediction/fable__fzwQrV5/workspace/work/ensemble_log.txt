@@ -1,0 +1,37 @@
+W_final2_0.03.npy eval max 0.580 ok True
+W_final2_0.1.npy eval max 0.481 ok True
+W_final_0.03.npy eval max 0.580 ok True
+W_final_0.1.npy eval max 0.530 ok True
+W_final_0.3.npy eval max 0.516 ok True
+W_bag2_10_0.1.npy eval max 0.476 ok True
+W_bag2_11_0.1.npy eval max 0.443 ok True
+W_bag2_12_0.3.npy eval max 0.453 ok True
+W_bag2_13_0.3.npy eval max 0.507 ok True
+W_bag2_8_0.1.npy eval max 0.436 ok True
+W_bag2_9_0.1.npy eval max 0.563 ok True
+W_bag_0_0.1.npy eval max 0.479 ok True
+W_bag_1_0.1.npy eval max inf ok False
+W_bag_2_0.1.npy eval max inf ok False
+W_bag_3_0.1.npy eval max 0.457 ok True
+W_bag_4_0.1.npy eval max inf ok False
+W_bag_5_0.1.npy eval max 0.426 ok True
+W_bag_6_0.3.npy eval max 0.445 ok True
+W_bag_7_0.3.npy eval max inf ok False
+members 15 ensemble max 0.45598616421270094 mean 0.04358234918379692
+between-member spread: rms std 0.0089, relative to ensemble std 0.182
+  member 0 nRMSE vs ensemble 0.230
+  member 1 nRMSE vs ensemble 0.149
+  member 2 nRMSE vs ensemble 0.229
+  member 3 nRMSE vs ensemble 0.519
+  member 4 nRMSE vs ensemble 0.600
+  member 5 nRMSE vs ensemble 0.220
+  member 6 nRMSE vs ensemble 0.251
+  member 7 nRMSE vs ensemble 0.341
+  member 8 nRMSE vs ensemble 0.317
+  member 9 nRMSE vs ensemble 0.242
+  member 10 nRMSE vs ensemble 0.340
+  member 11 nRMSE vs ensemble 0.206
+  member 12 nRMSE vs ensemble 0.195
+  member 13 nRMSE vs ensemble 0.242
+  member 14 nRMSE vs ensemble 0.179
+wrote r_pred.npy

@@ -1,0 +1,19 @@
+{
+    "task": {
+        "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.5Dy4Qu/codex-gpt-5.6-sol/ssn-heldout-stimulus-prediction"
+    },
+    "trial_name": "ssn-heldout-stimulus-prediction__CKfPbib",
+    "trials_dir": "/Users/guangzeluo/agent_task_generator/ai4science/jobs/calib/calib-codex-gpt-5.6-sol-ssn-heldout-stimulus-prediction-k3-20260903-1555",
+    "agent": {
+        "name": "codex",
+        "model_name": "gpt-5.6-sol",
+        "kwargs": {
+            "reasoning_effort": "high",
+            "config": "/Users/guangzeluo/agent_task_generator/ai4science/Science-Agent-Bench/calibration/codex_gateway.toml"
+        }
+    },
+    "environment": {
+        "type": "modal"
+    },
+    "job_id": "c6bbf418-7be8-4aed-8574-fe7c577e9ba8"
+}

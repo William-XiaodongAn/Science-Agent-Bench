@@ -1,0 +1,13 @@
+{
+ "model": "gpt-5.6-sol",
+ "expert_is": "A",
+ "winner_label": "A",
+ "winner": "expert",
+ "confidence": 0.92,
+ "activation_better": "A",
+ "apd80_better": "A",
+ "mask_better": "B",
+ "reasons": "A has smoother, continuous activation isochrones with a coherent left-to-right wavefront, whereas B shows more jagged contours and several suspicious closed or distorted regions. A's APD80 map varies gradually in space, while B contains mottled texture, a prominent dark wedge along the lower region, and dark streak-like defects on the right; its higher APD roughness and outlier fraction support these visible artefacts. B's mask is more complete and captures peripheral tissue that A's substantially smaller, conservative mask excludes. Despite A's reduced coverage and possible smoothing, its activation and especially repolarisation maps are substantially more reliable for conduction and heterogeneity analysis.",
+ "raw": "{\"winner\":\"A\",\"confidence\":0.92,\"activation_better\":\"A\",\"apd80_better\":\"A\",\"mask_better\":\"B\",\"reasons\":\"A has smoother, continuous activation isochrones with a coherent left-to-right wavefront, whereas B shows more jagged contours and several suspicious closed or distorted regions. A's APD80 map varies gradually in space, while B contains mottled texture, a prominent dark wedge along the lower region, and dark streak-like defects on the right; its higher APD roughness and outlier fraction support these visible artefacts. B's mask is more complete and captures peripheral tissue that A's substantially smaller, conservative mask excludes. Despite A's reduced coverage and possible smoothing, its activation and especially repolarisation maps are substantially more reliable for conduction and heterogeneity analysis.\"}",
+ "judged_at": "2026-09-04T10:33:07Z"
+}

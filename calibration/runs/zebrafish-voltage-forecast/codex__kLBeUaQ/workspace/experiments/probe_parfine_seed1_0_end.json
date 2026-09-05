@@ -1,0 +1,2102 @@
+[
+  {
+    "i": 0,
+    "name": "fine38",
+    "score": 0.08121678566919878,
+    "per": [
+      0.05550668218512306,
+      0.0925359656013537,
+      0.09560770922111958
+    ],
+    "config": {
+      "layers": [
+        160,
+        128,
+        80
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06,
+        0.16,
+        0.45
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 1,
+    "name": "fine10",
+    "score": 0.08295859502275975,
+    "per": [
+      0.055295032606449024,
+      0.0956884603200515,
+      0.0978922921417787
+    ],
+    "config": {
+      "layers": [
+        100,
+        168,
+        100
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03,
+        0.12,
+        0.35
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 2,
+    "name": "fine28",
+    "score": 0.08314922636121165,
+    "per": [
+      0.05729577280163378,
+      0.09416058723427011,
+      0.09799131904773103
+    ],
+    "config": {
+      "layers": [
+        150,
+        68,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06,
+        0.16,
+        0.45
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 3,
+    "name": "fine27",
+    "score": 0.08291012944555265,
+    "per": [
+      0.057268476405783766,
+      0.09361008640209455,
+      0.09785182552877965
+    ],
+    "config": {
+      "layers": [
+        150,
+        68,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 4,
+    "name": "fine43",
+    "score": 0.08221252737874181,
+    "per": [
+      0.05842455481983933,
+      0.0923787831539884,
+      0.0958342441623977
+    ],
+    "config": {
+      "layers": [
+        115,
+        117,
+        136
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06832735083582483,
+        0.10263647724955,
+        0.3108063671156885
+      ],
+      "spectral_radius": 0.8796621124069173,
+      "connectivity": 0.05,
+      "input_scale": {
+        "bias": 0.03772228997316372,
+        "stimulus": 7.750030743992358
+      },
+      "ridge": 1.1598883105927673e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 5,
+    "name": "fine29",
+    "score": 0.08387794979415297,
+    "per": [
+      0.05606390148682695,
+      0.09564185355659262,
+      0.09992809433903933
+    ],
+    "config": {
+      "layers": [
+        150,
+        68,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07,
+        0.18,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 6,
+    "name": "fine30",
+    "score": 0.0862629678326875,
+    "per": [
+      0.06040332623948246,
+      0.09709800295141331,
+      0.1012875743071667
+    ],
+    "config": {
+      "layers": [
+        80,
+        128,
+        160
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03,
+        0.12,
+        0.35
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 7,
+    "name": "fine12",
+    "score": 0.07972641371938462,
+    "per": [
+      0.05481039861770649,
+      0.09066224353277721,
+      0.09370659900767016
+    ],
+    "config": {
+      "layers": [
+        100,
+        168,
+        100
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 8,
+    "name": "fine00",
+    "score": 0.08085745097774587,
+    "per": [
+      0.057373734455675514,
+      0.09027237335714808,
+      0.09492624512041399
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03,
+        0.12,
+        0.35
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 9,
+    "name": "fine21",
+    "score": 0.08294859747989214,
+    "per": [
+      0.05636159035793716,
+      0.09401929236300072,
+      0.09846490971873853
+    ],
+    "config": {
+      "layers": [
+        68,
+        150,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04,
+        0.14,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 10,
+    "name": "fine25",
+    "score": 0.08505918144463932,
+    "per": [
+      0.05876817980476697,
+      0.09636756255703197,
+      0.10004180197211905
+    ],
+    "config": {
+      "layers": [
+        150,
+        68,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03,
+        0.12,
+        0.35
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 11,
+    "name": "fine57",
+    "score": 0.08350404499626946,
+    "per": [
+      0.05602965555799495,
+      0.09705410863854048,
+      0.09742837079227291
+    ],
+    "config": {
+      "layers": [
+        125,
+        128,
+        115
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06465750168970519,
+        0.10779346967149112,
+        0.5064335758886725
+      ],
+      "spectral_radius": 0.9001886583553467,
+      "connectivity": 0.4,
+      "input_scale": {
+        "bias": 0.08946990401081202,
+        "stimulus": 6.49888404615089
+      },
+      "ridge": 5.880021659097484e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 12,
+    "name": "fine49",
+    "score": 0.08309866151390634,
+    "per": [
+      0.05608252095257659,
+      0.09465227834145305,
+      0.09856118524768936
+    ],
+    "config": {
+      "layers": [
+        94,
+        154,
+        120
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.0305478500869179,
+        0.16763143664440805,
+        0.31162272905849203
+      ],
+      "spectral_radius": 0.9321278021156422,
+      "connectivity": 0.2,
+      "input_scale": {
+        "bias": 0.02144961312576414,
+        "stimulus": 5.760589548045884
+      },
+      "ridge": 8.966441069697407e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 13,
+    "name": "fine09",
+    "score": 0.0840025421522394,
+    "per": [
+      0.0594312498354965,
+      0.09454971704631343,
+      0.09802665957490828
+    ],
+    "config": {
+      "layers": [
+        80,
+        180,
+        108
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07,
+        0.18,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 14,
+    "name": "fine17",
+    "score": 0.08388691312826889,
+    "per": [
+      0.05675310791680621,
+      0.09537251674566403,
+      0.0995351147223364
+    ],
+    "config": {
+      "layers": [
+        150,
+        150,
+        68
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 15,
+    "name": "fine05",
+    "score": 0.08172846936780281,
+    "per": [
+      0.05642570508677699,
+      0.09211671619817292,
+      0.09664298681845854
+    ],
+    "config": {
+      "layers": [
+        80,
+        180,
+        108
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03,
+        0.12,
+        0.35
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 16,
+    "name": "fine31",
+    "score": 0.08639817363753162,
+    "per": [
+      0.06066324102415147,
+      0.09733727854895136,
+      0.10119400133949202
+    ],
+    "config": {
+      "layers": [
+        80,
+        128,
+        160
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04,
+        0.14,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 17,
+    "name": "fine50",
+    "score": 0.08066906256409995,
+    "per": [
+      0.05539241976183967,
+      0.0912756333976002,
+      0.09533913453285996
+    ],
+    "config": {
+      "layers": [
+        117,
+        113,
+        138
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03161004005243136,
+        0.12824840028506862,
+        0.4192262685836794
+      ],
+      "spectral_radius": 0.8642268391034873,
+      "connectivity": 0.4,
+      "input_scale": {
+        "bias": 0.03125867835035321,
+        "stimulus": 6.609403683367895
+      },
+      "ridge": 3.4048157650907883e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 18,
+    "name": "fine46",
+    "score": 0.08354790677787456,
+    "per": [
+      0.05742000373978693,
+      0.09434071959764628,
+      0.0988829969961905
+    ],
+    "config": {
+      "layers": [
+        108,
+        160,
+        100
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03062651308644798,
+        0.11613619971674087,
+        0.32671646451540115
+      ],
+      "spectral_radius": 0.8679380930238907,
+      "connectivity": 0.4,
+      "input_scale": {
+        "bias": 0.03544250318440588,
+        "stimulus": 11.589696478749234
+      },
+      "ridge": 9.383939435537741e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 19,
+    "name": "fine58",
+    "score": 0.08589158774541554,
+    "per": [
+      0.053669116033513174,
+      0.10048275044617161,
+      0.10352289675656179
+    ],
+    "config": {
+      "layers": [
+        126,
+        121,
+        121
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07366129220633669,
+        0.1842275639616165,
+        0.3179917667759274
+      ],
+      "spectral_radius": 0.9387484259303577,
+      "connectivity": 0.4,
+      "input_scale": {
+        "bias": 0.010813070895402307,
+        "stimulus": 8.380592684396976
+      },
+      "ridge": 6.465246017222879e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 20,
+    "name": "fine41",
+    "score": 0.0818193625472619,
+    "per": [
+      0.055919960175587875,
+      0.09268027851111024,
+      0.09685784895508757
+    ],
+    "config": {
+      "layers": [
+        87,
+        153,
+        128
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04595052029690001,
+        0.1332636835134941,
+        0.3817467854131118
+      ],
+      "spectral_radius": 0.8823838028053085,
+      "connectivity": 0.2,
+      "input_scale": {
+        "bias": 0.06069271910372898,
+        "stimulus": 5.95594779252441
+      },
+      "ridge": 1.289259842869684e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 21,
+    "name": "fine33",
+    "score": 0.08532652593937624,
+    "per": [
+      0.060820598911817424,
+      0.09593068864757812,
+      0.09922829025873317
+    ],
+    "config": {
+      "layers": [
+        80,
+        128,
+        160
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06,
+        0.16,
+        0.45
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 22,
+    "name": "fine13",
+    "score": 0.07951170347021852,
+    "per": [
+      0.0547173857332214,
+      0.09020452638593032,
+      0.09361319829150384
+    ],
+    "config": {
+      "layers": [
+        100,
+        168,
+        100
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06,
+        0.16,
+        0.45
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 23,
+    "name": "fine24",
+    "score": 0.08473279021522735,
+    "per": [
+      0.058690680926078764,
+      0.09631698003843706,
+      0.09919070968116626
+    ],
+    "config": {
+      "layers": [
+        68,
+        150,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07,
+        0.18,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 24,
+    "name": "fine47",
+    "score": 0.08458227696233596,
+    "per": [
+      0.05830598295993896,
+      0.09568702208096821,
+      0.0997538258461007
+    ],
+    "config": {
+      "layers": [
+        84,
+        146,
+        138
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.02716007766299705,
+        0.19366985801389996,
+        0.4226450625745735
+      ],
+      "spectral_radius": 0.9404343965991253,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.07538809322258673,
+        "stimulus": 7.572816698989813
+      },
+      "ridge": 1.9703322758553005e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 25,
+    "name": "fine39",
+    "score": 0.08362068421529967,
+    "per": [
+      0.05538268679672717,
+      0.09614187775564703,
+      0.09933748809352481
+    ],
+    "config": {
+      "layers": [
+        160,
+        128,
+        80
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07,
+        0.18,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 26,
+    "name": "fine07",
+    "score": 0.08186294014432995,
+    "per": [
+      0.057060839076232904,
+      0.09220849135991117,
+      0.09631948999684575
+    ],
+    "config": {
+      "layers": [
+        80,
+        180,
+        108
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 27,
+    "name": "fine03",
+    "score": 0.08071827353957035,
+    "per": [
+      0.05700979700920463,
+      0.09049217758917005,
+      0.09465284602033638
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06,
+        0.16,
+        0.45
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 28,
+    "name": "fine19",
+    "score": 0.08192407848922893,
+    "per": [
+      0.056040457683005,
+      0.09274746859841691,
+      0.0969843091862649
+    ],
+    "config": {
+      "layers": [
+        150,
+        150,
+        68
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07,
+        0.18,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 29,
+    "name": "fine37",
+    "score": 0.08163275595194652,
+    "per": [
+      0.05560458717825345,
+      0.09331697859686441,
+      0.09597670208072169
+    ],
+    "config": {
+      "layers": [
+        160,
+        128,
+        80
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 30,
+    "name": "fine52",
+    "score": 0.09172276416637833,
+    "per": [
+      0.056018443767690926,
+      0.11169644585343239,
+      0.10745340287801168
+    ],
+    "config": {
+      "layers": [
+        135,
+        133,
+        100
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06267466131005747,
+        0.11637203214317494,
+        0.33324764525268563
+      ],
+      "spectral_radius": 0.9384808107437403,
+      "connectivity": 0.4,
+      "input_scale": {
+        "bias": 0.07803082004204795,
+        "stimulus": 6.800739199057723
+      },
+      "ridge": 1.0118213431479151e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 31,
+    "name": "fine02",
+    "score": 0.08049089131258591,
+    "per": [
+      0.05630786475480639,
+      0.09040034885991087,
+      0.09476446032304048
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 32,
+    "name": "fine14",
+    "score": 0.08175247856998376,
+    "per": [
+      0.056158729797241555,
+      0.09268955206844504,
+      0.09640915384426468
+    ],
+    "config": {
+      "layers": [
+        100,
+        168,
+        100
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07,
+        0.18,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 33,
+    "name": "fine04",
+    "score": 0.0813352047967027,
+    "per": [
+      0.057813129312523116,
+      0.09119474924734328,
+      0.0949977358302417
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07,
+        0.18,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 34,
+    "name": "fine48",
+    "score": 0.08138085077450642,
+    "per": [
+      0.055928878723965875,
+      0.0923651284201442,
+      0.09584854517940919
+    ],
+    "config": {
+      "layers": [
+        184,
+        115,
+        69
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06760177506559187,
+        0.16224445285315522,
+        0.5027732433665371
+      ],
+      "spectral_radius": 0.9056415176762013,
+      "connectivity": 0.2,
+      "input_scale": {
+        "bias": 0.04009195736415175,
+        "stimulus": 6.7011323875027555
+      },
+      "ridge": 6.787430677279492e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 35,
+    "name": "fine22",
+    "score": 0.08639334635688746,
+    "per": [
+      0.057925264158560336,
+      0.09870052216471067,
+      0.10255425274739138
+    ],
+    "config": {
+      "layers": [
+        68,
+        150,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 36,
+    "name": "fine36",
+    "score": 0.08324477305532317,
+    "per": [
+      0.05651709664727781,
+      0.0959726706387478,
+      0.09724455187994391
+    ],
+    "config": {
+      "layers": [
+        160,
+        128,
+        80
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04,
+        0.14,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 37,
+    "name": "fine42",
+    "score": 0.08247762874154134,
+    "per": [
+      0.05864399416224386,
+      0.09263420838849094,
+      0.09615468367388921
+    ],
+    "config": {
+      "layers": [
+        120,
+        111,
+        137
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05458924391441078,
+        0.1323719321975071,
+        0.38697888860058094
+      ],
+      "spectral_radius": 0.8685701289126025,
+      "connectivity": 0.05,
+      "input_scale": {
+        "bias": 0.04391930716468581,
+        "stimulus": 9.178108881359481
+      },
+      "ridge": 5.016620229652079e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 38,
+    "name": "fine23",
+    "score": 0.09017964425852155,
+    "per": [
+      0.061014624741544246,
+      0.10304751964699699,
+      0.10647678838702346
+    ],
+    "config": {
+      "layers": [
+        68,
+        150,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06,
+        0.16,
+        0.45
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 39,
+    "name": "fine34",
+    "score": 0.08634894948783449,
+    "per": [
+      0.06154738214489181,
+      0.09710294474257515,
+      0.10039652157603651
+    ],
+    "config": {
+      "layers": [
+        80,
+        128,
+        160
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.07,
+        0.18,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 40,
+    "name": "fine40",
+    "score": 0.08028032118852647,
+    "per": [
+      0.05527709925073603,
+      0.09097312285289516,
+      0.09459074146194824
+    ],
+    "config": {
+      "layers": [
+        96,
+        108,
+        164
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04774590125663117,
+        0.11221473975443186,
+        0.3902736775338054
+      ],
+      "spectral_radius": 0.9136790559946802,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.07417162043487906,
+        "stimulus": 10.426613048800778
+      },
+      "ridge": 1.8224491681221502e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 41,
+    "name": "fine51",
+    "score": 0.08134718610932867,
+    "per": [
+      0.05592883263953633,
+      0.09249954480514144,
+      0.09561318088330825
+    ],
+    "config": {
+      "layers": [
+        183,
+        103,
+        82
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05593294592927889,
+        0.17004577211065933,
+        0.4735039536686131
+      ],
+      "spectral_radius": 0.9078292038102889,
+      "connectivity": 0.4,
+      "input_scale": {
+        "bias": 0.011392862353563356,
+        "stimulus": 10.072686479801817
+      },
+      "ridge": 3.4087533892700994e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 42,
+    "name": "fine11",
+    "score": 0.0808263414678073,
+    "per": [
+      0.054830429550177265,
+      0.09252584523434917,
+      0.09512274961889547
+    ],
+    "config": {
+      "layers": [
+        100,
+        168,
+        100
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04,
+        0.14,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 43,
+    "name": "fine53",
+    "score": 0.08381070868599853,
+    "per": [
+      0.058436305009528976,
+      0.09442970955433441,
+      0.09856611149413222
+    ],
+    "config": {
+      "layers": [
+        124,
+        127,
+        117
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.048483737375212416,
+        0.14879927436116192,
+        0.5015364720803066
+      ],
+      "spectral_radius": 0.8825145456639185,
+      "connectivity": 0.4,
+      "input_scale": {
+        "bias": 0.0253464089396682,
+        "stimulus": 7.6829279108398
+      },
+      "ridge": 8.313559403489832e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 44,
+    "name": "fine16",
+    "score": 0.08569232957340993,
+    "per": [
+      0.056113912138462375,
+      0.09848917964141955,
+      0.10247389694034784
+    ],
+    "config": {
+      "layers": [
+        150,
+        150,
+        68
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04,
+        0.14,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 45,
+    "name": "fine26",
+    "score": 0.08273942684036273,
+    "per": [
+      0.05654453773994625,
+      0.09377521247542116,
+      0.09789853030572078
+    ],
+    "config": {
+      "layers": [
+        150,
+        68,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04,
+        0.14,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 46,
+    "name": "fine56",
+    "score": 0.08329635652587195,
+    "per": [
+      0.05634261289409041,
+      0.09541349104074896,
+      0.09813296564277646
+    ],
+    "config": {
+      "layers": [
+        178,
+        96,
+        94
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05659654593549199,
+        0.19946069476081169,
+        0.4089649933130636
+      ],
+      "spectral_radius": 0.9108403766299935,
+      "connectivity": 0.05,
+      "input_scale": {
+        "bias": 0.023411829577939105,
+        "stimulus": 4.2704217656984165
+      },
+      "ridge": 1.605415491741169e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 47,
+    "name": "fine54",
+    "score": 0.08355991378389387,
+    "per": [
+      0.05470714709000755,
+      0.0963680084492245,
+      0.09960458581244958
+    ],
+    "config": {
+      "layers": [
+        94,
+        123,
+        151
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.028615672386239594,
+        0.12983650795114282,
+        0.4081177647673504
+      ],
+      "spectral_radius": 0.9499380575079834,
+      "connectivity": 0.2,
+      "input_scale": {
+        "bias": 0.14434798638122387,
+        "stimulus": 9.77998303677264
+      },
+      "ridge": 7.510220568970637e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 48,
+    "name": "fine06",
+    "score": 0.0812940202460828,
+    "per": [
+      0.056611066292308054,
+      0.09150635591095328,
+      0.09576463853498705
+    ],
+    "config": {
+      "layers": [
+        80,
+        180,
+        108
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04,
+        0.14,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 49,
+    "name": "fine44",
+    "score": 0.08614522994582265,
+    "per": [
+      0.06019255555424262,
+      0.09729049014431437,
+      0.10095264413891096
+    ],
+    "config": {
+      "layers": [
+        164,
+        135,
+        69
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03500670579361219,
+        0.1711867587854196,
+        0.4075433322643306
+      ],
+      "spectral_radius": 0.8664518743947307,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.13256799139000552,
+        "stimulus": 4.0134762286539996
+      },
+      "ridge": 1.2390262174046229e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 50,
+    "name": "fine18",
+    "score": 0.08210269962997936,
+    "per": [
+      0.05652759692420636,
+      0.09295022255919959,
+      0.09683027940653216
+    ],
+    "config": {
+      "layers": [
+        150,
+        150,
+        68
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06,
+        0.16,
+        0.45
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 51,
+    "name": "fine59",
+    "score": 0.08518100076504405,
+    "per": [
+      0.056855901051436834,
+      0.09966474404805273,
+      0.0990223571956426
+    ],
+    "config": {
+      "layers": [
+        153,
+        122,
+        93
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05075188477076047,
+        0.16012790807641267,
+        0.311038020862852
+      ],
+      "spectral_radius": 0.9436778468806268,
+      "connectivity": 0.05,
+      "input_scale": {
+        "bias": 0.04264570637721895,
+        "stimulus": 9.746116345970867
+      },
+      "ridge": 7.1185049284465536e-09,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 52,
+    "name": "fine15",
+    "score": 0.0884699034383733,
+    "per": [
+      0.05511814746292288,
+      0.1035618932596799,
+      0.10672966959251713
+    ],
+    "config": {
+      "layers": [
+        150,
+        150,
+        68
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03,
+        0.12,
+        0.35
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 53,
+    "name": "fine20",
+    "score": 0.07958831450851857,
+    "per": [
+      0.054867308253676236,
+      0.0896855892211445,
+      0.09421204605073497
+    ],
+    "config": {
+      "layers": [
+        68,
+        150,
+        150
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03,
+        0.12,
+        0.35
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 54,
+    "name": "fine08",
+    "score": 0.08224074098375475,
+    "per": [
+      0.05797448218674695,
+      0.09262370123606432,
+      0.09612403952845297
+    ],
+    "config": {
+      "layers": [
+        80,
+        180,
+        108
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06,
+        0.16,
+        0.45
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 55,
+    "name": "fine32",
+    "score": 0.08580305303643797,
+    "per": [
+      0.06033888996559228,
+      0.09668145066017532,
+      0.10038881848354632
+    ],
+    "config": {
+      "layers": [
+        80,
+        128,
+        160
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05,
+        0.15,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 56,
+    "name": "fine01",
+    "score": 0.08061804262740209,
+    "per": [
+      0.056943623346418754,
+      0.09021256130613625,
+      0.09469794322965128
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.04,
+        0.14,
+        0.4
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 57,
+    "name": "fine35",
+    "score": 0.08321759982596293,
+    "per": [
+      0.05692287181458415,
+      0.09565834941024211,
+      0.09707157825306253
+    ],
+    "config": {
+      "layers": [
+        160,
+        128,
+        80
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.03,
+        0.12,
+        0.35
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "stimulus": 5.0
+      },
+      "ridge": 1e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 58,
+    "name": "fine55",
+    "score": 0.08107717764866391,
+    "per": [
+      0.05484555551753739,
+      0.09248178789868765,
+      0.09590418952976669
+    ],
+    "config": {
+      "layers": [
+        130,
+        119,
+        119
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.05508168970074026,
+        0.1443575708499378,
+        0.38039620627507786
+      ],
+      "spectral_radius": 0.8986449296068936,
+      "connectivity": 0.05,
+      "input_scale": {
+        "bias": 0.03382853055884722,
+        "stimulus": 9.329246654363189
+      },
+      "ridge": 1.0525411373227226e-08,
+      "washout": 1000
+    }
+  },
+  {
+    "i": 59,
+    "name": "fine45",
+    "score": 0.09320073107966516,
+    "per": [
+      0.05737288328091107,
+      0.11187818060758487,
+      0.11035112935049958
+    ],
+    "config": {
+      "layers": [
+        126,
+        138,
+        104
+      ],
+      "voltage_feedback": false,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0,
+      "leak": [
+        0.06322470980482625,
+        0.10010262719307418,
+        0.4490815484917258
+      ],
+      "spectral_radius": 0.9459132469728981,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.12067317966818034,
+        "stimulus": 4.676634231395293
+      },
+      "ridge": 6.57951121923856e-10,
+      "washout": 1000
+    }
+  }
+]

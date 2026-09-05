@@ -1,0 +1,2412 @@
+[
+  {
+    "i": 0,
+    "name": "deep00",
+    "score": 0.09671721386333343,
+    "per": [
+      0.06373545165046779,
+      0.11369938151889053,
+      0.11271680842064194
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.1,
+      "leak": [
+        0.15,
+        0.15
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 1,
+    "name": "deep01",
+    "score": 0.1955166125007767,
+    "per": [
+      0.13974632461720737,
+      0.2444970807973806,
+      0.20230643208774216
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.1,
+      "leak": [
+        0.05,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 2,
+    "name": "deep02",
+    "score": 0.09962945322652055,
+    "per": [
+      0.07090506939439395,
+      0.11111120608920412,
+      0.1168720841959636
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.1,
+      "leak": [
+        0.15,
+        0.15,
+        0.15
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 3,
+    "name": "deep03",
+    "score": 0.1364132184824626,
+    "per": [
+      0.12305005896922568,
+      0.1575386648976864,
+      0.12865093158047572
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.1,
+      "leak": [
+        0.05,
+        0.15811388300841894,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 4,
+    "name": "deep04",
+    "score": 0.09791514054946465,
+    "per": [
+      0.08636353105957442,
+      0.10270857658895936,
+      0.10467331399986018
+    ],
+    "config": {
+      "layers": [
+        92,
+        92,
+        92,
+        92
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.1,
+      "leak": [
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 5,
+    "name": "deep05",
+    "score": 0.21850499494452905,
+    "per": [
+      0.10934560486188265,
+      0.27057332329423095,
+      0.27559605667747356
+    ],
+    "config": {
+      "layers": [
+        92,
+        92,
+        92,
+        92
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.1,
+      "leak": [
+        0.05,
+        0.10772173450159415,
+        0.2320794416806389,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 6,
+    "name": "deep06",
+    "score": 0.13122534109725006,
+    "per": [
+      0.12050096212516614,
+      0.1394492605953054,
+      0.13372580057127872
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.1,
+      "leak": [
+        0.15,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 7,
+    "name": "deep07",
+    "score": 0.1409511269024864,
+    "per": [
+      0.08856528611380081,
+      0.16989945857101624,
+      0.16438863602264214
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.1,
+      "leak": [
+        0.05,
+        0.08891397050194613,
+        0.15811388300841894,
+        0.2811706625951745,
+        0.5
+      ],
+      "spectral_radius": 0.9,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 8,
+    "name": "deep08",
+    "score": 0.09551353019990212,
+    "per": [
+      0.08356555925312042,
+      0.10027519967046812,
+      0.10269983167611788
+    ],
+    "config": {
+      "layers": [
+        92,
+        92,
+        92,
+        92
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.011140106561091392,
+      "leak": [
+        0.22615887261464693,
+        0.22615887261464693,
+        0.22615887261464693,
+        0.22615887261464693
+      ],
+      "spectral_radius": 1.067356517099487,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.004684932279929476,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00014990235454647393,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 9,
+    "name": "deep09",
+    "score": 0.09704226156848102,
+    "per": [
+      0.08032932911292308,
+      0.10213801497727566,
+      0.10865944061524432
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.022311260156383992,
+      "leak": [
+        0.07316338047178143,
+        0.07316338047178143,
+        0.07316338047178143,
+        0.07316338047178143,
+        0.07316338047178143
+      ],
+      "spectral_radius": 1.0860510088132842,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.17000092571559913,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001522941111381429,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 10,
+    "name": "deep10",
+    "score": 0.11492786035190627,
+    "per": [
+      0.08850675707190832,
+      0.12016793315468384,
+      0.1361088908291267
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.10278337285438297,
+      "leak": [
+        0.06552748390534259,
+        0.21743851005669773,
+        0.7215217621353204
+      ],
+      "spectral_radius": 0.8581616555117603,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.028147801466190257,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0063173143812974755,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 11,
+    "name": "deep11",
+    "score": 1.338001751814229,
+    "per": [
+      1.2307339340290295,
+      1.4098822918371592,
+      1.3733890295764992
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.9278537200840669,
+      "leak": [
+        0.09872748983027019,
+        0.16613204304346588,
+        0.2795559349604145,
+        0.470418104417968,
+        0.7915882486827893
+      ],
+      "spectral_radius": 1.0113851817104296,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.19109044732911815,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0005959585810296593,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 12,
+    "name": "deep12",
+    "score": 0.41988365420238516,
+    "per": [
+      0.4629845139275097,
+      0.3913619612777696,
+      0.4053044874018761
+    ],
+    "config": {
+      "layers": [
+        92,
+        92,
+        92,
+        92
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.045961176318975124,
+      "leak": [
+        0.13432339880290042,
+        0.13432339880290042,
+        0.13432339880290042,
+        0.13432339880290042
+      ],
+      "spectral_radius": 0.9744868362249481,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.11940794081795708,
+        "stimulus": 5.0
+      },
+      "ridge": 0.004951055082211763,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 13,
+    "name": "deep13",
+    "score": 0.09602292841433378,
+    "per": [
+      0.05944340491296071,
+      0.11494892354136589,
+      0.1136764567886747
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.6116711387011078,
+      "leak": [
+        0.08002015406035573,
+        0.50490694648369
+      ],
+      "spectral_radius": 0.9268943603949775,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.002238173677940918,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0017558158031215911,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 14,
+    "name": "deep14",
+    "score": 0.29489538013692107,
+    "per": [
+      0.268854747972481,
+      0.30047360534531087,
+      0.31535778709297135
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.668837181115246,
+      "leak": [
+        0.07811609769799827,
+        0.15667719772024977,
+        0.3142469351243498
+      ],
+      "spectral_radius": 0.9893584455811097,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.28223782260484337,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0182822811721447,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 15,
+    "name": "deep15",
+    "score": 0.09230926832220943,
+    "per": [
+      0.0720534854196726,
+      0.09923744139938731,
+      0.10563687814756838
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.15462611904349224,
+      "leak": [
+        0.2936028572545665,
+        0.2936028572545665,
+        0.2936028572545665
+      ],
+      "spectral_radius": 0.78604308538251,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.1248027419936391,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00038549196893937975,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 16,
+    "name": "deep16",
+    "score": 0.1200764653234979,
+    "per": [
+      0.09751447894253724,
+      0.1363719569794253,
+      0.12634296004853113
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.12145871364625341,
+      "leak": [
+        0.11845376272400375,
+        0.26740210285488697
+      ],
+      "spectral_radius": 1.013135622763458,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.002314066522428935,
+        "stimulus": 5.0
+      },
+      "ridge": 9.672950836681551e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 17,
+    "name": "deep17",
+    "score": 0.12057462224045983,
+    "per": [
+      0.1163085225711838,
+      0.11916849419980431,
+      0.12624684995039132
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.3855804713443711,
+      "leak": [
+        0.3981457817080765,
+        0.3981457817080765
+      ],
+      "spectral_radius": 0.8466128453966267,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.006839906732494912,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00011136057113459787,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 18,
+    "name": "deep18",
+    "score": 0.23457161782821404,
+    "per": [
+      0.21827764487860585,
+      0.279906635572156,
+      0.2055305730338803
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.14177910617610118,
+      "leak": [
+        0.0791050060418005,
+        0.23910560250178103,
+        0.7227290914753144
+      ],
+      "spectral_radius": 0.8555783636662169,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.2929701006152106,
+        "stimulus": 5.0
+      },
+      "ridge": 0.002138512174862096,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 19,
+    "name": "deep19",
+    "score": 0.10546937431551785,
+    "per": [
+      0.10348343868483831,
+      0.10554482024007328,
+      0.107379864021642
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.018162796830864573,
+      "leak": [
+        0.038887736228610977,
+        0.4250312288588992
+      ],
+      "spectral_radius": 0.8767207211491342,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.009011082577287095,
+        "stimulus": 5.0
+      },
+      "ridge": 0.02079611407974502,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 20,
+    "name": "deep20",
+    "score": 0.10152719190947802,
+    "per": [
+      0.09047573950386356,
+      0.10445885695103019,
+      0.10964697927354032
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.005139363567803121,
+      "leak": [
+        0.12709115062096643,
+        0.12709115062096643,
+        0.12709115062096643,
+        0.12709115062096643,
+        0.12709115062096643
+      ],
+      "spectral_radius": 1.014861245168834,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.007875696290766164,
+        "stimulus": 5.0
+      },
+      "ridge": 0.009276575463447964,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 21,
+    "name": "deep21",
+    "score": 0.1434949628251665,
+    "per": [
+      0.08389049034509277,
+      0.18507168342656288,
+      0.1615227147038438
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.11552202182461402,
+      "leak": [
+        0.061347487664087465,
+        0.13854200882020445,
+        0.3128716258607867
+      ],
+      "spectral_radius": 0.9499276894823286,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.003443611661841025,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00024643586901746886,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 22,
+    "name": "deep22",
+    "score": 0.11428560473378484,
+    "per": [
+      0.10749453833304495,
+      0.11378374958408118,
+      0.12157852628422836
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.005694829207615009,
+      "leak": [
+        0.14896246378485142,
+        0.14896246378485142
+      ],
+      "spectral_radius": 0.7737509846611227,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0020776687044344777,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0018762083600043918,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 23,
+    "name": "deep23",
+    "score": 0.09105479545362478,
+    "per": [
+      0.07287857639688554,
+      0.0991562383098623,
+      0.10112957165412655
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.047288944438510706,
+      "leak": [
+        0.10216522624329413,
+        0.1411014313270481,
+        0.1948766195175777,
+        0.2691460779485293,
+        0.37172038110267935
+      ],
+      "spectral_radius": 1.0193912075978202,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0002583345037987387,
+        "stimulus": 5.0
+      },
+      "ridge": 2.772685644888668e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 24,
+    "name": "deep24",
+    "score": 0.11116971747515737,
+    "per": [
+      0.07268205201442667,
+      0.13752331176156568,
+      0.12330378864947979
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.07475781345149823,
+      "leak": [
+        0.10815632277420596,
+        0.10815632277420596
+      ],
+      "spectral_radius": 0.8135491271423438,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.008719706282096423,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0001879502590364873,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 25,
+    "name": "deep25",
+    "score": 0.11185855080704978,
+    "per": [
+      0.10262549493331856,
+      0.112569200620392,
+      0.12038095686743877
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.08991342177606962,
+      "leak": [
+        0.39903942097137696,
+        0.39903942097137696
+      ],
+      "spectral_radius": 0.8551647445902965,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.03322399906103299,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00012090464835038084,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 26,
+    "name": "deep26",
+    "score": 0.09935248199642967,
+    "per": [
+      0.0851820673557564,
+      0.1044586730827621,
+      0.1084167055507705
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.02765880401367571,
+      "leak": [
+        0.09040346515987101,
+        0.7525256526775704
+      ],
+      "spectral_radius": 0.9208925170928193,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0007234150542905739,
+        "stimulus": 5.0
+      },
+      "ridge": 0.004548025260069184,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 27,
+    "name": "deep27",
+    "score": 0.44445063634619775,
+    "per": [
+      0.2817129314013856,
+      0.5787118995251268,
+      0.47292707811208096
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.8172925290215215,
+      "leak": [
+        0.06187869162222346,
+        0.4945150386544791
+      ],
+      "spectral_radius": 0.9804197695333955,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.16751340859811517,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0013565140849312218,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 28,
+    "name": "deep28",
+    "score": 0.10546209848358512,
+    "per": [
+      0.09033525398529048,
+      0.11106434414219414,
+      0.11498669732327077
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.04068688020072673,
+      "leak": [
+        0.06186382298390687,
+        0.06186382298390687
+      ],
+      "spectral_radius": 0.7777002513882024,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.00010726351129931462,
+        "stimulus": 5.0
+      },
+      "ridge": 0.011084380462514903,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 29,
+    "name": "deep29",
+    "score": 0.09357407374695104,
+    "per": [
+      0.07681430912004501,
+      0.09958248288755883,
+      0.10432542923324929
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.006462110018393716,
+      "leak": [
+        0.1744871645855851,
+        0.1744871645855851
+      ],
+      "spectral_radius": 0.7743831816353388,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.015041728147234302,
+        "stimulus": 5.0
+      },
+      "ridge": 4.622131115565799e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 30,
+    "name": "deep30",
+    "score": 0.14879643334950673,
+    "per": [
+      0.1304036580564559,
+      0.1577989376309315,
+      0.1581867043611328
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.41642200918208977,
+      "leak": [
+        0.05517308986828887,
+        0.1813930129580328,
+        0.5963672730409204
+      ],
+      "spectral_radius": 0.8334511840663682,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.005698067851731696,
+        "stimulus": 5.0
+      },
+      "ridge": 1.1321230044887449e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 31,
+    "name": "deep31",
+    "score": 0.09016372625574715,
+    "per": [
+      0.06757799552121817,
+      0.09944830350917387,
+      0.10346487973684941
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.15185046516928188,
+      "leak": [
+        0.08869634307430244,
+        0.08869634307430244
+      ],
+      "spectral_radius": 0.8099403935723626,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0009158767718255182,
+        "stimulus": 5.0
+      },
+      "ridge": 9.298955444547113e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 32,
+    "name": "deep32",
+    "score": 0.470526222298814,
+    "per": [
+      0.444938708990043,
+      0.5518431196873738,
+      0.41479683821902513
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.2646228126349219,
+      "leak": [
+        0.09407929915495117,
+        0.27022542209141964,
+        0.7761726479723988
+      ],
+      "spectral_radius": 1.0103656529742655,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.18415779308136296,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0017440265686333419,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 33,
+    "name": "deep33",
+    "score": 0.18857999686314017,
+    "per": [
+      0.16658162231062754,
+      0.20926258732267924,
+      0.18989578095611367
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.3685125698068459,
+      "leak": [
+        0.08488055248629521,
+        0.2958407467027009
+      ],
+      "spectral_radius": 0.9345179466331379,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.008705968275009768,
+        "stimulus": 5.0
+      },
+      "ridge": 1.487003080189073e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 34,
+    "name": "deep34",
+    "score": 0.08428556634952435,
+    "per": [
+      0.06545053809928503,
+      0.0921438191665209,
+      0.09526234178276713
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.6938501131391943,
+      "leak": [
+        0.08916282953185507,
+        0.20251220302066303,
+        0.4599583995663826
+      ],
+      "spectral_radius": 0.9271731966059165,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0011946906894733115,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0012310451817059,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 35,
+    "name": "deep35",
+    "score": 0.13460099151354596,
+    "per": [
+      0.13224895565870282,
+      0.12932273597673757,
+      0.14223128290519754
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.36918358518263417,
+      "leak": [
+        0.40480268269034964,
+        0.40480268269034964,
+        0.40480268269034964,
+        0.40480268269034964,
+        0.40480268269034964
+      ],
+      "spectral_radius": 1.048895523416788,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0030044640938537747,
+        "stimulus": 5.0
+      },
+      "ridge": 0.02440045328525585,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 36,
+    "name": "deep36",
+    "score": 0.15553278914070037,
+    "per": [
+      0.20124616790045413,
+      0.12574782134976553,
+      0.13960437817188148
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.016548190945548047,
+      "leak": [
+        0.10017117759963479,
+        0.19184152343386676,
+        0.367402789857599
+      ],
+      "spectral_radius": 0.9544034889993911,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.007891703644683395,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00015772843102594857,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 37,
+    "name": "deep37",
+    "score": 0.46727022073049423,
+    "per": [
+      0.48341729120650456,
+      0.5467411447745535,
+      0.37165222621042476
+    ],
+    "config": {
+      "layers": [
+        92,
+        92,
+        92,
+        92
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.41010330964004577,
+      "leak": [
+        0.03212463783698508,
+        0.08305836607797971,
+        0.21474770269942883,
+        0.5552309537534788
+      ],
+      "spectral_radius": 0.758313839625824,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.03222335136365984,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00020913525253864415,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 38,
+    "name": "deep38",
+    "score": 0.13054740501085754,
+    "per": [
+      0.12898890530646268,
+      0.12624433882841885,
+      0.1364089708976911
+    ],
+    "config": {
+      "layers": [
+        92,
+        92,
+        92,
+        92
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.03637358023212175,
+      "leak": [
+        0.24643831869128785,
+        0.24643831869128785,
+        0.24643831869128785,
+        0.24643831869128785
+      ],
+      "spectral_radius": 0.7635807733715427,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.007448387798834608,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0010027329669722053,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 39,
+    "name": "deep39",
+    "score": 0.09156401446636729,
+    "per": [
+      0.06859175117075086,
+      0.10204504580156025,
+      0.10405524642679075
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.005079367106153214,
+      "leak": [
+        0.06995161046287394,
+        0.5331527053358159
+      ],
+      "spectral_radius": 0.9096632730765977,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.00016275211652121212,
+        "stimulus": 5.0
+      },
+      "ridge": 9.756216206907328e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 40,
+    "name": "deep40",
+    "score": 0.09480768924120242,
+    "per": [
+      0.08296145507459728,
+      0.09979446802219348,
+      0.10166714462681649
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.06618544912789417,
+      "leak": [
+        0.18867280808357234,
+        0.18867280808357234
+      ],
+      "spectral_radius": 0.8539590891454956,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.06810389769522651,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0008246611671760886,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 41,
+    "name": "deep41",
+    "score": 0.1596736017080347,
+    "per": [
+      0.12703153153690028,
+      0.17521021251087876,
+      0.17677906107632507
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.05301629458547054,
+      "leak": [
+        0.034096300710176386,
+        0.12802621115654278,
+        0.48071815421922603
+      ],
+      "spectral_radius": 0.8389248741989376,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.15318764740959734,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0007574972950940969,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 42,
+    "name": "deep42",
+    "score": 0.5063586679570428,
+    "per": [
+      0.5082399042508744,
+      0.5152545788101074,
+      0.4955815208101467
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.045271567774104175,
+      "leak": [
+        0.22790931272584058,
+        0.22790931272584058
+      ],
+      "spectral_radius": 1.032543755113161,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.18921579560992965,
+        "stimulus": 5.0
+      },
+      "ridge": 2.1802515599305966e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 43,
+    "name": "deep43",
+    "score": 0.22869193686591613,
+    "per": [
+      0.22128161100243543,
+      0.2721134278418566,
+      0.19268077175345633
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.03989171479285953,
+      "leak": [
+        0.15242690550567625,
+        0.15242690550567625
+      ],
+      "spectral_radius": 0.970493781520603,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.01953559773084547,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00024288421372875235,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 44,
+    "name": "deep44",
+    "score": 0.12003722517225278,
+    "per": [
+      0.12161556299832922,
+      0.1175842267122736,
+      0.12091188580615551
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.08948386004994752,
+      "leak": [
+        0.3226034614428499,
+        0.3226034614428499,
+        0.3226034614428499,
+        0.3226034614428499,
+        0.3226034614428499
+      ],
+      "spectral_radius": 0.9301278792539327,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.04330269313170864,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0005320490344391712,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 45,
+    "name": "deep45",
+    "score": 0.18695734279639029,
+    "per": [
+      0.1436136534971997,
+      0.23540755168685532,
+      0.18185082320511575
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.27106425681317814,
+      "leak": [
+        0.07905662051803258,
+        0.30010582875947583
+      ],
+      "spectral_radius": 0.831827769918228,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.015512059372673125,
+        "stimulus": 5.0
+      },
+      "ridge": 7.412181587566971e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 46,
+    "name": "deep46",
+    "score": 0.08926205088802659,
+    "per": [
+      0.06341203846697002,
+      0.09921036477766144,
+      0.10516374941944837
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.39658121308978883,
+      "leak": [
+        0.11330775684304115,
+        0.11330775684304115,
+        0.11330775684304115,
+        0.11330775684304115,
+        0.11330775684304115
+      ],
+      "spectral_radius": 1.0895135525529924,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.03110797064492669,
+        "stimulus": 5.0
+      },
+      "ridge": 0.012972311325565606,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 47,
+    "name": "deep47",
+    "score": 0.09353779040324917,
+    "per": [
+      0.06692054698693041,
+      0.10082652036320351,
+      0.11286630385961358
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.062372763346525216,
+      "leak": [
+        0.1279804824990012,
+        0.23313368206292587,
+        0.4246843944555499
+      ],
+      "spectral_radius": 1.0869868979384085,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.1728389439519615,
+        "stimulus": 5.0
+      },
+      "ridge": 0.001017705425278343,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 48,
+    "name": "deep48",
+    "score": 0.11399356540959073,
+    "per": [
+      0.10618975481242966,
+      0.11416501141861733,
+      0.1216259299977252
+    ],
+    "config": {
+      "layers": [
+        92,
+        92,
+        92,
+        92
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.013640293318158633,
+      "leak": [
+        0.21535874341956518,
+        0.21535874341956518,
+        0.21535874341956518,
+        0.21535874341956518
+      ],
+      "spectral_radius": 0.7561751558463428,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0004890881758007515,
+        "stimulus": 5.0
+      },
+      "ridge": 0.003992533170295787,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 49,
+    "name": "deep49",
+    "score": 0.11641491004164066,
+    "per": [
+      0.11569990072951132,
+      0.11669417757096563,
+      0.11685065182444501
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": true,
+      "inter_scale": 0.006123541716700839,
+      "leak": [
+        0.13101388209360373,
+        0.13101388209360373
+      ],
+      "spectral_radius": 0.9377520796659384,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.2350127683479701,
+        "stimulus": 5.0
+      },
+      "ridge": 0.02410657464459483,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 50,
+    "name": "deep50",
+    "score": 0.18257596674119647,
+    "per": [
+      0.18263523337889656,
+      0.23555300957709913,
+      0.12953965726759378
+    ],
+    "config": {
+      "layers": [
+        92,
+        92,
+        92,
+        92
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.29128121834179854,
+      "leak": [
+        0.03627050248508751,
+        0.08637076399094416,
+        0.20567426314114318,
+        0.4897710818337498
+      ],
+      "spectral_radius": 1.0960505647428727,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0052002090056490384,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0002441942247199901,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 51,
+    "name": "deep51",
+    "score": 0.0948965159439334,
+    "per": [
+      0.06302829706904346,
+      0.11134667339471058,
+      0.11031457736804617
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.008865325622277266,
+      "leak": [
+        0.19526113339421652,
+        0.19526113339421652,
+        0.19526113339421652
+      ],
+      "spectral_radius": 0.9634280298197138,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.011734316360654896,
+        "stimulus": 5.0
+      },
+      "ridge": 3.280449852647759e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 52,
+    "name": "deep52",
+    "score": 0.16904939612342104,
+    "per": [
+      0.11745608382886347,
+      0.20610473312457825,
+      0.1835873714168213
+    ],
+    "config": {
+      "layers": [
+        74,
+        74,
+        74,
+        73,
+        73
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.2064554445185014,
+      "leak": [
+        0.06643086839961297,
+        0.06643086839961297,
+        0.06643086839961297,
+        0.06643086839961297,
+        0.06643086839961297
+      ],
+      "spectral_radius": 0.9629857646658757,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.1267952658121906,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0017999854051495945,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 53,
+    "name": "deep53",
+    "score": 0.7042361548707022,
+    "per": [
+      0.7616843562524339,
+      0.683870590502767,
+      0.6671535178569059
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.020927135268370537,
+      "leak": [
+        0.06372162634018341,
+        0.06372162634018341,
+        0.06372162634018341
+      ],
+      "spectral_radius": 0.9045038890378811,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.2962717139431657,
+        "stimulus": 5.0
+      },
+      "ridge": 1.864143782877865e-05,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 54,
+    "name": "deep54",
+    "score": 0.645581445698785,
+    "per": [
+      0.7448311722067205,
+      0.5919942529000782,
+      0.5999189119895562
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.5480214863943348,
+      "leak": [
+        0.10767250262686728,
+        0.6352912091210737
+      ],
+      "spectral_radius": 1.0811064861304798,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.22185449696170037,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0001755887374859111,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 55,
+    "name": "deep55",
+    "score": 0.08553367432729085,
+    "per": [
+      0.06403469721677633,
+      0.0939365651710228,
+      0.09862976059407341
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.20717643693583096,
+      "leak": [
+        0.1328067237465605,
+        0.20125973636945152,
+        0.3049957136266616
+      ],
+      "spectral_radius": 0.9512815720157557,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0018271897754258437,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0023866912860786224,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 56,
+    "name": "deep56",
+    "score": 0.09613689975648758,
+    "per": [
+      0.05840862452251688,
+      0.1145542066646864,
+      0.11544786808225944
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": false,
+      "inter_scale": 0.16056773304179636,
+      "leak": [
+        0.16459947987959014,
+        0.16459947987959014,
+        0.16459947987959014
+      ],
+      "spectral_radius": 0.9584996995880524,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0035737810709057355,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0004017839058053478,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 57,
+    "name": "deep57",
+    "score": 0.09759035990517921,
+    "per": [
+      0.07511592167769804,
+      0.1079377272025781,
+      0.10971743083526146
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.01024680747798469,
+      "leak": [
+        0.10669883493857589,
+        0.10669883493857589,
+        0.10669883493857589
+      ],
+      "spectral_radius": 0.9474122576020225,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.0003919127987311325,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0007860056647174751,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 58,
+    "name": "deep58",
+    "score": 0.15509362512269906,
+    "per": [
+      0.1640935166733924,
+      0.11974710225986467,
+      0.1814402564348401
+    ],
+    "config": {
+      "layers": [
+        123,
+        123,
+        122
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": true,
+      "all_layers_to_output": false,
+      "input_to_output": false,
+      "inter_scale": 0.04317383287387766,
+      "leak": [
+        0.27091762114332535,
+        0.27091762114332535,
+        0.27091762114332535
+      ],
+      "spectral_radius": 1.0236966011423854,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.24504902183877325,
+        "stimulus": 5.0
+      },
+      "ridge": 0.00021736739955070727,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "i": 59,
+    "name": "deep59",
+    "score": 0.0991102353268678,
+    "per": [
+      0.08560192111481764,
+      0.10428117404926744,
+      0.10744761081651834
+    ],
+    "config": {
+      "layers": [
+        184,
+        184
+      ],
+      "voltage_feedback": true,
+      "input_to_all_layers": false,
+      "all_layers_to_output": true,
+      "input_to_output": true,
+      "inter_scale": 0.0072871793674607775,
+      "leak": [
+        0.1774789064313516,
+        0.1774789064313516
+      ],
+      "spectral_radius": 0.8368684441277701,
+      "connectivity": 0.1,
+      "input_scale": {
+        "bias": 0.03,
+        "voltage": 0.00010863718460309703,
+        "stimulus": 5.0
+      },
+      "ridge": 0.0001470766238624169,
+      "washout": 1000,
+      "feedback_clip": [
+        0.0,
+        1.0
+      ]
+    }
+  }
+]

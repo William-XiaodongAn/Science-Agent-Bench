@@ -1,0 +1,18 @@
+/workspace/work/sim.py:23: RuntimeWarning: overflow encountered in multiply
+  r[:,t+1]=(1-a)*r[:,t]+a*k*up*up
+/workspace/work/sim.py:21: RuntimeWarning: invalid value encountered in matmul
+  u=W@r[:,t]+I[:,t]; U[:,t]=u
+/workspace/work/fit_v2.py:15: RuntimeWarning: overflow encountered in multiply
+  u=W@r[:,t]+Ie[:,t]; U[:,t]=u; up=np.maximum(u,0); r[:,t+1]=(1-a)*r[:,t]+a*k*up*up
+/workspace/work/fit_v2.py:15: RuntimeWarning: invalid value encountered in matmul
+  u=W@r[:,t]+Ie[:,t]; U[:,t]=u; up=np.maximum(u,0); r[:,t+1]=(1-a)*r[:,t]+a*k*up*up
+add lam 0.005 p4 {'nit': 18.0, 'train': 0.01691, 'eval_max': 0.86617, 'finite': True, 'test': 0.01704}
+/workspace/work/fit_kernel.py:28: RuntimeWarning: overflow encountered in square
+  u=W@r+Ib; r=(1-a)*r+a*k*np.maximum(u,0)**2
+/workspace/work/fit_kernel.py:28: RuntimeWarning: invalid value encountered in matmul
+  u=W@r+Ib; r=(1-a)*r+a*k*np.maximum(u,0)**2
+add lam 0.005 p2 {'nit': 131.0, 'train': 0.01671, 'eval_max': 0.71689, 'finite': True, 'test': 0.01723}
+add lam 0.005 MEAN test 0.01713 time 121
+add lam 0.1 p4 {'nit': 232.0, 'train': 0.01731, 'eval_max': 0.59974, 'finite': True, 'test': 0.01712}
+add lam 0.1 p2 {'nit': 129.0, 'train': 0.01715, 'eval_max': 0.61399, 'finite': True, 'test': 0.01728}
+add lam 0.1 MEAN test 0.01720 time 198

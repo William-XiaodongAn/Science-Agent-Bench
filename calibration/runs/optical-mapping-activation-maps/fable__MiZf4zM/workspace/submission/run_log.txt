@@ -1,0 +1,69 @@
+loaded (7619, 128, 128) in 0.2s
+onsets 18 [223, 634, 1044, 1454, 1862, 2273, 2683, 3092, 3504, 3913, 4322, 4734, 5143, 5553, 5963, 6372, 6783, 7193]
+mask: background amplitude 11.9, threshold 29.7, fraction 0.606 (9926 px)
+onsets changed with final mask; recomputing [224, 634, 1044, 1454, 1862, 2274, 2683, 3092, 3504, 3914, 4322, 4734, 5144, 5554, 5964, 6372, 6784, 7193]
+level sigma_s=1.0: done at 27.8s
+level sigma_s=2.0: done at 43.0s
+level sigma_s=4.0: done at 58.7s
+{
+ "sigma_t": 3.0,
+ "sigma_s": [
+  1.0,
+  2.0,
+  4.0
+ ],
+ "sd_act_thr": 2.2,
+ "sd_apd_thr": 8.0,
+ "n_beats": 18,
+ "onsets": [
+  224,
+  634,
+  1044,
+  1454,
+  1862,
+  2274,
+  2683,
+  3092,
+  3504,
+  3914,
+  4322,
+  4734,
+  5144,
+  5554,
+  5964,
+  6372,
+  6784,
+  7193
+ ],
+ "mask_fraction": 0.6058349609375,
+ "mask_pixels": 9926,
+ "amp_threshold": 29.73236083984375,
+ "level_fraction_in_mask": [
+  0.577574047954866,
+  0.0685069514406609,
+  0.3539190006044731
+ ],
+ "act_finite_frac": 1.0,
+ "apd_finite_frac": 1.0,
+ "apd_beats_per_pixel_median": 18.0,
+ "apd_beats_min": 13,
+ "frac_pixels_all18_apd": 0.850090670965142,
+ "act_range_ms_1_99": [
+  -24.4016056060791,
+  92.31658935546875
+ ],
+ "apd_median_ms": 505.9000549316406,
+ "apd_range_ms_1_99": [
+  455.3536682128906,
+  528.5542602539062
+ ],
+ "split_half_act_noise_ms_mask": 2.9474806785583496,
+ "split_half_apd_noise_ms_mask": 4.721867084503174,
+ "split_half_act_noise_ms_core": 0.1813027560710907,
+ "split_half_apd_noise_ms_core": 1.5423171520233154,
+ "split_half_act_noise_ms_finest_level_mask": 2.9053610434177277,
+ "split_half_apd_noise_ms_finest_level_mask": 5.1710143850068215,
+ "beat_sd_act_median_ms": 1.598346471786499,
+ "beat_sd_apd_median_ms": 5.452032566070557,
+ "elapsed_s": 58.779276847839355
+}

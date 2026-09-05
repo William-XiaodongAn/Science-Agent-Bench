@@ -1,0 +1,9 @@
+add:0.02:tobit           eval max 0.590 mean 0.0441 frac>10%peak 0.185
+add:0.1:tobit            eval max 0.586 mean 0.0437 frac>10%peak 0.183
+mult:0.01:tobit          eval max 0.606 mean 0.0435 frac>10%peak 0.174
+add:0.02:tobit_per       eval max 0.495 mean 0.0432 frac>10%peak 0.232
+add:0.1:tobit_per        eval max 0.474 mean 0.0424 frac>10%peak 0.242
+mult:0.01:tobit_per      eval max 0.476 mean 0.0420 frac>10%peak 0.238
+member spread rms 0.0058 (nRMSE-equiv 0.114)
+ensemble max 0.537 frac>10%peak 0.200 neurons 49
+written (49, 12001)

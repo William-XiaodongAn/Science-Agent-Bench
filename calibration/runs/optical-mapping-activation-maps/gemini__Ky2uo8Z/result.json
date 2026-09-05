@@ -1,0 +1,117 @@
+{
+    "id": "911e91bb-9518-4c1e-b2d3-ad351ed8360a",
+    "task_name": "sciagent-bench/optical-mapping-activation-maps",
+    "trial_name": "optical-mapping-activation-maps__Ky2uo8Z",
+    "trial_uri": "file:///Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t2v02/calib-gemini-cli-gemini-gemini-3.7-flash-optical-mapping-activation-maps-k3-20260904-0309/optical-mapping-activation-maps__Ky2uo8Z",
+    "task_id": {
+        "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.ToV94x/gemini-cli-gemini-gemini-3.7-flash/optical-mapping-activation-maps"
+    },
+    "source": null,
+    "task_checksum": "e267f34b2fe9fe0dff442a5b016320232bf393262e97ee223da3f7254ca1305f",
+    "config": {
+        "task": {
+            "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.ToV94x/gemini-cli-gemini-gemini-3.7-flash/optical-mapping-activation-maps",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "optical-mapping-activation-maps__Ky2uo8Z",
+        "trials_dir": "/Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t2v02/calib-gemini-cli-gemini-gemini-3.7-flash-optical-mapping-activation-maps-k3-20260904-0309",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "gemini-cli",
+            "import_path": null,
+            "model_name": "gemini/gemini-3.7-flash",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "modal",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "a9b06348-eb2f-4699-83ab-7301897dc358",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "gemini-cli",
+        "version": "0.58.0",
+        "model_info": {
+            "name": "gemini-3.7-flash",
+            "provider": "google"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 1606005,
+        "n_cache_tokens": 1423741,
+        "n_output_tokens": 41920,
+        "cost_usd": 0.40067857500000004,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.9447
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-09-04T10:09:28.661820Z",
+    "finished_at": "2026-09-04T10:18:16.138551Z",
+    "environment_setup": {
+        "started_at": "2026-09-04T10:09:28.970162Z",
+        "finished_at": "2026-09-04T10:09:32.209398Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-09-04T10:09:35.422163Z",
+        "finished_at": "2026-09-04T10:09:52.376945Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-09-04T10:09:52.377208Z",
+        "finished_at": "2026-09-04T10:18:07.887655Z"
+    },
+    "verifier": {
+        "started_at": "2026-09-04T10:18:12.916108Z",
+        "finished_at": "2026-09-04T10:18:15.193073Z"
+    },
+    "step_results": null
+}

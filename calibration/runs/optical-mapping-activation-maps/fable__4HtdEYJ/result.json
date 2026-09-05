@@ -1,0 +1,117 @@
+{
+    "id": "76962623-ca10-4be8-b2bb-6475f5c09abe",
+    "task_name": "sciagent-bench/optical-mapping-activation-maps",
+    "trial_name": "optical-mapping-activation-maps__4HtdEYJ",
+    "trial_uri": "file:///Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t2v02/calib-claude-code-anthropic-claude-fable-5-1-optical-mapping-activation-maps-k3-20260904-0309/optical-mapping-activation-maps__4HtdEYJ",
+    "task_id": {
+        "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.kSCxCk/claude-code-anthropic-claude-fable-5-1/optical-mapping-activation-maps"
+    },
+    "source": null,
+    "task_checksum": "0d0c36d9e9acd82c445e3a899245df8914285f1f8a1e6174ab5bdaf0cdf57878",
+    "config": {
+        "task": {
+            "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.kSCxCk/claude-code-anthropic-claude-fable-5-1/optical-mapping-activation-maps",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "optical-mapping-activation-maps__4HtdEYJ",
+        "trials_dir": "/Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t2v02/calib-claude-code-anthropic-claude-fable-5-1-optical-mapping-activation-maps-k3-20260904-0309",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "claude-code",
+            "import_path": null,
+            "model_name": "anthropic/claude-fable-5-1",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "modal",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "0e195459-b3c7-4ae5-b533-93b91c661d1a",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "claude-code",
+        "version": "2.1.259",
+        "model_info": {
+            "name": "claude-fable-5-1",
+            "provider": "anthropic"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 1638478,
+        "n_cache_tokens": 1528496,
+        "n_output_tokens": 57938,
+        "cost_usd": 4.649971500000001,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.9645
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-09-04T10:09:28.660884Z",
+    "finished_at": "2026-09-04T10:30:40.193638Z",
+    "environment_setup": {
+        "started_at": "2026-09-04T10:09:28.969411Z",
+        "finished_at": "2026-09-04T10:09:32.618866Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-09-04T10:09:35.934758Z",
+        "finished_at": "2026-09-04T10:09:37.378018Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-09-04T10:09:37.378279Z",
+        "finished_at": "2026-09-04T10:30:23.714554Z"
+    },
+    "verifier": {
+        "started_at": "2026-09-04T10:30:36.421694Z",
+        "finished_at": "2026-09-04T10:30:39.215387Z"
+    },
+    "step_results": null
+}

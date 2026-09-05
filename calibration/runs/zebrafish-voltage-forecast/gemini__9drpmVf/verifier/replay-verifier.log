@@ -1,0 +1,216 @@
+seed 0: search used 43 evaluations in 534.5 s -> [120, 120, 128] inputs ['voltage', 'stimulus'] fb True (dev best 0.09494)
+seed 0: hidden-window RMSE 0.09748
+seed 1: search used 60 evaluations in 560.0 s -> [120, 120, 128] inputs ['voltage', 'stimulus'] fb True (dev best 0.09229)
+seed 1: hidden-window RMSE 0.09160
+seed 2: search used 54 evaluations in 733.6 s -> [120, 120, 128] inputs ['voltage', 'stimulus'] fb True (dev best 0.09636)
+seed 2: hidden-window RMSE 0.09639
+seed 3: search used 60 evaluations in 404.8 s -> [184, 184] inputs ['voltage', 'stimulus'] fb True (dev best 0.11235)
+seed 3: hidden-window RMSE 0.11196
+seed 4: search used 41 evaluations in 620.9 s -> [368] inputs ['voltage', 'stimulus'] fb True (dev best 0.10433)
+seed 4: hidden-window RMSE 0.10650
+{
+ "score": 0.10079,
+ "metric": "hidden-window RMSE, mean over five independently searched networks (seeds 0-4), causal roll-out",
+ "direction": "lower_better",
+ "normalized": 0.6665,
+ "improvement_over_paper_best": -0.2855,
+ "improvement_over_best_baseline": 0.1622,
+ "passed": false,
+ "ranked": true,
+ "status": "ok",
+ "flags": [],
+ "reward_mode": "normalized",
+ "metrics": {
+  "rmse_mean_over_searches": 0.10079,
+  "rmse_per_search": [
+   0.09748,
+   0.0916,
+   0.09639,
+   0.11196,
+   0.1065
+  ],
+  "rmse_sd_over_searches": 0.00738,
+  "beats_paper_best": false,
+  "meets_5pct_stretch": false,
+  "n_searches": 5,
+  "evaluations_used": [
+   43,
+   60,
+   54,
+   60,
+   41
+  ],
+  "search_wall_sec": [
+   534.5,
+   560.0,
+   733.6,
+   404.8,
+   620.9
+  ],
+  "dev_best_per_search": [
+   0.09494,
+   0.09229,
+   0.09636,
+   0.11235,
+   0.10433
+  ],
+  "configurations": [
+   {
+    "seed": 0,
+    "layers": [
+     120,
+     120,
+     128
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.5,
+    "ridge": 0.005,
+    "spectral_radius": 1.1,
+    "input_scale": 0.1
+   },
+   {
+    "seed": 1,
+    "layers": [
+     120,
+     120,
+     128
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.5,
+    "ridge": 0.00125,
+    "spectral_radius": 1.1500000000000001,
+    "input_scale": 0.1
+   },
+   {
+    "seed": 2,
+    "layers": [
+     120,
+     120,
+     128
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.5,
+    "ridge": 0.001,
+    "spectral_radius": 0.9,
+    "input_scale": {
+     "bias": 0.1,
+     "voltage": 0.1,
+     "stimulus": 0.25
+    }
+   },
+   {
+    "seed": 3,
+    "layers": [
+     184,
+     184
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.4,
+    "ridge": 1e-05,
+    "spectral_radius": 0.5,
+    "input_scale": {
+     "bias": 0.05,
+     "voltage": 0.1,
+     "stimulus": 0.010000000000000002
+    }
+   },
+   {
+    "seed": 4,
+    "layers": [
+     368
+    ],
+    "units": 368,
+    "inputs": [
+     "voltage",
+     "stimulus"
+    ],
+    "voltage_feedback": true,
+    "kb": null,
+    "leak": 0.5,
+    "ridge": 1e-05,
+    "spectral_radius": 0.9,
+    "input_scale": {
+     "bias": 1.0,
+     "voltage": 0.1,
+     "stimulus": 0.1
+    }
+   }
+  ],
+  "profile": {
+   "rmse_first_500ms": 0.088,
+   "rmse_first_1000ms": 0.08881,
+   "rmse_first_2000ms": 0.08148
+  },
+  "rollout": {
+   "user": "nobody",
+   "per_seed": [
+    {
+     "warmup_sec": 1.01,
+     "steps_sec": 0.78,
+     "seed": 0
+    },
+    {
+     "warmup_sec": 0.46,
+     "steps_sec": 0.23,
+     "seed": 1
+    },
+    {
+     "warmup_sec": 0.64,
+     "steps_sec": 0.41,
+     "seed": 2
+    },
+    {
+     "warmup_sec": 1.37,
+     "steps_sec": 0.66,
+     "seed": 3
+    },
+    {
+     "warmup_sec": 0.44,
+     "steps_sec": 0.24,
+     "seed": 4
+    }
+   ]
+  },
+  "size_limits": {
+   "max_units": 368,
+   "max_layers": 5
+  }
+ },
+ "anchors": {
+  "do_nothing_rmse": 0.3022,
+  "paper_best_rmse": 0.0784,
+  "baselines": {
+   "BASELINE_ESN_PLUS_RMSE": 0.1203
+  },
+  "min_improvement": 0.0,
+  "max_configs": 60,
+  "search_timeout_sec": 900.0
+ },
+ "reward": 0.6665
+}
+=== reward.txt ===
+0.6665

@@ -1,0 +1,18 @@
+it 0 loss -4661.24 nll -4661.24 pen 0.00 rmse_fit 0.0229 rmse_holdout nan J [[0.18, 0.331], [0.605, 0.375]] sig [[1.234, 0.951], [0.775, 1.163]] r0 0.0052 noise 0.0200 t 0s
+it 25 loss -5420.75 nll -5482.85 pen 62.10 rmse_fit 0.0174 rmse_holdout nan J [[0.288, 0.561], [0.777, 0.513]] sig [[1.914, 1.227], [0.984, 1.484]] r0 0.0078 noise 0.0199 t 12s
+it 50 loss -5474.34 nll -5514.81 pen 40.47 rmse_fit 0.0171 rmse_holdout nan J [[0.343, 0.613], [0.892, 0.702]] sig [[1.904, 1.32], [1.312, 1.628]] r0 0.0083 noise 0.0197 t 24s
+it 75 loss -5479.56 nll -5515.89 pen 36.33 rmse_fit 0.0171 rmse_holdout nan J [[0.391, 0.647], [0.931, 0.784]] sig [[1.884, 1.373], [1.361, 1.781]] r0 0.0083 noise 0.0199 t 36s
+it 100 loss -5484.43 nll -5519.04 pen 34.61 rmse_fit 0.0171 rmse_holdout nan J [[0.421, 0.658], [0.94, 0.84]] sig [[1.83, 1.401], [1.414, 1.846]] r0 0.0080 noise 0.0200 t 48s
+it 125 loss -5485.57 nll -5519.48 pen 33.91 rmse_fit 0.0170 rmse_holdout nan J [[0.432, 0.659], [0.954, 0.863]] sig [[1.806, 1.393], [1.458, 1.878]] r0 0.0080 noise 0.0200 t 60s
+it 150 loss -5477.28 nll -5511.26 pen 33.98 rmse_fit 0.0171 rmse_holdout nan J [[0.441, 0.664], [0.955, 0.886]] sig [[1.778, 1.393], [1.487, 1.912]] r0 0.0080 noise 0.0200 t 73s
+it 175 loss -5481.36 nll -5515.03 pen 33.66 rmse_fit 0.0171 rmse_holdout nan J [[0.449, 0.67], [0.965, 0.897]] sig [[1.746, 1.396], [1.527, 1.928]] r0 0.0080 noise 0.0200 t 85s
+it 200 loss -5488.57 nll -5522.00 pen 33.44 rmse_fit 0.0170 rmse_holdout nan J [[0.455, 0.679], [0.969, 0.905]] sig [[1.711, 1.404], [1.561, 1.941]] r0 0.0080 noise 0.0200 t 96s
+it 225 loss -5482.32 nll -5515.60 pen 33.28 rmse_fit 0.0171 rmse_holdout nan J [[0.462, 0.684], [0.97, 0.911]] sig [[1.684, 1.405], [1.589, 1.956]] r0 0.0080 noise 0.0200 t 108s
+it 250 loss -5474.19 nll -5507.46 pen 33.26 rmse_fit 0.0172 rmse_holdout nan J [[0.47, 0.686], [0.968, 0.918]] sig [[1.665, 1.4], [1.61, 1.976]] r0 0.0080 noise 0.0200 t 120s
+it 275 loss -5476.13 nll -5509.31 pen 33.18 rmse_fit 0.0172 rmse_holdout nan J [[0.479, 0.686], [0.96, 0.927]] sig [[1.652, 1.39], [1.623, 2.002]] r0 0.0080 noise 0.0200 t 132s
+it 300 loss -5486.70 nll -5519.67 pen 32.97 rmse_fit 0.0171 rmse_holdout nan J [[0.489, 0.684], [0.951, 0.937]] sig [[1.645, 1.377], [1.631, 2.031]] r0 0.0080 noise 0.0200 t 144s
+it 325 loss -5487.36 nll -5520.29 pen 32.93 rmse_fit 0.0170 rmse_holdout nan J [[0.496, 0.684], [0.945, 0.943]] sig [[1.631, 1.368], [1.644, 2.054]] r0 0.0080 noise 0.0200 t 156s
+it 350 loss -5478.30 nll -5511.20 pen 32.91 rmse_fit 0.0171 rmse_holdout nan J [[0.502, 0.687], [0.942, 0.944]] sig [[1.613, 1.364], [1.662, 2.068]] r0 0.0080 noise 0.0200 t 167s
+it 375 loss -5480.35 nll -5513.13 pen 32.79 rmse_fit 0.0171 rmse_holdout nan J [[0.506, 0.691], [0.941, 0.942]] sig [[1.59, 1.363], [1.683, 2.076]] r0 0.0080 noise 0.0200 t 179s
+it 399 loss -5480.75 nll -5513.47 pen 32.71 rmse_fit 0.0171 rmse_holdout nan J [[0.512, 0.693], [0.938, 0.942]] sig [[1.574, 1.358], [1.698, 2.092]] r0 0.0080 noise 0.0200 t 191s
+spectral radius of W 1.7669266215823685

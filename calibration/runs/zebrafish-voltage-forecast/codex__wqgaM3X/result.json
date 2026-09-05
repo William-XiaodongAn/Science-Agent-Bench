@@ -1,0 +1,120 @@
+{
+    "id": "629c594e-cbe6-48d0-9695-55feb6bc9495",
+    "task_name": "sciagent-bench/zebrafish-voltage-forecast",
+    "trial_name": "zebrafish-voltage-forecast__wqgaM3X",
+    "trial_uri": "file:///Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t3v10/calib-codex-gpt-5.6-sol-zebrafish-voltage-forecast-k1-20260905-0946/zebrafish-voltage-forecast__wqgaM3X",
+    "task_id": {
+        "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.HCk2Zs/codex-gpt-5.6-sol/zebrafish-voltage-forecast"
+    },
+    "source": null,
+    "task_checksum": "180bfc37c1f5ff228cf80a403c9a7bca093812afb7182a9297de59ab9435537f",
+    "config": {
+        "task": {
+            "path": "/var/folders/r8/4mm7zt6x0770pz1ybpv564xh0000gn/T/sciagent-calib.HCk2Zs/codex-gpt-5.6-sol/zebrafish-voltage-forecast",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "zebrafish-voltage-forecast__wqgaM3X",
+        "trials_dir": "/Users/guangzeluo/agent_task_generator/ai4science/jobs/calib-t3v10/calib-codex-gpt-5.6-sol-zebrafish-voltage-forecast-k1-20260905-0946",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.6-sol",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {
+                "reasoning_effort": "high",
+                "config": "/Users/guangzeluo/agent_task_generator/ai4science/Science-Agent-Bench/calibration/codex_gateway.toml"
+            },
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "modal",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "4f671c59-0112-45b2-b6b7-ea6cd5347882",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.153.3",
+        "model_info": {
+            "name": "gpt-5.6-sol",
+            "provider": "openai"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 20318567,
+        "n_cache_tokens": 19716140,
+        "n_output_tokens": 51664,
+        "cost_usd": 11.931337,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.77
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-09-05T16:46:54.743385Z",
+    "finished_at": "2026-09-05T17:58:15.110821Z",
+    "environment_setup": {
+        "started_at": "2026-09-05T16:46:54.813361Z",
+        "finished_at": "2026-09-05T16:46:57.520388Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-09-05T16:47:00.772389Z",
+        "finished_at": "2026-09-05T16:47:01.984032Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-09-05T16:47:01.984247Z",
+        "finished_at": "2026-09-05T17:51:42.552297Z"
+    },
+    "verifier": {
+        "started_at": "2026-09-05T17:51:48.261037Z",
+        "finished_at": "2026-09-05T17:58:13.987964Z"
+    },
+    "step_results": null
+}

@@ -1,0 +1,10 @@
+0.0811  {"input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [368], "leak": [0.02, 0.3], "ridge": 1e-07, "voltage_feedback": false}  per-seed [0.0809, 0.081, 0.0818, 0.0811, 0.0805]
+0.0813  {"input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [300], "leak": 0.07, "ridge": 1e-07, "voltage_feedback": false}  per-seed [0.0818, 0.0812, 0.0805, 0.0818, 0.0814]
+0.0818  {"input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [368], "leak": 0.07, "ridge": 1e-07, "voltage_feedback": false}  per-seed [0.082, 0.0811, 0.0829, 0.0813, 0.082]
+0.0818  {"feedback_clip": [0.0, 1.0], "input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [368], "leak": 0.07, "ridge": 1e-07, "voltage_feedback": false}  per-seed [0.082, 0.0811, 0.0829, 0.0813, 0.082]
+0.0820  {"input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [200], "leak": 0.07, "ridge": 1e-07, "voltage_feedback": false}  per-seed [0.0823, 0.0816, 0.0825, 0.082, 0.0813]
+0.0822  {"input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [368], "leak": [0.02, 0.3], "ridge": 1e-07, "spectral_radius": 0.95, "voltage_feedback": false}  per-seed [0.0817, 0.0809, 0.0847, 0.0828, 0.0808]
+0.0824  {"input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [120], "leak": 0.07, "ridge": 1e-07, "voltage_feedback": false}  per-seed [0.0815, 0.084, 0.0822, 0.0816, 0.0827]
+0.0854  {"input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [60], "leak": 0.07, "ridge": 1e-07, "voltage_feedback": false}  per-seed [0.0838, 0.0864, 0.086, 0.0821, 0.0886]
+0.0859  {"input_scale": {"bias": 0.1, "stimulus": 50.0}, "layers": [368], "leak": 0.07, "ridge": 1e-07, "spectral_radius": 0.95, "voltage_feedback": false}  per-seed [0.0863, 0.0817, 0.0883, 0.0872, 0.0859]
+[c_cap.json] 45 evals in 37s
