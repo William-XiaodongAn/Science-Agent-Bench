@@ -7,6 +7,10 @@
 #       --agent "codex:gpt-5.6-sol:reasoning_effort=high;config=calibration/codex_gateway_chat.toml" \
 #       --agent "gemini-cli:gemini/gemini-3.7-flash" [--task tasks/...]... [--extra-host llm-gateway.example.com]
 #   agent spec = name:model[:kw=v;kw2=v2]  (each kw=v becomes a Harbor --ak)
+#   Gemini: since 2026-09-05 the Modal sandboxes enforce the network allowlist, so Harbor's stock gemini-cli agent (which
+#   downloads nvm + gemini-cli at trial start) fails with NetworkConnectionError. Run Gemini with the pre-baked agent instead:
+#     PYTHONPATH=<repo> harbor run -p <staged task> -a calibration.gemini_prebaked:GeminiCliPrebaked -m gemini/<model> ...
+#   (the task images already contain `gemini`; see calibration/gemini_prebaked.py).
 #
 # The env file holds the provider credentials Harbor forwards to the agents and is never echoed:
 #   ANTHROPIC_API_KEY / ANTHROPIC_BASE_URL (claude-code), OPENAI_API_KEY / OPENAI_BASE_URL (codex),
