@@ -51,8 +51,8 @@ and that the shortcuts the validity probes reject are the shortcuts that matter.
 | Task | Tier | Domain | Metric (lower is better) | Do-nothing | Pass bar | Reference |
 |---|---|---|---|---|---|---|
 | [`ssn-heldout-stimulus-prediction`](tasks/ssn-heldout-stimulus-prediction) | T1 controlled generator | neuroscience / nonlinear dynamics | held-out trajectory nRMSE | 1.104 | < 0.444 | 0.423 |
-| [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms) | 19.33 | < 3.0 | 2.12 |
-| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE, paper's split and inputs, mean of 5 seeds | 0.302 | < 0.0527 (5% below the best shipped baseline, 0.0555) | 0.0404 (history-conditioned template) |
+| [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms), APD80 RMSE (ms) | 19.33 | < 1.89 (one frame) and APD80 < 3.78 (two frames) | 0.92 / 2.5 |
+| [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE under the paper's conditions: the submitted search procedure is run five times with a metered 60-evaluation budget at ≤ 368 units (inputs: stimulus and optional fed-back voltage only), the five returned ESNs rolled out causally, mean RMSE | 0.302 | < 0.0784 (the paper's own statistic) | reference search, see task README |
 
 All three are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
 (the task's normalised score in [0, 1], or 1.0/0.0 pass with `REWARD_MODE=binary`) and
@@ -91,6 +91,32 @@ Tasks declare `network_mode = "allowlist"` (model API hosts only), so the images
 scientific stack and the agent CLIs; on a Docker host without egress-control support Harbor will
 say so, and the tasks can be run with `network_mode = "public"` for local checks.
 
+### Frontier-agent calibration (2026-09-03 / 04)
+
+Fable 5.1 (claude-code), GPT-5.6 Sol (codex) and Gemini 3.7 Flash (gemini-cli), k = 3 on Modal via
+`calibration/run_calibration.sh`. Tier 1 passed 1/3 by each agent
+([`RESULTS-2026-09-03.md`](calibration/RESULTS-2026-09-03.md)). Tier 2 passed 3/3 by Fable and Codex and 0/3 by
+Gemini under v0.1's empirical 3.0 ms bar; under v0.2 (gates in frame units, APD80 gated) **Fable 3/3, Codex 1/3,
+Gemini 0/3**, and a blinded forced-choice judge (two model families, agreeing on all 11 comparisons) preferred the
+expert's maps in 9 of 11 ([`RESULTS-2026-09-04-tier2-v02.md`](calibration/RESULTS-2026-09-04-tier2-v02.md)). Tier 3 was run three
+times as the task was tightened: 3/3 for every agent under v0.3 (whole test stimulus released; all
+solutions read beat durations off future stimulus times); 3/3 for Fable and Codex with beat templates
+and tree ensembles and 0/3 for Gemini under v0.5 (causal roll-out, any method;
+[`RESULTS-2026-09-04-tier3-v05.md`](calibration/RESULTS-2026-09-04-tier3-v05.md)); under v0.6
+(causal roll-out, echo state networks only, bar = the paper's 0.0784) Fable 3/3, Codex 0/3, Gemini 0/3,
+every pass a stimulus-driven ESN without voltage feedback, audited compliant
+([`RESULTS-2026-09-04-tier3-v06.md`](calibration/RESULTS-2026-09-04-tier3-v06.md)); and under v0.7
+(pass = at least 5% below the paper, RMSE < 0.0745) **Fable 2/3, Codex 2/3, Gemini 0/3**, pass@1 0.67 /
+0.67 / 0, all four passes stimulus-driven ESN ensembles or deep ESNs with cell-model inputs, audited
+compliant ([`RESULTS-2026-09-04-tier3-v07.md`](calibration/RESULTS-2026-09-04-tier3-v07.md)); under v0.8, the same
+task with the paper withheld from the agent, Fable 3/3, Codex 1/3, Gemini 0/3, every pass again a stimulus-driven
+ESN without voltage feedback found by experiment, with full tool-call digests of the passes in
+`calibration/trajectory-digests/` ([`RESULTS-2026-09-04-tier3-v08.md`](calibration/RESULTS-2026-09-04-tier3-v08.md));
+and under v0.9, the search-procedure protocol at the paper's size, budget and statistic with the paper's cell models
+still available, **Fable 3/3 (0.062-0.067)**, Gemini 0/3, Codex not scored (rate-limited, then stopped for v0.10)
+([`RESULTS-2026-09-04-tier3-v09.md`](calibration/RESULTS-2026-09-04-tier3-v09.md)). v0.10 (cell models removed) is being
+calibrated.
+
 ### agent-env (pass@k on frontier models)
 
 [`agentenv/register_task.py`](agentenv/register_task.py) registers a task directory as a runnable
@@ -100,12 +126,16 @@ pass@k. See [`agentenv/README.md`](agentenv/README.md).
 
 ### Known issues to resolve before acceptance
 
-- **Tier 3 (v0.3) follows the paper's setup** (stimulus schedule given as an input in training and
-  prediction, paper's split, metric and tuning budget) and ships the paper's ESN family plus two
-  stimulus-aligned templates as baselines; the agent must beat the best of them by 5%. Under the
-  closed-loop pacing protocol the stimulus intervals fix most of each beat (a template alone scores
-  0.0555, below the paper's best 0.0784), so the task is the residual beat-to-beat variation; the
-  measured frontier is ~0.040. See its README §2-4.
+- **Tier 3 (v0.6) follows the paper's setup causally and restricts the method to the paper's model
+  class.** The stimulus is an input, as in the paper, but the paper's networks receive it one sample at
+  a time; under the closed-loop pacing protocol the *next* stimulus time reveals the current beat's
+  duration (repolarisation-to-stimulus gap 51 ± 1.4 ms), so releasing the whole test stimulus (v0.1-v0.4)
+  let a template score 0.0555 and frontier agents 0.022-0.042. v0.5 made the submission a model rolled out
+  by the verifier with the stimulus delivered sample by sample; frontier agents then passed with causal
+  beat templates and tree ensembles (0.055-0.065), which are not what the paper studies. v0.6 restricts
+  the method to echo state networks (declaration + import scan in the verifier, code audit afterwards);
+  the shipped framework covers the paper's whole family, and our reference, a stimulus-driven
+  multi-timescale ESN without voltage feedback, scores 0.071 against the paper's 0.0784. See its README §2.
 - **Tier 1 headroom:** no legitimate method above 0.62 normalised is known, while the oracle
   sits at 1.0. Probe gap to a drive-only proxy is modest. See its README §4-5.
 - **Tier 2 APD80 definition** in the original instruction did not match the frozen ground truth;
@@ -147,8 +177,8 @@ directory directly.
 | | tier1_task_1 | tier_2_task_1 | tier_3_task_1 |
 |---|---|---|---|
 | **Task** | predict a 49-neuron SSN's response to a stimulus it never saw | recover per-pixel activation and APD80 maps from a raw optical mapping recording | forecast the last 20% of a zebrafish cardiac voltage trace |
-| **Input** | rates + drive under one stimulus; drive only under the held-out one | 128x128 16-bit camera stream, 529.09 fps | 16454 training samples + the test-window stimulus |
-| **Submit** | `r_pred.npy` (49, 12001) | `mask.npy`, `activation_ms.npy`, `apd80_ms.npy`, each (128,128) | `pred.npy` (4113,) |
+| **Input** | rates + drive under one stimulus; drive only under the held-out one | 128x128 16-bit camera stream, 529.09 fps | 16454 training samples; the test-window stimulus arrives one sample at a time |
+| **Submit** | `r_pred.npy` (49, 12001) | `mask.npy`, `activation_ms.npy`, `apd80_ms.npy`, each (128,128) | `search.py` (a search procedure the verifier runs 5 times under the paper's size and budget) |
 | **Metric** | trajectory nRMSE | activation-time map RMSE (ms), median offset removed | RMSE, paper's definition |
 | **Do-nothing** | 1.104 | 19.33 ms | 0.3022 |
 | **Reference** | 0.008 (oracle floor) | 1.01 ms (noise floor) | **0.0784** (published baseline) |

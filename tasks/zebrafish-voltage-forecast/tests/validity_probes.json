@@ -4,11 +4,11 @@
  "label permutation: answer time-shuffled (mean of 10)": 0.4256,
  "label permutation: answer reversed": 0.2693,
  "label permutation: answer shifted by half a beat (60 ms)": 0.5374,
- "shipped baseline ESN+ (5 seeds)": 0.1078,
- "shipped baseline HESN+ with CN input (5 seeds)": 0.1045,
- "shipped baseline template, time-warped mean shape": 0.0768,
- "shipped baseline template, nearest interval": 0.0555,
- "reference: history-conditioned template (k=2)": 0.0404,
- "paper: ESN+ 368 / HESN+ (CN) 368 / DHESN-io+ (CN) 368": "0.1021 / 0.0879 / 0.0784",
- "corr(stimulus interval_n, APD_n) in training (why templates are strong)": 0.994
+ "untuned framework default (368 units, feedback), seeds 0-4": 0.1203,
+ "untuned framework + CN input, seeds 0-4": 0.1052,
+ "paper's 5-layer structure with feedback, best of 18 hand configurations (seed 0)": 0.0887,
+ "paper: its tuned result on this window (mean over 5 optimised networks)": 0.0784,
+ "for the record, NON-causal nearest-interval template (protocol forbids)": 0.0555,
+ "closed-loop protocol: repolarisation (0.22) -> next stimulus, mean / sd (ms)": "50.7 / 1.4",
+ "corr(stimulus interval_n, APD_n) in training": 0.994
 }
