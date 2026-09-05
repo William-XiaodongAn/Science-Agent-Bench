@@ -70,25 +70,36 @@ format of what you wrote without scoring it.
 **Primary: activation-time map RMSE (ms)**, computed inside the intersection of
 your mask and the reference mask, **after removing the per-map median offset**:
 the zero of activation time is arbitrary, so only the spatial *pattern* counts.
-Lower is better. The verifier also reports a normalised score on [0, 1] that
-maps the do-nothing anchor to 0 and the beat-to-beat repeatability floor to 1.
+Lower is better. **Secondary, also gated: APD80 map RMSE (ms)**, absolute (a
+duration has a meaningful zero), inside the same intersection. The verifier also
+reports a normalised activation score on [0, 1] that maps the do-nothing anchor
+to 0 and the statistical noise of an 18-beat map to 1.
 
-| anchor | activation RMSE | normalised | APD80 RMSE |
-|---|---|---|---|
-| constant prediction (spatial mean), do-nothing | **19.33 ms** | 0.00 | 12.17 ms |
-| beat-to-beat repeatability, not reachable | **1.01 ms** | 1.00 | 2.27 ms |
+| anchor | activation RMSE | APD80 RMSE |
+|---|---|---|
+| constant prediction (spatial mean), do-nothing | **19.33 ms** | 12.17 ms |
+| statistical noise of an 18-beat map (split-half / 2), not reachable | ~0.5 ms | ~1.8 ms |
 
-**Pass bar:** a submission passes when it is valid (below), includes
-`methods.md`, and scores **activation RMSE < 3.0 ms**. A deliberately plain
-implementation of the definitions above (an SNR-based mask, a modest temporal
-smoother, the 50% upstroke rule, 18-beat mean) reaches about 2 ms; that is the
-bar a straightforward, correct pipeline clears, not a target.
+**Pass gates, both required.** The recording is sampled at 529.09 fps, so one
+frame is **1.890 ms**. A submission passes when it is valid (below), includes
+`methods.md`, and
 
-Secondary (reported, not ranked): APD80 map RMSE (absolute, no offset removal,
-since a duration is meaningful in itself), and your mask's coverage and IoU
-against the reference. Note the APD80 baseline is comparatively easy to lose
-to: a pipeline can score worse than the constant prediction there while doing
-well on activation. Report it honestly in `methods.md` rather than hiding it.
+- **activation RMSE < 1.890 ms** (one frame: the definitions interpolate between
+  frames, so a correct pipeline agrees with the reference to sub-frame precision
+  on average), and
+- **APD80 RMSE < 3.780 ms** (two frames: a duration is the difference of two
+  crossings).
+
+The gates are stated in units of the measurement, not of what any pipeline
+scored. They do require denoising at the level the expert applied: the 20%
+repolarisation crossing sits on a slow, noisy tail, and a pipeline that applies
+the definitions to the raw frames with only a short temporal smoother lands at
+about 2.1 ms activation and 15 ms APD80 and fails both. Modest Gaussian
+smoothing in time and space (a few frames, about a pixel) before the definitions
+brings the same code to about 0.9 ms and 2.5 ms.
+
+Also reported: your mask's coverage and IoU against the reference, and the APD80
+bias. Report your own validation honestly in `methods.md` rather than hiding it.
 
 ## Validity: read this, it is easy to fail
 Your submission is marked **invalid** (no score, excluded from ranking, not

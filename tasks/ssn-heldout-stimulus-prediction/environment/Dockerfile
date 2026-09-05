@@ -22,9 +22,9 @@ RUN pip install --index-url https://pypi.org/simple/ --upgrade pip wheel setupto
 # Agent CLIs, baked because the runtime allowlist cannot fetch them. The claude npm
 # package is only a wrapper; the official bootstrap installs the binary into ~/.local/bin.
 ENV PATH="/root/.local/bin:${PATH}"
-RUN npm install -g @openai/codex \
+RUN npm install -g @openai/codex @google/gemini-cli \
     && curl -fsSL https://downloads.claude.ai/claude-code-releases/bootstrap.sh | bash -s -- \
-    && codex --version && claude --version
+    && codex --version && claude --version && gemini --version
 
 COPY workspace/ /workspace/
 RUN chmod +x /workspace/timer.sh && mkdir -p /workspace/submission \

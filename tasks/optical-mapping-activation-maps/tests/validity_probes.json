@@ -27,53 +27,76 @@
   "valid": false,
   "normalized": 1.0
  },
- "reference pipeline": {
+ "reference pipeline (Gaussian sigma 4 frames / 1 px, 1-px mask margin)": {
+  "rmse_ms": 0.905,
+  "coverage": 0.969,
+  "iou": 0.708,
+  "valid": true,
+  "normalized": 0.978,
+  "apd80_rmse_ms": 2.565,
+  "passes_gates": true
+ },
+ "v0.1 pipeline: 5-frame box, no spatial denoising": {
   "rmse_ms": 2.119,
   "coverage": 1.0,
-  "iou": 0.657,
+  "iou": 0.635,
   "valid": true,
-  "normalized": 0.939
+  "normalized": 0.914,
+  "apd80_rmse_ms": 15.286,
+  "passes_gates": false
  },
- "no temporal smoothing": {
+ "no denoising at all": {
   "rmse_ms": 2.517,
   "coverage": 1.0,
-  "iou": 0.518,
+  "iou": 0.502,
   "valid": false,
-  "normalized": 0.918
+  "normalized": 0.893,
+  "apd80_rmse_ms": 78.5,
+  "passes_gates": false
  },
- "single beat": {
-  "rmse_ms": 3.555,
-  "coverage": 1.0,
-  "iou": 0.657,
+ "single beat instead of 18 (denoised)": {
+  "rmse_ms": 1.0,
+  "coverage": 0.969,
+  "iou": 0.708,
   "valid": true,
-  "normalized": 0.861
+  "normalized": 0.973,
+  "apd80_rmse_ms": 2.878,
+  "passes_gates": true
  },
  "wrong definition: argmax(dV/dt)": {
-  "rmse_ms": 51.506,
-  "coverage": 1.0,
-  "iou": 0.657,
+  "rmse_ms": 5.458,
+  "coverage": 0.969,
+  "iou": 0.708,
   "valid": true,
-  "normalized": 0.0
+  "normalized": 0.737,
+  "apd80_rmse_ms": 2.565,
+  "passes_gates": false
  },
  "wrong polarity (not inverted)": {
-  "rmse_ms": 6.998,
-  "coverage": 1.0,
-  "iou": 0.657,
+  "rmse_ms": 6.12,
+  "coverage": 0.969,
+  "iou": 0.708,
   "valid": true,
-  "normalized": 0.673
+  "normalized": 0.702,
+  "apd80_rmse_ms": 140.475,
+  "passes_gates": false
  },
  "no transpose": {
-  "rmse_ms": 31.195,
-  "coverage": 0.933,
-  "iou": 0.587,
+  "rmse_ms": 31.085,
+  "coverage": 0.913,
+  "iou": 0.641,
   "valid": false,
-  "normalized": 0.0
+  "normalized": 0.0,
+  "apd80_rmse_ms": 17.272,
+  "passes_gates": false
  },
  "frame 0 kept": {
-  "rmse_ms": 2.099,
-  "coverage": 0.992,
-  "iou": 0.719,
-  "valid": true,
-  "normalized": 0.94
+  "rmse_ms": 0.883,
+  "coverage": 0.906,
+  "iou": 0.726,
+  "valid": false,
+  "normalized": 0.98,
+  "apd80_rmse_ms": 2.541,
+  "passes_gates": false
  }
 }

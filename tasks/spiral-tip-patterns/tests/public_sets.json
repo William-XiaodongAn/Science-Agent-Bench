@@ -1,0 +1,128 @@
+{
+ "A": {
+  "params": {
+   "tau_pv": 3.33,
+   "tau_v1": 19.6,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.0,
+   "tau_d": 0.41,
+   "tau_0": 8.3,
+   "tau_r": 50.0,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "C",
+  "note": "circular core"
+ },
+ "B": {
+  "params": {
+   "tau_pv": 3.33,
+   "tau_v1": 19.6,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.0,
+   "tau_d": 0.381,
+   "tau_0": 8.3,
+   "tau_r": 50.0,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "FO",
+  "petal_ratio": 17.6,
+  "petals": 19,
+  "note": "large-ring outward flower"
+ },
+ "C": {
+  "params": {
+   "tau_pv": 3.33,
+   "tau_v1": 19.6,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.0,
+   "tau_d": 0.389,
+   "tau_0": 8.3,
+   "tau_r": 50.0,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "D",
+  "note": "resonant drift, boundary-guided"
+ },
+ "D": {
+  "params": {
+   "tau_pv": 3.33,
+   "tau_v1": 19.6,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.0,
+   "tau_d": 0.36,
+   "tau_0": 8.3,
+   "tau_r": 50.0,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "FO",
+  "petal_ratio": 6.1,
+  "petals": 7,
+  "note": "compact outward flower"
+ },
+ "E": {
+  "params": {
+   "tau_pv": 3.33,
+   "tau_v1": 19.6,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.0,
+   "tau_d": 0.25,
+   "tau_0": 8.3,
+   "tau_r": 50.0,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "FO",
+  "note": "fast-precession outward meander (T1 223 ms, T2 366 ms, loops larger than the ring: reads as an irregular tangle; the figure's author may call it hypermeander)",
+  "petal_ratio": 1.64,
+  "petals": 3
+ },
+ "F": {
+  "params": {
+   "tau_pv": 10.0,
+   "tau_v1": 10.0,
+   "tau_v2": 10.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.0,
+   "tau_d": 0.25,
+   "tau_0": 10.0,
+   "tau_r": 190.0,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 0.0
+  },
+  "cls": "L",
+  "note": "linear core (star)"
+ }
+}

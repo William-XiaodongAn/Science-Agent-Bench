@@ -1,0 +1,386 @@
+{
+ "H1": {
+  "params": {
+   "tau_pv": 2.94,
+   "tau_v1": 18.41,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 10.19,
+   "tau_d": 0.395,
+   "tau_0": 8.29,
+   "tau_r": 51.55,
+   "tau_si": 45.15,
+   "K": 10.0,
+   "V_sic": 0.869,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "C",
+  "T1": 209.6,
+  "r1": 0.792,
+  "R2": 0.028,
+  "petal_ratio": null,
+  "petals": null,
+  "source": "m1_04",
+  "robustness": {
+   "f64": {
+    "cls": "C",
+    "petal_ratio": null,
+    "sustained": true
+   },
+   "N768": {
+    "cls": "X",
+    "petal_ratio": null,
+    "sustained": false
+   },
+   "s2half": {
+    "cls": "C",
+    "petal_ratio": null,
+    "sustained": true
+   },
+   "T12": {
+    "cls": "C",
+    "petal_ratio": null,
+    "sustained": true
+   }
+  },
+  "note": "base set_01 perturbed; reference pipeline obstacle protocol"
+ },
+ "H2": {
+  "params": {
+   "tau_pv": 3.153,
+   "tau_v1": 18.67,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 10.35,
+   "tau_d": 0.41,
+   "tau_0": 8.24,
+   "tau_r": 53.85,
+   "tau_si": 48.21,
+   "K": 10.0,
+   "V_sic": 0.845,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "C",
+  "T1": 158.7,
+  "r1": 0.567,
+  "R2": 0.03,
+  "petal_ratio": null,
+  "petals": null,
+  "source": "m1_01",
+  "robustness": {
+   "f64": {
+    "cls": "C",
+    "petal_ratio": null,
+    "sustained": true
+   },
+   "N768": {
+    "cls": "C",
+    "petal_ratio": null,
+    "sustained": true
+   },
+   "s2half": {
+    "cls": "C",
+    "petal_ratio": null,
+    "sustained": true
+   },
+   "T12": {
+    "cls": "C",
+    "petal_ratio": null,
+    "sustained": true
+   }
+  },
+  "note": "base set_01 perturbed; reference pipeline obstacle protocol"
+ },
+ "H3": {
+  "params": {
+   "tau_pv": 3.054,
+   "tau_v1": 21.15,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 10.39,
+   "tau_d": 0.375,
+   "tau_0": 7.31,
+   "tau_r": 46.41,
+   "tau_si": 43.59,
+   "K": 10.0,
+   "V_sic": 0.888,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "FI",
+  "T1": 133.2,
+  "r1": 0.472,
+  "R2": 0.693,
+  "petal_ratio": 7.43,
+  "petals": 6,
+  "source": "m1_05",
+  "robustness": {
+   "f64": {
+    "cls": "FI",
+    "petal_ratio": 7.28,
+    "sustained": true
+   },
+   "N768": {
+    "cls": "FI",
+    "petal_ratio": 7.15,
+    "sustained": true
+   },
+   "s2half": {
+    "cls": "FI",
+    "petal_ratio": 7.28,
+    "sustained": true
+   },
+   "T12": {
+    "cls": "FI",
+    "petal_ratio": 7.31,
+    "sustained": true
+   }
+  },
+  "note": "base set_01 perturbed; reference pipeline obstacle protocol"
+ },
+ "H4": {
+  "params": {
+   "tau_pv": 3.004,
+   "tau_v1": 20.74,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.11,
+   "tau_d": 0.37,
+   "tau_0": 8.58,
+   "tau_r": 50.12,
+   "tau_si": 48.75,
+   "K": 10.0,
+   "V_sic": 0.851,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "FI",
+  "T1": 141.3,
+  "r1": 0.488,
+  "R2": 2.569,
+  "petal_ratio": 14.84,
+  "petals": 14,
+  "source": "m1_06",
+  "robustness": {
+   "f64": {
+    "cls": "FI",
+    "petal_ratio": 15.05,
+    "sustained": true
+   },
+   "N768": {
+    "cls": "FI",
+    "petal_ratio": 15.13,
+    "sustained": true
+   },
+   "s2half": {
+    "cls": "FI",
+    "petal_ratio": 15.26,
+    "sustained": true
+   },
+   "T12": {
+    "cls": "FI",
+    "petal_ratio": 15.15,
+    "sustained": true
+   }
+  },
+  "note": "base set_01 perturbed; reference pipeline obstacle protocol"
+ },
+ "H5": {
+  "params": {
+   "tau_pv": 3.008,
+   "tau_v1": 19.14,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 12.24,
+   "tau_d": 0.34,
+   "tau_0": 7.78,
+   "tau_r": 45.81,
+   "tau_si": 44.36,
+   "K": 10.0,
+   "V_sic": 0.822,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "FO",
+  "T1": 119.1,
+  "r1": 0.392,
+  "R2": 1.736,
+  "petal_ratio": 10.47,
+  "petals": 11,
+  "source": "m1_09",
+  "robustness": {
+   "f64": {
+    "cls": "FO",
+    "petal_ratio": 10.6,
+    "sustained": true
+   },
+   "N768": {
+    "cls": "FO",
+    "petal_ratio": 10.07,
+    "sustained": true
+   },
+   "s2half": {
+    "cls": "FO",
+    "petal_ratio": 10.62,
+    "sustained": true
+   },
+   "T12": {
+    "cls": "FO",
+    "petal_ratio": 10.55,
+    "sustained": true
+   }
+  },
+  "note": "base set_01 perturbed; reference pipeline obstacle protocol"
+ },
+ "H6": {
+  "params": {
+   "tau_pv": 3.036,
+   "tau_v1": 20.36,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.91,
+   "tau_d": 0.32,
+   "tau_0": 9.05,
+   "tau_r": 52.06,
+   "tau_si": 42.84,
+   "K": 10.0,
+   "V_sic": 0.894,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "FO",
+  "T1": 108.7,
+  "r1": 0.368,
+  "R2": 0.513,
+  "petal_ratio": 3.74,
+  "petals": 5,
+  "source": "m1_10",
+  "robustness": {
+   "f64": {
+    "cls": "FO",
+    "petal_ratio": 3.75,
+    "sustained": true
+   },
+   "N768": {
+    "cls": "FO",
+    "petal_ratio": 3.65,
+    "sustained": true
+   },
+   "s2half": {
+    "cls": "X",
+    "petal_ratio": null,
+    "sustained": false
+   },
+   "T12": {
+    "cls": "FO",
+    "petal_ratio": 3.74,
+    "sustained": true
+   }
+  },
+  "note": "base set_01 perturbed; reference pipeline obstacle protocol"
+ },
+ "H7": {
+  "params": {
+   "tau_pv": 10.57,
+   "tau_v1": 10.57,
+   "tau_v2": 10.57,
+   "tau_pw": 667.0,
+   "tau_mw": 10.82,
+   "tau_d": 0.2781,
+   "tau_0": 9.6,
+   "tau_r": 168.1,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 0.0
+  },
+  "cls": "L",
+  "T1": 219.2,
+  "r1": 1.307,
+  "R2": 0.086,
+  "petal_ratio": null,
+  "petals": null,
+  "source": "m2_05",
+  "robustness": {
+   "f64": {
+    "cls": "X",
+    "petal_ratio": null,
+    "sustained": false
+   },
+   "N768": {
+    "cls": "X",
+    "petal_ratio": null,
+    "sustained": false
+   },
+   "s2half": {
+    "cls": "L",
+    "petal_ratio": null,
+    "sustained": true
+   },
+   "T12": {
+    "cls": "X",
+    "petal_ratio": null,
+    "sustained": false
+   }
+  },
+  "note": "base set_02 perturbed; reference pipeline s2half protocol"
+ },
+ "H8": {
+  "params": {
+   "tau_pv": 9.78,
+   "tau_v1": 9.78,
+   "tau_v2": 9.78,
+   "tau_pw": 667.0,
+   "tau_mw": 9.76,
+   "tau_d": 0.2615,
+   "tau_0": 11.73,
+   "tau_r": 211.2,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 0.0
+  },
+  "cls": "L",
+  "T1": 276.8,
+  "r1": 1.902,
+  "R2": 0.189,
+  "petal_ratio": null,
+  "petals": null,
+  "source": "m2_02",
+  "robustness": {
+   "f64": {
+    "cls": "X",
+    "petal_ratio": null,
+    "sustained": false
+   },
+   "N768": {
+    "cls": "X",
+    "petal_ratio": null,
+    "sustained": false
+   },
+   "s2half": {
+    "cls": "L",
+    "petal_ratio": null,
+    "sustained": true
+   },
+   "T12": {
+    "cls": "X",
+    "petal_ratio": null,
+    "sustained": false
+   }
+  },
+  "note": "base set_02 perturbed; reference pipeline s2half protocol"
+ }
+}

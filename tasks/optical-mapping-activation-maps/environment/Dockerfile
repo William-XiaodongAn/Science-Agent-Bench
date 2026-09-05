@@ -18,9 +18,9 @@ RUN pip install --index-url https://pypi.org/simple/ --upgrade pip wheel setupto
     && pip install --index-url https://download.pytorch.org/whl/cpu torch==2.8.0
 
 ENV PATH="/root/.local/bin:${PATH}"
-RUN npm install -g @openai/codex \
+RUN npm install -g @openai/codex @google/gemini-cli \
     && curl -fsSL https://downloads.claude.ai/claude-code-releases/bootstrap.sh | bash -s -- \
-    && codex --version && claude --version
+    && codex --version && claude --version && gemini --version
 
 COPY workspace/ /workspace/
 # The raw camera stream (250 MB) exceeds GitHub's file limit and is not in git. If the build
