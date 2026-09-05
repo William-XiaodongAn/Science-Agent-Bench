@@ -53,9 +53,8 @@ and that the shortcuts the validity probes reject are the shortcuts that matter.
 | [`ssn-heldout-stimulus-prediction`](tasks/ssn-heldout-stimulus-prediction) | T1 controlled generator | neuroscience / nonlinear dynamics | held-out trajectory nRMSE | 1.104 | < 0.444 | 0.423 |
 | [`optical-mapping-activation-maps`](tasks/optical-mapping-activation-maps) | T2 expert workflow | cardiac electrophysiology | activation-map RMSE (ms), APD80 RMSE (ms) | 19.33 | < 1.89 (one frame) and APD80 < 3.78 (two frames) | 0.92 / 2.5 |
 | [`zebrafish-voltage-forecast`](tasks/zebrafish-voltage-forecast) | T3 open-ended discovery | cardiac dynamics | test RMSE under the paper's conditions: the submitted search procedure is run five times with a metered 60-evaluation budget at ≤ 368 units (inputs: stimulus and optional fed-back voltage only), the five returned ESNs rolled out causally, mean RMSE | 0.302 | < 0.0784 (the paper's own statistic) | reference search, see task README |
-| [`spiral-tip-patterns`](tasks/spiral-tip-patterns) | T3 open-ended discovery | cardiac dynamics / spiral-wave meander | pattern-class match of the pipeline's simulated tip trajectories (6 reference + 8 hidden parameter sets, higher is better) | 0 | 6/6 reference and >= 7/8 hidden | 14/14 (score 1.0) |
 
-All four are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
+All three are **CPU-only** (4 vCPU, 16 GB; Harbor passes these to Docker as hard limits, so a local Docker VM must offer at least that many CPUs). Every verifier writes `/logs/verifier/reward.txt`
 (the task's normalised score in [0, 1], or 1.0/0.0 pass with `REWARD_MODE=binary`) and
 `/logs/verifier/result.json` (raw metric, normalised score, `passed`, `ranked`, flags, secondary
 metrics, diagnostics). "Pass" is the documented per-task rule (valid + `methods.md` + metric below
@@ -120,9 +119,8 @@ removed, so no borrowing from the paper is possible: inputs = stimulus + optiona
 (0.0730-0.0739), Codex 3/3 (0.0695-0.0748), Gemini 0/3**, every pass replayed in the clean image and audited (no hacking,
 no paper references, ESN-only; digests in `calibration/trajectory-digests/v10/`)
 ([`RESULTS-2026-09-05-tier3-v10.md`](calibration/RESULTS-2026-09-05-tier3-v10.md)). The tier-3 task therefore separates the two
-leading agents from Gemini but not from each other; the second tier-3 task, `spiral-tip-patterns` (parameters -> automatic
-spiral initiation, tip tracking and pattern classification, judged on sealed hidden parameter sets; reference pipeline
-14/14 on Modal), is being calibrated with the same three agents.
+leading agents from Gemini but not from each other; a second tier-3 task (spiral-tip patterns) is being built and
+calibrated on the `harbor-tasks` branch and will land here once its calibration is complete.
 
 ### agent-env (pass@k on frontier models)
 
