@@ -1,8 +1,0 @@
-  fit done 192 evals 187s  fit=1.6361 pen=0.0713  w1=[0.513 0.374 0.24  0.2  ] sig=[0.699 0.911 1.854 2.317]
-/workspace/work/ssn.py:24: RuntimeWarning: overflow encountered in square
-  r = r + a*(-r + K*np.maximum(u, 0)**NPOW)
-/workspace/work/ssn.py:23: RuntimeWarning: invalid value encountered in matmul
-  u = W @ r + I[:, s-1]
-/workspace/work/bag.py:8: RuntimeWarning: overflow encountered in cast
-  Re = simulate_np(W, I_ev, r0=np.full(N,0.01)); np.save(f'Re_bag_{seed}_{lam}.npy', Re.astype(np.float32))
-bag 7 0.3 train nRMSE (unweighted) 0.47042619436769906 eval max inf finite False time 188.72864890098572

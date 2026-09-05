@@ -1,4 +1,0 @@
-  fit done 101 evals 96s  fit=0.9330 pen=0.0000  w1=[0.636 0.35  0.333 0.467] sig=[0.5   1.065 1.394 0.999]
-train nRMSE (all obs) 0.48041984916091235 peak 0.2824136816185127
-spectral radius 1.7891690975121273 dev rms 0.0
-eval sim max 0.5778219272796833 finite True mean 0.047722895955260046

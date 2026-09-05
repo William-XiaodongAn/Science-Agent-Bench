@@ -1,3 +1,0 @@
-mult lam 0.01 p4 {'nit': 19.0, 'train': 0.01758, 'eval_max': 0.62972, 'finite': True, 'test': 0.0173}
-mult lam 0.01 p2 {'nit': 31.0, 'train': 0.01742, 'eval_max': 0.64279, 'finite': True, 'test': 0.01742}
-mult lam 0.01 MEAN test 0.01736 time 73

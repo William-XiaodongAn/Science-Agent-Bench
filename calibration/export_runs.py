@@ -11,7 +11,7 @@ For each task: <out>/<task>/inputs/ (instruction.md, task.toml, task.yaml of the
 trial `<agent>__<trial_id>/` with trajectory/ (agent log + Harbor trajectory.json), submission/ (what the agent left in
 /workspace/submission, or the whole artifact tree minus data/ and files above --max-file-mb), verifier/ (result.json,
 reward.txt, test-stdout.txt, judge files), trial.log, config.json, result.json; trials that ended in an infrastructure
-exception go to infra_failed/ (logs only). Trials scored offline (submission captured after a dropped Modal stream) get
+exception go to infra_failed/ (logs only); with --zip all trial directories are packed into <task>/trials.zip. Trials scored offline (submission captured after a dropped Modal stream) get
 their local replay verifier output copied into verifier/ when --local-replays holds a matching <agent>_<trial_id>/logs.
 """
 import argparse, glob, json, os, shutil
@@ -162,9 +162,23 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True); ap.add_argument("--task", action="append", required=True, help="task=jobs_dir")
     ap.add_argument("--local-replays", default=None); ap.add_argument("--max-file-mb", type=float, default=15.0)
+    ap.add_argument("--zip", action="store_true", help="pack the trial directories (and infra_failed/) of each task into <task>/trials.zip, keeping SUMMARY.md and inputs/ as files")
     a = ap.parse_args()
     for spec in a.task:
         task, jobs = spec.split("=", 1)
         rows, infra = export_task(task, jobs, a.out, int(a.max_file_mb * 1e6), a.local_replays)
+        if a.zip:
+            import zipfile
+            tout = os.path.join(a.out, task); zpath = os.path.join(tout, "trials.zip")
+            with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
+                for entry in sorted(os.listdir(tout)):
+                    full = os.path.join(tout, entry)
+                    if not os.path.isdir(full) or entry == "inputs":
+                        continue
+                    for root, _, files in os.walk(full):
+                        for f in files:
+                            fp = os.path.join(root, f); z.write(fp, os.path.relpath(fp, tout))
+                    shutil.rmtree(full)
+            print(f"  {task}: trial directories packed into {zpath} ({os.path.getsize(zpath)/1e6:.1f} MB)")
         print(f"{task}: {len(rows)} scored trials exported, {len(infra)} infra-failed; passes: " +
               ", ".join(f"{ag} {sum(1 for r in rows if r['agent']==ag and r['passed'])}/{sum(1 for r in rows if r['agent']==ag)}" for ag in sorted({r['agent'] for r in rows})))

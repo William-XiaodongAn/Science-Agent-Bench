@@ -1,5 +1,0 @@
-kernel-only: {'train_rmse': np.float64(0.019427697656620765), 'test_rmse': np.float64(0.019320489515860812), 'eval_max': np.float64(0.555887308079869), 'eval_finite': True}
-lam 0.02 nit 155 |delta| rms 0.0185 {'train_rmse': np.float64(0.016952326560929393), 'test_rmse': np.float64(0.016992136823239173), 'eval_max': np.float64(0.6582627154353026), 'eval_finite': True} time 38
-lam 0.1 nit 232 |delta| rms 0.0106 {'train_rmse': np.float64(0.017307426674566435), 'test_rmse': np.float64(0.01711745371646511), 'eval_max': np.float64(0.5997360792439461), 'eval_finite': True} time 72
-lam 0.5 nit 93 |delta| rms 0.0055 {'train_rmse': np.float64(0.017913605365309553), 'test_rmse': np.float64(0.01763850995702301), 'eval_max': np.float64(0.567888015475501), 'eval_finite': True} time 32
-lam 2.0 nit 21 |delta| rms 0.0023 {'train_rmse': np.float64(0.018668564616023814), 'test_rmse': np.float64(0.018451008085697003), 'eval_max': np.float64(0.5592156491258845), 'eval_finite': True} time 7

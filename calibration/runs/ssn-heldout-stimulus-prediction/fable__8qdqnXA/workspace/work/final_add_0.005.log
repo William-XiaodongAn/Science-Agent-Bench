@@ -1,9 +1,0 @@
-/workspace/work/fit_kernel.py:28: RuntimeWarning: overflow encountered in square
-  u=W@r+Ib; r=(1-a)*r+a*k*np.maximum(u,0)**2
-/workspace/work/fit_kernel.py:28: RuntimeWarning: invalid value encountered in matmul
-  u=W@r+Ib; r=(1-a)*r+a*k*np.maximum(u,0)**2
-/workspace/work/fit_v2.py:15: RuntimeWarning: overflow encountered in multiply
-  u=W@r[:,t]+Ie[:,t]; U[:,t]=u; up=np.maximum(u,0); r[:,t+1]=(1-a)*r[:,t]+a*k*up*up
-/workspace/work/fit_v2.py:15: RuntimeWarning: invalid value encountered in matmul
-  u=W@r[:,t]+Ie[:,t]; U[:,t]=u; up=np.maximum(u,0); r[:,t+1]=(1-a)*r[:,t]+a*k*up*up
-add full lam 0.005 {'nit': 155, 'train': np.float64(0.016757435731261434), 'eval_max': np.float64(0.8012751730749772), 'finite': True} time 94
