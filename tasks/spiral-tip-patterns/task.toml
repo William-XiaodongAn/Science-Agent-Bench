@@ -23,7 +23,7 @@ protocol = "submission = run.py (--params file.json --out dir) producing tip_tra
 classes = "C circular | FI flower petals inward | FO flower petals outward | L linear core | D drift | H hypermeander"
 hidden_sets = 8
 pass_rule = "methods.md present AND all 6 reference sets match AND >= 7 of 8 hidden sets match; 14/14 reported as the stretch"
-reference = "solution/: obstacle-pivot initiation with S1-S2 fallback, tool tip definition, two-frequency classifier; Modal 2026-09-05: 6/6 reference + all hidden sets matched, score 1.0; oracle 9 min for the six rows, verifier ~85-100 s per set on 4 cores"
+reference = "solution/: obstacle-pivot initiation with S1-S2 fallback, tool tip definition, two-frequency classifier; Modal 2026-09-05 (sealed sets): 6/6 reference + 8/8 hidden, score 1.0, passed; oracle 9 min for the six rows, verifier 572 s for the 14 sets (~40 s per set on 4 cores)"
 budget_gpus = 0
 budget_wall_clock_hours = 4
 difficulty = "hard"          # estimated; expert solve time not yet measured (spec 5.3)

@@ -84,7 +84,12 @@ hard-codes the six reference outputs scores at most 6/14 and fails.
 - Runs are 8 s of model time; a precession slower than ~5 s is read as drift by construction.
 - Data licence / attribution of the WebGL tool (A. Kaboudian) and of `ref.png` to be confirmed before release.
 
-## 6. Commands
+## 6. Reference run (Modal, 2026-09-05)
+`harbor run -p tasks/spiral-tip-patterns -a oracle -e modal`: oracle phase 9 min (six rows), verifier 572 s for the 14 sets
+(39-46 s each), score 1.0, passed, `submitted_label_agreement` 1.0, no provenance failures; the earlier run with two
+provisional hidden sets gave the same 8/8. Job: `jobs/t3t2-oracle/oracle-final-20260905`.
+
+## 7. Commands
 ```bash
 harbor run -p tasks/spiral-tip-patterns -a oracle -y                       # reference pipeline through the verifier
 harbor run -p tasks/spiral-tip-patterns -a claude-code -m claude-opus-5 -y
