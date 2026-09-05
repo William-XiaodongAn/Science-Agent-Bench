@@ -1,0 +1,44 @@
+{
+ "h_smoke1": {
+  "params": {
+   "tau_pv": 3.33,
+   "tau_v1": 19.6,
+   "tau_v2": 1000.0,
+   "tau_pw": 667.0,
+   "tau_mw": 11.0,
+   "tau_d": 0.405,
+   "tau_0": 8.3,
+   "tau_r": 50.0,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 1.0
+  },
+  "cls": "FI",
+  "petal_ratio": 7.37,
+  "petals": 6,
+  "note": "provisional smoke test"
+ },
+ "h_smoke2": {
+  "params": {
+   "tau_pv": 13.68,
+   "tau_v1": 13.68,
+   "tau_v2": 13.68,
+   "tau_pw": 667.0,
+   "tau_mw": 27.04,
+   "tau_d": 0.227,
+   "tau_0": 9.51,
+   "tau_r": 160.2,
+   "tau_si": 45.0,
+   "K": 10.0,
+   "V_sic": 0.85,
+   "V_c": 0.13,
+   "V_v": 0.055,
+   "C_si": 0.0
+  },
+  "cls": "L",
+  "note": "provisional smoke test"
+ }
+}

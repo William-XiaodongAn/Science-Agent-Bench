@@ -11,7 +11,7 @@ from collections import defaultdict
 
 
 INFRA_EXCEPTIONS = {"ApiRateLimitError", "EnvironmentStartTimeoutError", "NetworkConnectionError", "AddTestsDirError",
-                    "EnvironmentBuildTimeoutError", "VerifierTimeoutError", "UnknownApiError"}   # UnknownApiError: gateway closed the connection mid-run
+                    "EnvironmentBuildTimeoutError", "VerifierTimeoutError", "UnknownApiError", "ConnectionError"}   # UnknownApiError: gateway closed the connection; ConnectionError: local DNS/network loss while streaming from Modal
 
 
 def pass_at_k(n, c, k):
