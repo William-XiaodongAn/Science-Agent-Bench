@@ -193,3 +193,80 @@ if __name__ == "__main__":
         d = np.load(path)
         desc = describe(d["t"], d["x"], d["y"])
         print(f"{path.split('/')[-1]:34s} {summarize(desc)}")
+
+
+# ----------------------------------------------------------------------------- shape statistics (human-calibrated, v0.2)
+def _centre_path(t, x, y, window_ms=6000.0):
+    """(t, z, c, r1, T1) on the analysis window with NaN gaps interpolated; c = running mean over one loop period."""
+    t = np.asarray(t, float); x = np.asarray(x, float); y = np.asarray(y, float)
+    d = describe(t, x, y, window_ms=window_ms)
+    if "T1" not in d:
+        return None
+    m = t > t[-1] - window_ms; t = t[m]; z = x[m] + 1j * y[m]; ok = ~np.isnan(z)
+    if ok.sum() < 100:
+        return None
+    z = np.interp(t, t[ok], z.real[ok]) + 1j * np.interp(t, t[ok], z.imag[ok])
+    dt = float(np.median(np.diff(t))) or 1.0
+    w = max(1, int(round(d["T1"] / dt))); c = _boxcar(z, w); e = w // 2 + 1
+    return t[e:-e], z[e:-e], c[e:-e], max(d["r1"], 1e-3), d["T1"]
+
+
+def drift_leg_curvature(t, x, y, corner_deg=35.0, min_leg_r1=8.0):
+    """Drift patterns: the centre path (loops removed) resampled by arc length (0.25 loop radii), smoothed over 2 radii;
+    corners = stretches where the net heading change within 3 radii reaches `corner_deg`; legs = stretches between corners
+    at least `min_leg_r1` radii long. Returns dict(max_sagitta = max over legs of (max chord deviation / leg length),
+    max_net_turn_deg, legs = [(net_turn_deg, sagitta, length_r1), ...]). The reviewer requires straight legs: reference
+    0.017, accepted pipelines <= 0.029, rejected (curved or curling runs) >= 0.040."""
+    cp = _centre_path(t, x, y)
+    if cp is None:
+        return dict(max_sagitta=np.nan, max_net_turn_deg=np.nan, legs=[])
+    _, _, c, r1, _ = cp
+    s = np.concatenate([[0.0], np.cumsum(np.abs(np.diff(c)))]); L = s[-1]
+    if L < 10 * r1:
+        return dict(max_sagitta=np.nan, max_net_turn_deg=np.nan, legs=[])
+    step = 0.25 * r1; su = np.arange(0, L, step); cu = np.interp(su, s, c.real) + 1j * np.interp(su, s, c.imag)
+    k = 8; cu = _boxcar(cu, k)[k:-k]
+    th = np.unwrap(np.angle(np.diff(cu))); dth = np.diff(th)
+    win = 12; net = np.convolve(dth, np.ones(win), mode="same"); corner = np.abs(np.degrees(net)) >= corner_deg
+    corner = np.convolve(corner.astype(int), np.ones(win), mode="same") > 0
+    legs = []; i = 0; n = len(dth)
+    while i < n:
+        if corner[i]:
+            i += 1; continue
+        j = i
+        while j < n and not corner[j]:
+            j += 1
+        if (j - i) * step >= min_leg_r1 * r1:
+            seg = cu[i:j + 1]; chord = seg[-1] - seg[0]
+            if abs(chord) > 1e-9:
+                u = chord / abs(chord); dev = np.abs(np.imag((seg - seg[0]) * np.conj(u)))
+                nett = abs(np.degrees(th[min(j, len(th) - 1)] - th[i]))
+                legs.append((float(nett), float(dev.max() / abs(chord)), float((j - i) * step / r1)))
+        i = j
+    if not legs:
+        return dict(max_sagitta=np.nan, max_net_turn_deg=np.nan, legs=[])
+    return dict(max_sagitta=max(l[1] for l in legs), max_net_turn_deg=max(l[0] for l in legs), legs=legs)
+
+
+def linear_core_cusp_angle(t, x, y):
+    """Linear cores: at the ends of the straight runs (local maxima of the distance from the running centre, at least
+    0.8 loop radii out) the reversal angle between the chords 0.25 radii before and after the end point; 180 = sharp cusp.
+    Returns dict(median_angle_deg, n_ends). Reference and accepted pipelines 171-173 deg; rounded, petal-like ends 113-129."""
+    cp = _centre_path(t, x, y)
+    if cp is None:
+        return dict(median_angle_deg=np.nan, n_ends=0)
+    _, zc, cc, r1, _ = cp
+    r = np.abs(zc - cc); zs = _boxcar(zc, 3); Lc = 0.25 * r1; ang = []
+    for i in range(30, len(r) - 30):
+        if r[i] < 0.8 * r1 or r[i] < r[i - 30:i + 31].max():
+            continue
+        def chord(direction):
+            acc = 0.0; j = i
+            while 0 < j < len(zs) - 1 and acc < Lc:
+                j += direction; acc += abs(zs[j] - zs[j - direction])
+            return zs[j] - zs[i]
+        vin = -chord(-1); vout = chord(+1)
+        if abs(vin) < 1e-9 or abs(vout) < 1e-9:
+            continue
+        ang.append(np.degrees(np.arccos(np.clip(np.real(vin * np.conj(vout)) / (abs(vin) * abs(vout)), -1, 1))))
+    return dict(median_angle_deg=(float(np.median(ang)) if ang else np.nan), n_ends=len(ang))
