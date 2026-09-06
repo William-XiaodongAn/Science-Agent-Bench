@@ -157,7 +157,8 @@ def describe(t, x, y, window_ms=6000.0, min_window_ms=3000.0):
     # ---- classification
     if (not np.isnan(mirror) and mirror > 0.4 and not np.isnan(lin) and lin > 0.6):
         cls = "L"
-    elif A_c < 0.2 * max(r1, 1e-6) and extent < 0.6 * max(r1, 1e-6):
+    elif A_c < 0.2 * max(r1, 1e-6) and extent < 0.8 * max(r1, 1e-6):   # stated rule: wander < 20% of the loop radius; the extent bound only
+        # excludes a slow straight creep hiding behind a small RMS (extent of a uniform drift = 2*sqrt(3)*RMS ~ 0.7 r1 at the limit)
         cls = "C"
     elif R2 > 5.0 or (revs < 0.8 and net > max(3.0, 4 * r1)):
         cls = "D"
