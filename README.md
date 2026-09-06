@@ -122,10 +122,11 @@ no paper references, ESN-only; digests in `calibration/trajectory-digests/v10/`)
 ([`RESULTS-2026-09-05-tier3-v10.md`](calibration/RESULTS-2026-09-05-tier3-v10.md)). The tier-3 task therefore separates the two
 leading agents from Gemini but not from each other. The second tier-3 task, **`spiral-tip-patterns`** (parameters -> an
 automatic pipeline for spiral initiation, tip tracking and pattern classification, judged on six reference and eight sealed
-hidden parameter sets; reference pipeline 14/14), was calibrated on 2026-09-05: **Codex 4/4 scored trials passed (14, 13, 14,
-14 of 14 sets), Fable 1/3 (14, 12, 12), Gemini 1/3 (14, 7, 3)**, every pass re-verified in a fresh sandbox with the final
-verifier and audited (no lookup tables, no closed-form curves, no image reads by code; the six linear-core and near-onset
-sets are where the non-passing pipelines lost points)
+hidden parameter sets; reference pipeline 14/14), was calibrated on 2026-09-05: the programmatic verifier passed Codex 4/4 scored trials
+(14, 13, 14, 14 of 14 sets), Fable 1/3 (14, 12, 12) and Gemini 1/3 (14, 7, 3), every pass re-verified in a fresh sandbox and
+audited; the task owner's blinded review of the drawings then rejected three of the Codex passes and the Gemini pass for
+shape infidelity (drift runs not straight, linear cores without sharp cusps), so the **final tally is Fable 1/3, Codex 1/3,
+Gemini 0/3**
 ([`RESULTS-2026-09-05-tier3-task2-v01.md`](calibration/RESULTS-2026-09-05-tier3-task2-v01.md), run folders in
 [`calibration/runs/`](calibration/runs)).
 
