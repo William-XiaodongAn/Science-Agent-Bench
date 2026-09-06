@@ -37,3 +37,9 @@
 | gemini | mjafGjU | NetworkConnectionError | Command failed (exit 1): set -euo pipefail; curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | e |
 | gemini | sGfWopm | NetworkConnectionError | Command failed (exit 1): set -euo pipefail; curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | e |
 | gemini | vteDbsh | infrastructure (manual: agent CLI stopped by gateway rate limiting) |  |
+
+## Expert review (task owner, blinded drawings, 2026-09-06)
+Accepted: `codex__K6Hb4Co`, `fable__fAYdiX5`, `fable__Gj4rJgv`. Rejected: all other submissions. Failure patterns: drift
+trajectories (row C) that do not run straight between edge turns; linear cores (F, H7, H8) without the sharp cusp at the ends
+of each run. Final pass = programmatic pass AND expert acceptance: fable__fAYdiX5, codex__K6Hb4Co (Fable 1/3, Codex 1/3,
+Gemini 0/3); fable__Gj4rJgv was accepted by the expert but failed the verifier (12/14).

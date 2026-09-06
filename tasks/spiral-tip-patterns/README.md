@@ -81,6 +81,10 @@ hard-codes the six reference outputs scores at most 6/14 and fails.
   labels come from the same classifier applied to the reference runs.
 - Hooked, star-like meanders (low excitability, T1 300-550 ms) fall into H when their centre path does not
   repeat; none is used as a hidden set.
+- **Shape fidelity gap (from the 2026-09-06 expert review).** The D rule accepts curved or wobbling drift paths and the L
+  rule accepts rounded or hooked ends; the expert requires straight drift runs and sharp cusps. v0.2 should add a per-run
+  straightness statistic for D (line-fit residual between edge turns) and a cusp statistic for L (curvature at the speed
+  minima), both calibrated on the reference pipeline, and re-derive the sealed labels with them.
 - Runs are 8 s of model time; a precession slower than ~5 s is read as drift by construction.
 - **Verifier corrections made during the first calibration (2026-09-05), applied to every submission:** (1) the frame
   provenance check now accepts any fixed axis convention (8 dihedral orientations; the instruction states the preferred
@@ -103,8 +107,11 @@ provisional hidden sets gave the same 8/8. Job: `jobs/t3t2-oracle/oracle-final-2
 
 ## 7. First calibration (2026-09-05)
 Fable 5.1, GPT-5.6 Sol and Gemini 3.7 Flash, k = 3 (+ replacements), 4 h budget, all scored submissions re-verified with
-the final verifier in fresh sandboxes and every pass audited: **Codex 4/4 scored trials passed (14, 13, 14, 14 of 14),
-Fable 1/3 (14, 12, 12), Gemini 1/3 (14, 7, 3)**. Misses concentrate on the linear-core sets and the near-onset flower.
+the final verifier in fresh sandboxes and every pass audited. Programmatic verifier: Codex 4/4 scored trials (14, 13,
+14, 14 of 14), Fable 1/3 (14, 12, 12), Gemini 1/3 (14, 7, 3). The task owner's blinded review of the drawings accepted only
+Codex K6Hb4Co, Fable fAYdiX5 and Fable Gj4rJgv, so the **final tally (verifier AND review) is Fable 1/3, Codex 1/3,
+Gemini 0/3**. The review rejected drift runs that are not straight and linear cores without sharp cusps, two shape
+properties the classifier does not test (v0.2 work item, see §5).
 Details, the two verifier corrections made during the run and the infrastructure notes:
 `calibration/RESULTS-2026-09-05-tier3-task2-v01.md`; run folders `calibration/runs/spiral-tip-patterns/`.
 
