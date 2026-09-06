@@ -120,9 +120,14 @@ removed, so no borrowing from the paper is possible: inputs = stimulus + optiona
 (0.0730-0.0739), Codex 3/3 (0.0695-0.0748), Gemini 0/3**, every pass replayed in the clean image and audited (no hacking,
 no paper references, ESN-only; digests in `calibration/trajectory-digests/v10/`)
 ([`RESULTS-2026-09-05-tier3-v10.md`](calibration/RESULTS-2026-09-05-tier3-v10.md)). The tier-3 task therefore separates the two
-leading agents from Gemini but not from each other; the second tier-3 task, `spiral-tip-patterns` (parameters -> automatic
-spiral initiation, tip tracking and pattern classification, judged on sealed hidden parameter sets; reference pipeline
-14/14 on Modal), is being calibrated with the same three agents.
+leading agents from Gemini but not from each other. The second tier-3 task, **`spiral-tip-patterns`** (parameters -> an
+automatic pipeline for spiral initiation, tip tracking and pattern classification, judged on six reference and eight sealed
+hidden parameter sets; reference pipeline 14/14), was calibrated on 2026-09-05: **Codex 4/4 scored trials passed (14, 13, 14,
+14 of 14 sets), Fable 1/3 (14, 12, 12), Gemini 1/3 (14, 7, 3)**, every pass re-verified in a fresh sandbox with the final
+verifier and audited (no lookup tables, no closed-form curves, no image reads by code; the six linear-core and near-onset
+sets are where the non-passing pipelines lost points)
+([`RESULTS-2026-09-05-tier3-task2-v01.md`](calibration/RESULTS-2026-09-05-tier3-task2-v01.md), run folders in
+[`calibration/runs/`](calibration/runs)).
 
 ### agent-env (pass@k on frontier models)
 

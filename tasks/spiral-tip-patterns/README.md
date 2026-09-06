@@ -101,7 +101,14 @@ hard-codes the six reference outputs scores at most 6/14 and fails.
 (39-46 s each), score 1.0, passed, `submitted_label_agreement` 1.0, no provenance failures; the earlier run with two
 provisional hidden sets gave the same 8/8. Job: `jobs/t3t2-oracle/oracle-final-20260905`.
 
-## 7. Commands
+## 7. First calibration (2026-09-05)
+Fable 5.1, GPT-5.6 Sol and Gemini 3.7 Flash, k = 3 (+ replacements), 4 h budget, all scored submissions re-verified with
+the final verifier in fresh sandboxes and every pass audited: **Codex 4/4 scored trials passed (14, 13, 14, 14 of 14),
+Fable 1/3 (14, 12, 12), Gemini 1/3 (14, 7, 3)**. Misses concentrate on the linear-core sets and the near-onset flower.
+Details, the two verifier corrections made during the run and the infrastructure notes:
+`calibration/RESULTS-2026-09-05-tier3-task2-v01.md`; run folders `calibration/runs/spiral-tip-patterns/`.
+
+## 8. Commands
 ```bash
 harbor run -p tasks/spiral-tip-patterns -a oracle -y                       # reference pipeline through the verifier
 harbor run -p tasks/spiral-tip-patterns -a claude-code -m claude-opus-5 -y

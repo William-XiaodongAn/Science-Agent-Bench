@@ -10,6 +10,7 @@ gemini-cli; k = 3 per agent on Modal, 4 vCPU / 16 GB sandboxes, network limited 
 | `ssn-heldout-stimulus-prediction/` | v0.3 (2 h budget) | 2026-09-03 | `../RESULTS-2026-09-03.md` |
 | `optical-mapping-activation-maps/` | v0.2 (dual gate in frame units) | 2026-09-04 | `../RESULTS-2026-09-04-tier2-v02.md` |
 | `zebrafish-voltage-forecast/` | v0.10 (search procedure, paper withheld, no borrowing) | 2026-09-04/05 | `../RESULTS-2026-09-05-tier3-v10.md`, audits in `../trajectory-digests/v10/` |
+| `spiral-tip-patterns/` | v0.1 (pipeline judged on 6 reference + 8 sealed sets) | 2026-09-05 | `../RESULTS-2026-09-05-tier3-task2-v01.md`, audits in `../trajectory-digests/t3t2/`; verifier outputs are the final-grader re-verifications (`verifier_original/` = trial time) |
 
 Inside a task folder:
 

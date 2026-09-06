@@ -23,7 +23,11 @@ def main():
                        "whether they are the same pattern class. Do not try to guess which side is which.", "",
                        "| pair | left class | right class | same? | notes |", "|---|---|---|---|---|"]
     n = 0
+    # one job per trial id: when a submission was re-verified more than once, keep the latest job (sorted by path)
+    latest = {}
     for trial in sorted(glob.glob(os.path.join(a.jobs_dir, "*", "*__*"))):
+        latest[trial.rsplit("__", 1)[-1]] = trial
+    for trial in sorted(latest.values()):
         draw = os.path.join(trial, "verifier", "drawings")
         if not os.path.isdir(draw):
             continue
