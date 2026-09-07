@@ -22,11 +22,13 @@ direction = "higher_better"
 protocol = "submission = run.py (--params file.json --out dir) producing tip_trace.csv, frames/ (u,v), pattern.json, trajectory.png, snapshot.png, run_log.txt; the verifier runs it per parameter set as an unprivileged user with a 900 s cap, checks validity and provenance, classifies the trajectory with a frozen two-frequency decomposition and compares with the sealed class"
 classes = "C circular | FI flower petals inward | FO flower petals outward | L linear core | D drift | H hypermeander"
 hidden_sets = 8
-pass_rule = "methods.md present AND all 6 reference sets match AND >= 7 of 8 hidden sets match; 14/14 reported as the stretch"
-reference = "solution/: obstacle-pivot initiation with S1-S2 fallback, tool tip definition, two-frequency classifier; Modal 2026-09-05 (sealed sets): 6/6 reference + 8/8 hidden, score 1.0, passed; oracle 9 min for the six rows, verifier 572 s for the 14 sets (~40 s per set on 4 cores)"
+pass_rule = "methods.md present AND all 6 reference sets match AND >= 7 of 8 hidden sets match; a set matches when class, provenance, the human-calibrated shape rules and the VLM judge agree; 14/14 reported as the stretch"
+reference = "solution/: obstacle-pivot initiation with S1-S2 fallback, tool tip definition, two-frequency classifier; v0.2 Modal 2026-09-06: 14/14 (class, provenance, shape rules, judge 3/3 on every set), score 1.0, passed; oracle 9 min for the six rows, verifier 1302 s for the 14 sets including the judge"
 budget_gpus = 0
 budget_wall_clock_hours = 4
-difficulty = "hard"          # estimated; expert solve time not yet measured (spec 5.3)
+difficulty = "hard"
+human_baseline = "expert draws one pattern in under 5 min with the interactive tool (task owner, 2026-09-06); the task asks for the systematic pipeline that replaces that step"
+version_notes = "v0.2 (2026-09-06): human-calibrated shape rules (drift straightness, linear-core cusps) and a VLM judge of drawing fidelity added after the expert review of the v0.1 calibration"
 
 [agent]
 timeout_sec = 14400.0
@@ -44,6 +46,13 @@ MIN_TIP_FRAC = "0.7"
 MIN_PS_FRAC = "0.7"
 MAX_FRAME_GAP_MS = "250"
 MIN_HIDDEN_CORRECT = "7"
+DRIFT_SAGITTA_MAX = "0.035"     # v0.2 shape rule: drift legs straight (reference 0.017; expert-accepted <= 0.029; rejected >= 0.040)
+CUSP_ANGLE_MIN = "160"          # v0.2 shape rule: linear-core run ends sharp (reference 172-173 deg; rounded ends 113-129)
+JUDGE_MODEL = "anthropic/claude-fable-5-1"   # v0.2 VLM judge (Anthropic Messages API)
+JUDGE_API_KEY = "${ANTHROPIC_API_KEY:-}"        # resolved on the host at job time (harbor --env-file); reaches the verifier only, not the agent
+JUDGE_BASE_URL = "${ANTHROPIC_BASE_URL:-https://api.anthropic.com}"
+JUDGE_VOTES = "3"
+REQUIRE_JUDGE = "1"             # no pass without judge verdicts (a trial verified without credentials is flagged judge_unavailable)
 REWARD_MODE = "normalized"
 
 [environment]

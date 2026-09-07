@@ -72,8 +72,8 @@ well under a minute on 4 cores.
 | `C` | circular core, rigid rotation | the loop centre stays put: its wander is below 20% of the loop radius |
 | `FI` | flower, petals **inward** | the loop centre travels a closed, repeating ring (>= 1.2 revolutions in the window, radius variation < 50%, repeats after one revolution) **in the same sense** as the tip rotates: the loops lie on the inside of the ring |
 | `FO` | flower, petals **outward** | the same, but the ring is travelled **in the opposite sense** to the tip rotation: the loops lie on the outside of the ring |
-| `L` | linear core | the tip runs back and forth along a slowly turning straight segment (its motion is an oscillation, not a rotation) |
-| `D` | drift | the loop centre travels away: ring radius above 5 cm, or fewer than 0.8 revolutions with a net displacement above max(3 cm, 4 loop radii) |
+| `L` | linear core | the tip runs back and forth along a slowly turning straight segment (its motion is an oscillation, not a rotation); **the ends of the runs are sharp cusps**: the median reversal angle at the run ends is at least 160 degrees |
+| `D` | drift | the loop centre travels away: ring radius above 5 cm, or fewer than 0.8 revolutions with a net displacement above max(3 cm, 4 loop radii); **the runs between edge turns are straight**: the largest deviation of a run from its chord is at most 3.5% of the run length |
 | `H` | hypermeander | none of the above: the loop centre wanders without repeating |
 
 Decompose the trajectory as tip = loop centre + loop: the loop is the rotation of the tip
@@ -85,7 +85,18 @@ oscillation rather than a rotation: the spectrum of the trajectory has comparabl
 `+1/T1` and `-1/T1` and the loop is flat (covariance eigenvalue ratio < 0.4). Petals per ring
 revolution: `T2/T1 - 1` for `FI`, `T2/T1 + 1` for `FO` (report the ratio too; it need not be an
 integer). The rules are applied in the order L, C, D, flower, H. The verifier applies this same
-decomposition to your `tip_trace.csv`; your own `cls` is compared with it and reported.
+decomposition to your `tip_trace.csv`; your own `cls` is compared with it and reported. The two shape
+criteria in bold come from the expert's review of the first calibration: drift drawings with curved runs
+and linear cores with rounded or petal-like ends were rejected even though their class matched.
+
+**Drawing fidelity.** For every set the verifier also shows your `trajectory.png` and the reference
+pipeline's drawing of the same set, in random order, to a vision-language judge with the expert's
+criteria (same pattern in kind; straight drift runs; sharp cusps; petals on the right side of the ring;
+legible drawing). Three independent votes, majority decides; the set counts only if the judge agrees.
+Both drawings are cropped to the drawn trajectory before judging, so margins and axis limits do not
+matter, but a drawing that is empty, clipped or too cluttered to read is rejected. An expert produces one
+of these drawings in under five minutes with the interactive tool; your pipeline replaces that step for
+any parameter set.
 
 ## Deliverables (all in `/workspace/submission/`)
 - `run.py` plus every module it imports (keep them in `/workspace/submission/`).
@@ -107,7 +118,9 @@ process, unprivileged user, no network, 900 s cap each), then for each set:
    changing in time) and the tip lies on a phase singularity of `(u, v)` in >= 70% of the
    checked frames;
 3. **pattern** — the class the verifier's decomposition assigns to your trajectory equals the
-   sealed label. For flowers the petal ratio is also compared (within 1 or 15%) and reported.
+   sealed label, the shape criteria hold (straight drift runs, sharp linear-core cusps), and the
+   vision-language judge agrees that your drawing shows the same pattern as the reference drawing.
+   For flowers the petal ratio is also compared (within 1 or 15%) and reported.
 
 `score` = fraction of the fourteen sets whose pattern matches (0-1); also reported: your own
 `cls` labels' agreement, per-set descriptors, and the provenance failures separately (a set

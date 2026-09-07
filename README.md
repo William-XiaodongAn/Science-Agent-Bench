@@ -126,7 +126,9 @@ hidden parameter sets; reference pipeline 14/14), was calibrated on 2026-09-05: 
 (14, 13, 14, 14 of 14 sets), Fable 1/3 (14, 12, 12) and Gemini 1/3 (14, 7, 3), every pass re-verified in a fresh sandbox and
 audited; the task owner's blinded review of the drawings then rejected three of the Codex passes and the Gemini pass for
 shape infidelity (drift runs not straight, linear cores without sharp cusps), so the **final tally is Fable 1/3, Codex 1/3,
-Gemini 0/3**
+Gemini 0/3**. The task's v0.2 verifier turns that review into code: human-calibrated shape rules (straight drift legs, sharp
+linear-core cusps) plus a blinded VLM judge of drawing fidelity, which together reproduce 10 of the 11 review verdicts
+without a human ([`RESULTS-2026-09-06-tier3-task2-v02.md`](calibration/RESULTS-2026-09-06-tier3-task2-v02.md))
 ([`RESULTS-2026-09-05-tier3-task2-v01.md`](calibration/RESULTS-2026-09-05-tier3-task2-v01.md), run folders in
 [`calibration/runs/`](calibration/runs)).
 
