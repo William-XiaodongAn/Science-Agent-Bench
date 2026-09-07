@@ -52,7 +52,7 @@ def rise_fall_frames(s):
 
 
 def pipeline(frames_raw, *, transpose=True, drop0=True, t_sigma=4.0, s_sigma=1.0, smooth=None, snr_thr=5.0, one_beat=False, deriv=False,
-             force_sign=None, naive_constant=False):
+             force_sign=None, naive_constant=False, outline_disk=9, outline_erode=5, map_sigma=2.0):
     """Default denoising: Gaussian, sigma 4 frames (7.6 ms, far shorter than the ~66-frame upstroke) in time and 1 pixel in space.
     `smooth=k` instead applies a k-frame moving average and no spatial filter (the v0.1 behaviour, kept for the probes)."""
     fr = np.transpose(frames_raw, (0, 2, 1)) if transpose else frames_raw
@@ -76,7 +76,17 @@ def pipeline(frames_raw, *, transpose=True, drop0=True, t_sigma=4.0, s_sigma=1.0
     if k:
         mask = lab == (np.bincount(lab.ravel())[1:].argmax() + 1)
     mask = ndimage.binary_fill_holes(mask)
-    mask = ndimage.binary_dilation(mask, iterations=1)      # 1-px margin: keeps coverage of the expert mask clear of the 0.95 gate
+    if outline_disk:
+        # v0.3: the expert's mask is a smooth anatomical outline without the low-signal rim. A disk opening + closing removes the
+        # ragged rim and the appendage, the largest component is kept, and an erosion pulls the outline off the rim.
+        yy, xx = np.mgrid[-outline_disk:outline_disk + 1, -outline_disk:outline_disk + 1]; se = (xx ** 2 + yy ** 2) <= outline_disk ** 2
+        mask = ndimage.binary_closing(ndimage.binary_opening(mask, structure=se), structure=se)
+        lab, k = ndimage.label(mask)
+        if k:
+            mask = lab == (np.bincount(lab.ravel())[1:].argmax() + 1)
+        mask = ndimage.binary_fill_holes(mask)
+    if outline_erode:
+        mask = ndimage.binary_erosion(mask, iterations=outline_erode)
     # beats on the field mean
     s = norm(sm[:, mask].mean(axis=1))
     onsets = []
@@ -111,6 +121,14 @@ def pipeline(frames_raw, *, transpose=True, drop0=True, t_sigma=4.0, s_sigma=1.0
     act = np.full((128, 128), np.nan, np.float32); apd = np.full((128, 128), np.nan, np.float32)
     with np.errstate(invalid="ignore"):
         act[mask] = np.nanmean(np.array(acts), axis=0); apd[mask] = np.nanmean(np.array(apds), axis=0)
+    if map_sigma:
+        # v0.3: maps are spatially smooth at the pixel scale like the expert's (median |Laplacian| 0.04 ms activation); a Gaussian
+        # of `map_sigma` pixels inside the mask (normalised convolution so the outline does not bleed in) removes pixel noise
+        for arr in (act, apd):
+            vals = np.where(mask & np.isfinite(arr), arr, 0.0).astype(np.float64); wts = (mask & np.isfinite(arr)).astype(np.float64)
+            num = ndimage.gaussian_filter(vals, map_sigma); den = ndimage.gaussian_filter(wts, map_sigma)
+            sm_ = np.where(den > 1e-6, num / np.maximum(den, 1e-6), np.nan)
+            arr[mask] = sm_[mask].astype(np.float32)
     if naive_constant:
         act[mask] = 0.0; apd[mask] = float(np.nanmedian(apd[mask]))
     info = dict(frames=int(frames_raw.shape[0]), used=int(T), polarity_sign=float(sign), rise_frames=float(rise), fall_frames=float(fall),
@@ -138,8 +156,9 @@ def main():
 footer ({info['frames']} frames), transposed to the analysis convention, frame 0 dropped. Polarity
 decided from the field-mean waveform (10-90% rise {info['rise_frames']:.0f} frames vs 90-10% fall
 {info['fall_frames']:.0f} frames -> sign {info['polarity_sign']:+.0f}). Gaussian denoising, sigma 4 frames in time (7.6 ms) and 1 pixel in space, before any definition is applied.
-Mask = pixels with (98th-2nd percentile amplitude) / residual noise > 5, largest connected component,
-holes filled, dilated by one pixel ({info['mask_pixels']} px). Beat onsets on the 5-95%-normalised field mean, 50% upward
+Mask = pixels with (98th-2nd percentile amplitude) / residual noise > 5, largest connected component, holes filled, then
+the outline regularised as an anatomical boundary: 9-px disk opening and closing, largest component, 5-px erosion off the
+low-signal rim ({info['mask_pixels']} px). Maps smoothed inside the mask with a 2-px Gaussian (normalised convolution). Beat onsets on the 5-95%-normalised field mean, 50% upward
 crossing, 250-frame refractory: {info['n_onsets']} onsets, {info['n_usable']} usable.
 Per beat and pixel: window [onset-60, onset+300); baseline = median of first 50 frames; activation =
 first 50%-amplitude crossing, linearly interpolated; APD80 = frames above the 20% level x 1.89 ms.

@@ -80,6 +80,12 @@ def main():
     baseline, floor, pass_bar = env_float("BASELINE_ACT_MS"), env_float("FLOOR_ACT_MS"), env_float("PASS_ACT_MS")
     apd_baseline, apd_floor, apd_pass_bar = env_float("BASELINE_APD_MS"), env_float("FLOOR_APD_MS"), env_float("PASS_APD_MS")
     cov_min, iou_min = env_float("COVERAGE_MIN"), env_float("IOU_MIN")
+    # v0.3 expert-likeness gates (2026-09-06 review: every agent deliverable was distinguishable from the expert's by its
+    # ragged, oversized mask and pixel-noisy maps). Pass conditions, not validity gates: the score is still reported.
+    outside_max = float(os.environ.get("MASK_OUTSIDE_MAX", "0.12"))        # fraction of the submitted mask outside the expert tissue
+    compact_max = float(os.environ.get("MASK_COMPACTNESS_MAX", "1.0"))     # perimeter^2 / (4 pi area); expert 0.85, agents 0.96-1.54
+    act_rough_max = float(os.environ.get("ACT_ROUGHNESS_MAX", "0.06"))     # median |Laplacian| of the activation map (ms); expert 0.037
+    apd_rough_max = float(os.environ.get("APD_ROUGHNESS_MAX", "0.70"))     # same for APD80 (ms); expert 0.63
 
     gt_act = np.load(os.path.join(SEALED, "activation_ms.npy")).astype(np.float64)
     gt_apd = np.load(os.path.join(SEALED, "apd80_ms.npy")).astype(np.float64)
@@ -114,10 +120,30 @@ def main():
     apd_bias = float(np.mean(d2f)) if len(d2f) else None
     apd_normalized = float(np.clip((apd_baseline - apd_rmse) / (apd_baseline - apd_floor), 0.0, 1.0)) if apd_rmse is not None else None
 
+    # v0.3 mask shape and map smoothness
+    from scipy import ndimage as _ndi
+    outside = float((sub_mask & ~gt_mask).sum() / sub_mask.sum())
+    perim = float((sub_mask & ~_ndi.binary_erosion(sub_mask)).sum()); compactness = perim ** 2 / (4 * np.pi * sub_mask.sum())
+    inner = _ndi.binary_erosion(sub_mask, iterations=2) & sel
+    def roughness(x):
+        lap = np.abs(_ndi.laplace(np.nan_to_num(x.astype(np.float64))))
+        return float(np.nanmedian(lap[inner])) if inner.any() else float("nan")
+    act_rough = roughness(sub_act); apd_rough = roughness(sub_apd)
+    mask_ok = bool(outside <= outside_max and compactness <= compact_max)
+    smooth_ok = bool(np.isfinite(act_rough) and act_rough <= act_rough_max and np.isfinite(apd_rough) and apd_rough <= apd_rough_max)
+
     methods_ok, methods_flag = methods_check()
     flags = []
     if not methods_ok:
         flags.append(methods_flag)
+    if outside > outside_max:
+        flags.append("mask_outside_tissue_above_gate")
+    if compactness > compact_max:
+        flags.append("mask_outline_not_smooth")
+    if not (np.isfinite(act_rough) and act_rough <= act_rough_max):
+        flags.append("activation_map_too_rough")
+    if not (np.isfinite(apd_rough) and apd_rough <= apd_rough_max):
+        flags.append("apd80_map_too_rough")
     if apd_rmse is None or len(d2f) < 0.5 * sel.sum():
         flags.append("apd80_mostly_missing")
     elif apd_rmse > apd_baseline:
@@ -130,7 +156,7 @@ def main():
         flags.append("activation_above_gate")
     if not apd_ok:
         flags.append("apd80_above_gate")
-    passed = bool(act_ok and apd_ok and methods_ok)
+    passed = bool(act_ok and apd_ok and methods_ok and mask_ok and smooth_ok)
     reward = normalized if REWARD_MODE == "normalized" else (1.0 if passed else 0.0)
 
     write({
@@ -156,10 +182,17 @@ def main():
             "mask_iou": round(iou, 4),
             "mask_pixels": int(sub_mask.sum()),
             "activation_finite_frac": round(finite_frac, 4),
+            "mask_outside_tissue_frac": round(outside, 4),
+            "mask_compactness": round(compactness, 4),
+            "activation_roughness_ms": None if not np.isfinite(act_rough) else round(act_rough, 4),
+            "apd80_roughness_ms": None if not np.isfinite(apd_rough) else round(apd_rough, 4),
+            "mask_gates_passed": mask_ok,
+            "smoothness_gates_passed": smooth_ok,
         },
         "anchors": {"baseline_act_ms": baseline, "floor_act_ms": floor, "pass_act_ms": pass_bar,
                     "baseline_apd_ms": apd_baseline, "floor_apd_ms": apd_floor, "pass_apd_ms": apd_pass_bar,
-                    "coverage_min": cov_min, "iou_min": iou_min},
+                    "coverage_min": cov_min, "iou_min": iou_min, "mask_outside_max": outside_max, "mask_compactness_max": compact_max,
+                    "act_roughness_max": act_rough_max, "apd_roughness_max": apd_rough_max},
     }, reward)
 
 

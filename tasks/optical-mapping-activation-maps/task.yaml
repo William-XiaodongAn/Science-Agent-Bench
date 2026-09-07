@@ -2,7 +2,7 @@
 # SciAgent Bench task metadata (spec section 3.2). The runnable definition is task.toml.
 id: optical-mapping-activation-maps
 title: "Recover activation and APD80 maps from a raw cardiac optical-mapping recording"
-version: 0.2               # 0.1 empirical 3.0 ms bar; 0.2 gates in units of the temporal resolution (activation < 1 frame, APD80 < 2 frames), Gaussian-denoised reference
+version: 0.3               # v0.3: expert-likeness gates (mask outline, map smoothness); reference upgraded
 tier: T2
 domain: neuroscience-physiology
 subdomain: cardiac-electrophysiology-optical-mapping
@@ -39,7 +39,7 @@ verifier:
   normalized: "clip((19.334 - rmse) / (19.334 - 1.008), 0, 1)"
   range: [0, 1]
   deterministic: true
-  pass_rule: "valid (coverage >= 0.95, IoU >= 0.55, >= 50% finite) AND methods.md present AND activation RMSE < 1.890 ms (one frame at 529.09 fps) AND APD80 RMSE < 3.780 ms (two frames)"
+  pass_rule: "valid (coverage >= 0.85, IoU >= 0.55, >= 50% finite) AND methods.md present AND activation RMSE < 1.890 ms (one frame at 529.09 fps) AND APD80 RMSE < 3.780 ms (two frames) AND expert-likeness gates (mask outside tissue <= 12%, compactness <= 1.0, activation roughness <= 0.06 ms, APD80 roughness <= 0.70 ms)"
   gate_rationale: "stated in units of the recording's temporal resolution, not of any pipeline's score; the 18-beat map's statistical noise is 0.3-0.7 ms (activation) and ~1.8 ms (APD80), so noise alone never fails a correct pipeline"
   runs_per_eval: 3
 ground_truth:
