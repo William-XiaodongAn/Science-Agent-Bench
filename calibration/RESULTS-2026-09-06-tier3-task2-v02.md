@@ -73,7 +73,8 @@ leg (3 legs); cusp angles 172.9 / 172.4 / 173.0 deg on F / H7 / H8; judge 3/3 "s
 (`JUDGE_API_KEY = "${ANTHROPIC_API_KEY:-}"`), resolved on the host from `harbor --env-file`; the agent never sees them.
 
 ## What the suite gives agents
-The instruction now states the shape criteria and the judge's rubric, so the target is knowable; every verifier result
+The instruction describes the patterns qualitatively (including straight drift runs and sharp cusps) but not the thresholds
+or the judge's rubric (task owner's decision: disclosed thresholds become optimization targets); every verifier result
 carries the per-set descriptors, shape statistics, judge votes with one-sentence reasons, and the drawings the judge saw.
 A failing pipeline therefore learns *which* property of *which* regime it missed (curved drift at tau_d 0.389; rounded
 ends on the set_02 family; a coarse grid turning a near-onset flower into rigid rotation), which is the feedback the
