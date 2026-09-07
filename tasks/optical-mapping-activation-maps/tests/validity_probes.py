@@ -57,7 +57,7 @@ def probe_v03():
     """v0.3: the expert's deliverable passes the expert-likeness gates; a rim-inflated mask and pixel-noisy maps fail them."""
     rng = np.random.default_rng(0)
     exp = expert_likeness(gt_mask, gt_act, gt_apd)
-    rim = ndimage.binary_dilation(gt_mask, iterations=3); rim |= (rng.random(rim.shape) < 0.03) & ndimage.binary_dilation(gt_mask, iterations=6)
+    rim = ndimage.binary_dilation(gt_mask, iterations=5); rim |= (rng.random(rim.shape) < 0.05) & ndimage.binary_dilation(gt_mask, iterations=8)   # an agent-like rim: 20-30% outside
     inflated = expert_likeness(rim, gt_act, gt_apd)
     noisy = expert_likeness(gt_mask, gt_act + rng.normal(0, 0.3, gt_act.shape), gt_apd + rng.normal(0, 1.0, gt_apd.shape))
     print("[v0.3] expert deliverable      :", exp)
