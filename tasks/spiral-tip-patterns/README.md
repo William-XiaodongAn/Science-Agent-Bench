@@ -141,6 +141,15 @@ Details, the two verifier corrections made during the run and the infrastructure
 The v0.2 suite (section 3) reproduces 10 of the 11 review verdicts without a human and passes the reference 14/14 with a
 unanimous judge (`calibration/RESULTS-2026-09-06-tier3-task2-v02.md`).
 
+**Re-verification under v0.2 (Modal, 2026-09-06/07, no agent re-run):** the eleven captured submissions were re-run through
+the frozen v0.2 suite in fresh sandboxes. Passes: Fable fAYdiX5 and Codex K6Hb4Co (14/14, unanimous judge), exactly the two
+the review accepted and the v0.1 grader passed, so the automatic tally is **Fable 1/3, Codex 1/4 scored trials (1/3 at k = 3), Gemini 0/3**. The four v0.1
+passes the review had rejected fail on row C (curved drift runs) and, for 83EytP9, on the rounded linear-core ends of F, H7,
+H8. Agreement with the review: 10/11 (exception Gj4rJgv, circles on H7/H8). Modal sandbox speed varied 0.9-2.1x between runs;
+two runs hit the 900 s per-set cap for that reason and were repeated in fresh sandboxes (details in the results file). Run
+folders with the v0.2 verifier output: `calibration/runs/spiral-tip-patterns/` (trial-time and v0.1-final verdicts kept as
+`verifier_original/` and `verifier_previous/`).
+
 ## 8. Commands
 ```bash
 harbor run -p tasks/spiral-tip-patterns -a oracle -y                       # reference pipeline through the verifier
