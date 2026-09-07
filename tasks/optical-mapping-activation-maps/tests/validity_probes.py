@@ -29,12 +29,43 @@ def score(act, mask, apd=None):
     d = (act[sel] - gt_act[sel]); d = d[np.isfinite(d)]
     rmse = float(np.sqrt(np.mean((d - np.median(d)) ** 2))) if len(d) else float("nan")
     out = dict(rmse_ms=round(rmse, 3), coverage=round(float(cov), 3), iou=round(float(iou), 3),
-               valid=bool(cov >= 0.95 and iou >= 0.55), normalized=round(float(np.clip((BASE - rmse) / (BASE - FLOOR), 0, 1)), 3))
+               valid=bool(cov >= 0.85 and iou >= 0.55), normalized=round(float(np.clip((BASE - rmse) / (BASE - FLOOR), 0, 1)), 3))
     if apd is not None:
         d2 = (apd[sel] - gt_apd[sel]); d2 = d2[np.isfinite(d2)]
         out["apd80_rmse_ms"] = round(float(np.sqrt(np.mean(d2 ** 2))), 3) if len(d2) else None
         out["passes_gates"] = bool(out["valid"] and rmse < PASS_ACT and out["apd80_rmse_ms"] is not None and out["apd80_rmse_ms"] < PASS_APD)
     return out
+
+
+OUTSIDE_MAX, COMPACT_MAX, ACT_ROUGH_MAX, APD_ROUGH_MAX = 0.12, 1.0, 0.06, 0.70   # mirror task.toml [verifier.env] (v0.3)
+
+
+def expert_likeness(mask, act, apd):
+    """The v0.3 pass gates as computed by tests/grade.py."""
+    sel = gt_mask & mask
+    outside = float((mask & ~gt_mask).sum() / mask.sum())
+    perim = float((mask & ~ndimage.binary_erosion(mask)).sum()); compact = perim ** 2 / (4 * np.pi * mask.sum())
+    inner = ndimage.binary_erosion(mask, iterations=2) & sel
+    def rough(x):
+        return float(np.nanmedian(np.abs(ndimage.laplace(np.nan_to_num(x.astype(np.float64))))[inner]))
+    ra, rp = rough(act), rough(apd)
+    return dict(outside=round(outside, 3), compactness=round(compact, 3), act_roughness=round(ra, 3), apd_roughness=round(rp, 3),
+                expert_gates=bool(outside <= OUTSIDE_MAX and compact <= COMPACT_MAX and ra <= ACT_ROUGH_MAX and rp <= APD_ROUGH_MAX))
+
+
+def probe_v03():
+    """v0.3: the expert's deliverable passes the expert-likeness gates; a rim-inflated mask and pixel-noisy maps fail them."""
+    rng = np.random.default_rng(0)
+    exp = expert_likeness(gt_mask, gt_act, gt_apd)
+    rim = ndimage.binary_dilation(gt_mask, iterations=3); rim |= (rng.random(rim.shape) < 0.03) & ndimage.binary_dilation(gt_mask, iterations=6)
+    inflated = expert_likeness(rim, gt_act, gt_apd)
+    noisy = expert_likeness(gt_mask, gt_act + rng.normal(0, 0.3, gt_act.shape), gt_apd + rng.normal(0, 1.0, gt_apd.shape))
+    print("[v0.3] expert deliverable      :", exp)
+    print("[v0.3] rim-inflated mask       :", inflated, "-> should fail")
+    print("[v0.3] pixel-noisy maps        :", noisy, "-> should fail")
+    ok = exp["expert_gates"] and not inflated["expert_gates"] and not noisy["expert_gates"]
+    print("[v0.3]", "OK" if ok else "MISMATCH")
+    return ok
 
 
 rows = {}
@@ -60,3 +91,4 @@ w = max(len(k) for k in rows)
 for k, v in rows.items():
     print(f"{k:{w}s}  {json.dumps(v)}")
 json.dump(rows, open(task / "tests" / "validity_probes.json", "w"), indent=1)
+probe_v03()

@@ -17,5 +17,8 @@ mkdir -p /workspace/submission && cp -R "$(dirname "$0")/submission/." /workspac
 echo "captured submission installed: $(ls /workspace/submission | tr '\n' ' ')"
 EOF
 chmod +x "$STAGE/spiral-tip-patterns/solution/solve.sh"
+# v0.2: the verifier's VLM judge needs the gateway host in the allowlist and the credentials from the env file
+ENVFILE="${SCIAGENT_ENV_FILE:-$HOME/.sciagent-keys.env}"; EXTRA_HOST="${SCIAGENT_EXTRA_HOST:-litellm-proxy.ml.scale.com}"
+sed -i.bak -E "s#^(allowed_hosts = \[)#\1\"$EXTRA_HOST\", #" "$STAGE/spiral-tip-patterns/task.toml" && rm -f "$STAGE/spiral-tip-patterns/task.toml.bak"
 mkdir -p "$JOBS"
-env -u ANTHROPIC_BASE_URL -u ANTHROPIC_API_KEY harbor run -p "$STAGE/spiral-tip-patterns" -a oracle -e modal -y -o "$JOBS" --job-name "reverify-$TAG-$(date +%Y%m%d-%H%M)"
+env -u ANTHROPIC_BASE_URL -u ANTHROPIC_API_KEY harbor run -p "$STAGE/spiral-tip-patterns" -a oracle -e modal -y --env-file "$ENVFILE" -o "$JOBS" --job-name "reverify-$TAG-$(date +%Y%m%d-%H%M)"

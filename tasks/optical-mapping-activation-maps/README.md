@@ -83,7 +83,7 @@ unit, not in units of what any pipeline scored.
   the level the expert applied: the expert's per-beat scatter (1.01 ms) is what a 5-frame temporal and
   3×3 spatial filter achieve on the raw stream (raw: 3.5 ms), and the 20% repolarisation crossing on the
   slow tail is the step that punishes under-denoising (15 ms APD80 without spatial smoothing).
-- **Validity gates (DNF):** shapes `(128,128)`; non-empty mask; coverage of the reference mask ≥ 0.95
+- **Validity gates (DNF):** shapes `(128,128)`; non-empty mask; coverage of the reference mask ≥ 0.85 (v0.3; was 0.95)
   (the metric is computed on the intersection, so reference tissue must not be dropped) and IoU ≥ 0.55
   (the whole frame scores 0.37 because tissue covers 37% of it; the gate rejects trivial and
   mis-oriented masks with margin); at least half of the selected activation pixels finite.
@@ -157,3 +157,29 @@ harbor run -p tasks/optical-mapping-activation-maps -a oracle -y   # reference p
 harbor run -p tasks/optical-mapping-activation-maps -a claude-code -m claude-opus-5 -y
 python3 tests/validity_probes.py                                   # maintainer probes
 ```
+
+## v0.3 (2026-09-06): expert-likeness gates
+
+The task owner compared the nine 2026-09-04 deliverables with the expert's and found every one immediately
+distinguishable and inferior, although Fable's three and Codex's one cleared the activation/APD80 gates. The visible
+differences are the mask (the expert's is a smooth, roughly heart-shaped anatomical outline that excludes the low-signal
+rim and the appendage; every agent mask is a ragged signal threshold, 12-95% larger) and the pixel noise of the maps.
+v0.3 turns both into gates, calibrated on the expert's deliverable, the agents' and an upgraded reference:
+
+| gate (pass condition) | expert | agents (9) | reference v0.3 |
+|---|---|---|---|
+| mask outside the expert tissue <= 12% | 0.00 | 0.18-0.49 | 0.088 |
+| mask compactness perimeter^2 / (4 pi area) <= 1.0 | 0.85 | 0.96-1.54 | 0.98 |
+| activation-map roughness (median abs Laplacian in the tissue) <= 0.06 ms | 0.037 | 0.10-0.39 | 0.049 |
+| APD80-map roughness <= 0.70 ms | 0.63 | 0.74-1.9 | 0.14 |
+| coverage of the expert tissue (validity) >= 0.85 (was 0.95) | 1.00 | 0.92-1.00 | 0.88 |
+
+The reference pipeline (`solution/reference.py`) now regularises its SNR mask into an anatomical outline (9-px disk opening
+and closing, largest component, 5-px erosion off the rim) and smooths both maps inside the mask with a 2-px normalised
+Gaussian; its activation RMSE improves from 0.91 to 0.57 ms and APD80 from 2.57 to 2.28 ms. The expert's own deliverable
+passes every gate. All nine 2026-09-04 submissions fail v0.3 (seven on the outside-tissue and roughness gates, two already
+invalid on IoU), which matches the owner's judgement. Limits: the expert's outline is anatomical, not a signal-quality
+boundary (per-pixel SNR inside and outside it overlap), so the best systematic IoU is about 0.81 and the gate is set where
+the upgraded reference passes with margin; the instruction now states the deliverable standard explicitly so that agents
+can aim for it. `tests/mask_metrics_probe.py` and the sweep in `calibration/RESULTS-2026-09-04-tier2-v02.md` document the
+calibration; `calibration/RESULTS-2026-09-06-tier2-v03.md` the outcome.
