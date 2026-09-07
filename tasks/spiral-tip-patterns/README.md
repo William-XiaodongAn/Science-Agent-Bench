@@ -136,6 +136,8 @@ Gemini 0/3**. The review rejected drift runs that are not straight and linear co
 properties the classifier does not test (v0.2 work item, see §5).
 Details, the two verifier corrections made during the run and the infrastructure notes:
 `calibration/RESULTS-2026-09-05-tier3-task2-v01.md`; run folders `calibration/runs/spiral-tip-patterns/`.
+The v0.2 suite (section 3) reproduces 10 of the 11 review verdicts without a human and passes the reference 14/14 with a
+unanimous judge (`calibration/RESULTS-2026-09-06-tier3-task2-v02.md`).
 
 ## 8. Commands
 ```bash

@@ -67,7 +67,10 @@ have no rule yet, and every judge rejection is logged with its reason so it can 
 
 
 ## Reference under v0.2
-ORACLE_PLACEHOLDER
+Modal run `t3t2-oracle/oracle-v02c-20260906`: 14/14 sets, score 1.0, passed; drift row C max chord deviation 0.017 of the
+leg (3 legs); cusp angles 172.9 / 172.4 / 173.0 deg on F / H7 / H8; judge 3/3 "same pattern" on all 14 sets; verifier
+1302 s for 14 sets (the judge adds about 10 min). Credentials reach the verifier through `[verifier.env]` templates
+(`JUDGE_API_KEY = "${ANTHROPIC_API_KEY:-}"`), resolved on the host from `harbor --env-file`; the agent never sees them.
 
 ## What the suite gives agents
 The instruction now states the shape criteria and the judge's rubric, so the target is knowable; every verifier result

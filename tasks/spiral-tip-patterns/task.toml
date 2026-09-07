@@ -23,7 +23,7 @@ protocol = "submission = run.py (--params file.json --out dir) producing tip_tra
 classes = "C circular | FI flower petals inward | FO flower petals outward | L linear core | D drift | H hypermeander"
 hidden_sets = 8
 pass_rule = "methods.md present AND all 6 reference sets match AND >= 7 of 8 hidden sets match; a set matches when class, provenance, the human-calibrated shape rules and the VLM judge agree; 14/14 reported as the stretch"
-reference = "solution/: obstacle-pivot initiation with S1-S2 fallback, tool tip definition, two-frequency classifier; Modal 2026-09-05 (sealed sets): 6/6 reference + 8/8 hidden, score 1.0, passed; oracle 9 min for the six rows, verifier 572 s for the 14 sets (~40 s per set on 4 cores)"
+reference = "solution/: obstacle-pivot initiation with S1-S2 fallback, tool tip definition, two-frequency classifier; v0.2 Modal 2026-09-06: 14/14 (class, provenance, shape rules, judge 3/3 on every set), score 1.0, passed; oracle 9 min for the six rows, verifier 1302 s for the 14 sets including the judge"
 budget_gpus = 0
 budget_wall_clock_hours = 4
 difficulty = "hard"
@@ -48,7 +48,9 @@ MAX_FRAME_GAP_MS = "250"
 MIN_HIDDEN_CORRECT = "7"
 DRIFT_SAGITTA_MAX = "0.035"     # v0.2 shape rule: drift legs straight (reference 0.017; expert-accepted <= 0.029; rejected >= 0.040)
 CUSP_ANGLE_MIN = "160"          # v0.2 shape rule: linear-core run ends sharp (reference 172-173 deg; rounded ends 113-129)
-JUDGE_MODEL = "anthropic/claude-fable-5-1"   # v0.2 VLM judge (Anthropic Messages API via ANTHROPIC_BASE_URL/ANTHROPIC_API_KEY)
+JUDGE_MODEL = "anthropic/claude-fable-5-1"   # v0.2 VLM judge (Anthropic Messages API)
+JUDGE_API_KEY = "${ANTHROPIC_API_KEY:-}"        # resolved on the host at job time (harbor --env-file); reaches the verifier only, not the agent
+JUDGE_BASE_URL = "${ANTHROPIC_BASE_URL:-https://api.anthropic.com}"
 JUDGE_VOTES = "3"
 REQUIRE_JUDGE = "1"             # no pass without judge verdicts (a trial verified without credentials is flagged judge_unavailable)
 REWARD_MODE = "normalized"

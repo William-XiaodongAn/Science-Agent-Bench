@@ -6,8 +6,9 @@ Blinded pairwise comparison per parameter set: the two drawings are shown in ran
 the judge is told the expected pattern class and the expert's shape criteria, and must return JSON
   {"same_pattern": bool, "legible": [bool, bool], "class": [code, code], "reason": str}.
 Each pair is judged N times (default 3, independent calls); the majority decides. The model is reached through the
-Anthropic Messages API (ANTHROPIC_BASE_URL / ANTHROPIC_API_KEY, JUDGE_MODEL); without credentials the judge reports
-"unavailable" and the verifier records that instead of a verdict.
+Anthropic Messages API (JUDGE_BASE_URL / JUDGE_API_KEY, falling back to ANTHROPIC_BASE_URL / ANTHROPIC_API_KEY; JUDGE_MODEL);
+task.toml routes the host's key into the verifier's environment via ${...} templates (harbor --env-file). Without
+credentials the judge reports "unavailable" and the verifier records that instead of a verdict.
 
 Library use:   verdict = judge_pair(ref_png, sub_png, expected_cls, label)
 CLI (calibration): python3 vlm_judge.py --reference <dir with <label>/trajectory.png> --drawings <dir with <label>_trajectory.png> [--labels A,B,...]
@@ -120,7 +121,8 @@ def judge_once(ref_png, sub_png, expected_cls, rng, model, base, key):
 
 def judge_pair(ref_png, sub_png, expected_cls, label, n=3, seed=0, model=None, base=None, key=None):
     model = model or os.environ.get("JUDGE_MODEL", "anthropic/claude-fable-5-1")
-    base = base or os.environ.get("ANTHROPIC_BASE_URL", "https://api.anthropic.com"); key = key or os.environ.get("ANTHROPIC_API_KEY", "")
+    base = base or os.environ.get("JUDGE_BASE_URL") or os.environ.get("ANTHROPIC_BASE_URL", "https://api.anthropic.com")
+    key = key or os.environ.get("JUDGE_API_KEY") or os.environ.get("ANTHROPIC_API_KEY", "")
     if not key:
         return {"label": label, "available": False, "same_pattern": None, "votes": [], "note": "no judge credentials"}
     rng = random.Random(f"{seed}:{label}")
