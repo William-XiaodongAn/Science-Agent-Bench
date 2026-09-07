@@ -57,7 +57,9 @@ Calibration against the task owner's blinded review of the eleven v0.1 submissio
 verdicts (the exception, Fable Gj4rJgv, was accepted by the reviewer but its hidden sets H7/H8 are circles where the
 reference has linear cores; both stay failures); the judge's agreement is reported in
 `calibration/RESULTS-2026-09-06-tier3-task2-v02.md`. Human baseline: the expert draws one pattern in under five minutes
-with the interactive tool (task owner, 2026-09-06); the pipeline replaces that step for arbitrary parameters.
+with the interactive tool (task owner, 2026-09-06); the pipeline replaces that step for arbitrary parameters. The instruction
+describes the patterns qualitatively (straight drift runs, sharp cusps) but not the thresholds or the judge's rubric, so
+that the statistics do not become optimization targets.
 
 ### Stages 1-3 (unchanged from v0.1)
 `test.sh` -> `grade.py`: for each of 6 reference + 8 sealed hidden parameter sets, run the submission's

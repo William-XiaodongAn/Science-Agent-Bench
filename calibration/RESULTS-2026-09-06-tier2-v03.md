@@ -46,7 +46,8 @@ Local: `solution/reference.py` through `tests/grade.py` with the v0.3 environmen
 2.275 ms, coverage 0.879, IoU 0.810, outside 0.088, compactness 0.979, roughness 0.049 / 0.138. Modal oracle run `t2-v03-oracle/oracle-v03-20260906`: passed, reward 0.996; activation 0.571 ms, APD80 2.275 ms, coverage 0.879,
 IoU 0.811, outside 0.088, compactness 0.979, roughness 0.049 / 0.138, mask 5880 px. Identical to the local run.
 
-## Notes for agents (now in the instruction)
-The instruction states the deliverable standard (an anatomical outline without the low-signal rim, smooth maps) with the
-gate values, and that these are pass gates rather than validity gates, so a submission that misses them is still scored
-and told which property it missed.
+## Disclosure
+The gate values and the standard behind them are NOT in the instruction (task owner's decision, 2026-09-06): stating
+"a smooth anatomical outline without the rim, spatially smooth maps" would make the gates optimization targets, i.e. invite
+reward hacking. The instruction only says that the deliverable is compared with the expert's and that work an expert would
+not accept does not pass; the flags in the verifier output name the property missed, for analysis after the fact.

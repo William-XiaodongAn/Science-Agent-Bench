@@ -180,6 +180,7 @@ Gaussian; its activation RMSE improves from 0.91 to 0.57 ms and APD80 from 2.57 
 passes every gate. All nine 2026-09-04 submissions fail v0.3 (seven on the outside-tissue and roughness gates, two already
 invalid on IoU), which matches the owner's judgement. Limits: the expert's outline is anatomical, not a signal-quality
 boundary (per-pixel SNR inside and outside it overlap), so the best systematic IoU is about 0.81 and the gate is set where
-the upgraded reference passes with margin; the instruction now states the deliverable standard explicitly so that agents
-can aim for it. `tests/mask_metrics_probe.py` and the sweep in `calibration/RESULTS-2026-09-04-tier2-v02.md` document the
+the upgraded reference passes with margin; the instruction does not disclose the gates or the standard: an agent is expected to infer
+expert-quality work from the task (the deliverable is compared with the expert's), otherwise the gate values would become
+optimization targets. `tests/mask_metrics_probe.py` and the sweep in `calibration/RESULTS-2026-09-04-tier2-v02.md` document the
 calibration; `calibration/RESULTS-2026-09-06-tier2-v03.md` the outcome.
