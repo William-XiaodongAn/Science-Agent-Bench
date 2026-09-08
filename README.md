@@ -78,86 +78,58 @@ Layout of a task, and how it maps onto the spec's §3.1 anatomy:
 ### Running
 
 ```bash
-pip install -e ".[runner]"           # harbor
+pip install "harbor>=0.21,<0.23"     # add harbor[modal] to run on Modal
 python fetch_data.py --only dat      # tier-2's 250 MB raw recording (or let its Dockerfile download it)
 ln tier_2_task_1/2024-05-02_Exp000_Rec010_Cam0-PM1394Cam00.dat tasks/optical-mapping-activation-maps/environment/workspace/data/
 
 harbor run -p tasks/zebrafish-voltage-forecast -a oracle -y                      # reference solution through the verifier
 export ANTHROPIC_API_KEY=...
-harbor run -p tasks/ssn-heldout-stimulus-prediction -a claude-code -m claude-opus-5 -y
+harbor run -p tasks/ssn-heldout-stimulus-prediction -a claude-code -m claude-fable-5-1 -y
 harbor run -p tasks/optical-mapping-activation-maps -a codex -m gpt-5.6-sol -y
 ```
 
 Tasks declare `network_mode = "allowlist"` (model API hosts only), so the images bake in the
 scientific stack and the agent CLIs; on a Docker host without egress-control support Harbor will
-say so, and the tasks can be run with `network_mode = "public"` for local checks.
+say so, and the tasks can be run with `network_mode = "public"` for local checks. `spiral-tip-patterns`
+runs a VLM judge inside its verifier and needs the judge credentials passed with `harbor --env-file`
+(see its README).
 
-### Frontier-agent calibration (2026-09-03 / 04)
+## Results: frontier agents, pass@1 under the current verifiers
 
-Fable 5.1 (claude-code), GPT-5.6 Sol (codex) and Gemini 3.7 Flash (gemini-cli), k = 3 on Modal via
-`calibration/run_calibration.sh`. Tier 1 passed 1/3 by each agent
-([`RESULTS-2026-09-03.md`](calibration/RESULTS-2026-09-03.md)). Tier 2 passed 3/3 by Fable and Codex and 0/3 by
-Gemini under v0.1's empirical 3.0 ms bar; under v0.2 (gates in frame units, APD80 gated) **Fable 3/3, Codex 1/3,
-Gemini 0/3**, and a blinded forced-choice judge (two model families, agreeing on all 11 comparisons) preferred the
-expert's maps in 9 of 11 ([`RESULTS-2026-09-04-tier2-v02.md`](calibration/RESULTS-2026-09-04-tier2-v02.md)). Tier 3 was run three
-times as the task was tightened: 3/3 for every agent under v0.3 (whole test stimulus released; all
-solutions read beat durations off future stimulus times); 3/3 for Fable and Codex with beat templates
-and tree ensembles and 0/3 for Gemini under v0.5 (causal roll-out, any method;
-[`RESULTS-2026-09-04-tier3-v05.md`](calibration/RESULTS-2026-09-04-tier3-v05.md)); under v0.6
-(causal roll-out, echo state networks only, bar = the paper's 0.0784) Fable 3/3, Codex 0/3, Gemini 0/3,
-every pass a stimulus-driven ESN without voltage feedback, audited compliant
-([`RESULTS-2026-09-04-tier3-v06.md`](calibration/RESULTS-2026-09-04-tier3-v06.md)); and under v0.7
-(pass = at least 5% below the paper, RMSE < 0.0745) **Fable 2/3, Codex 2/3, Gemini 0/3**, pass@1 0.67 /
-0.67 / 0, all four passes stimulus-driven ESN ensembles or deep ESNs with cell-model inputs, audited
-compliant ([`RESULTS-2026-09-04-tier3-v07.md`](calibration/RESULTS-2026-09-04-tier3-v07.md)); under v0.8, the same
-task with the paper withheld from the agent, Fable 3/3, Codex 1/3, Gemini 0/3, every pass again a stimulus-driven
-ESN without voltage feedback found by experiment, with full tool-call digests of the passes in
-`calibration/trajectory-digests/` ([`RESULTS-2026-09-04-tier3-v08.md`](calibration/RESULTS-2026-09-04-tier3-v08.md));
-and under v0.9, the search-procedure protocol at the paper's size, budget and statistic with the paper's cell models
-still available, **Fable 3/3 (0.062-0.067)**, Gemini 0/3, Codex not scored (rate-limited, then stopped for v0.10)
-([`RESULTS-2026-09-04-tier3-v09.md`](calibration/RESULTS-2026-09-04-tier3-v09.md)); and under **v0.10** (cell-model inputs
-removed, so no borrowing from the paper is possible: inputs = stimulus + optional fed-back voltage only) **Fable 3/3
-(0.0730-0.0739), Codex 3/3 (0.0695-0.0748), Gemini 0/3**, every pass replayed in the clean image and audited (no hacking,
-no paper references, ESN-only; digests in `calibration/trajectory-digests/v10/`)
-([`RESULTS-2026-09-05-tier3-v10.md`](calibration/RESULTS-2026-09-05-tier3-v10.md)). The tier-3 task therefore separates the two
-leading agents from Gemini but not from each other. The second tier-3 task, **`spiral-tip-patterns`** (parameters -> an
-automatic pipeline for spiral initiation, tip tracking and pattern classification, judged on six reference and eight sealed
-hidden parameter sets; reference pipeline 14/14), was calibrated on 2026-09-05: the programmatic verifier passed Codex 4/4 scored trials
-(14, 13, 14, 14 of 14 sets), Fable 1/3 (14, 12, 12) and Gemini 1/3 (14, 7, 3), every pass re-verified in a fresh sandbox and
-audited; the task owner's blinded review of the drawings then rejected three of the Codex passes and the Gemini pass for
-shape infidelity (drift runs not straight, linear cores without sharp cusps), so the **final tally is Fable 1/3, Codex 1/3,
-Gemini 0/3**. The task's v0.2 verifier turns that review into code: human-calibrated shape rules (straight drift legs, sharp
-linear-core cusps) plus a blinded VLM judge of drawing fidelity, which together reproduce 10 of the 11 review verdicts
-without a human ([`RESULTS-2026-09-06-tier3-task2-v02.md`](calibration/RESULTS-2026-09-06-tier3-task2-v02.md))
-([`RESULTS-2026-09-05-tier3-task2-v01.md`](calibration/RESULTS-2026-09-05-tier3-task2-v01.md), run folders in
-[`calibration/runs/`](calibration/runs)).
+Fable 5.1 (`claude-code`), GPT-5.6 Sol (`codex`) and Gemini 3.7 Flash (`gemini-cli`), k = 3 scored trials per agent, on
+Modal with each task's budget. Where a verifier changed after the runs, the captured submissions were re-verified with
+the current verifier; the agents were not re-run. Full trajectories, submitted deliverables and verifier outputs per
+trial: [`results/`](results).
 
-### agent-env (pass@k on frontier models)
+| Task | Version | Fable 5.1 | GPT-5.6 Sol | Gemini 3.7 Flash | Human check |
+|---|---|---|---|---|---|
+| [`ssn-heldout-stimulus-prediction`](results/ssn-heldout-stimulus-prediction) | 0.1 | 1/3 | 1/3 | 1/3 | - |
+| [`optical-mapping-activation-maps`](results/optical-mapping-activation-maps) | 0.3 | 0/3 | 0/3 | 0/3 | expert rejected all nine deliverables next to the lab's maps; v0.3 gates encode that |
+| [`zebrafish-voltage-forecast`](results/zebrafish-voltage-forecast) | 0.10 | 3/3 | 3/3 | 0/3 | all passes audited: ESN-only, no borrowed ideas |
+| [`spiral-tip-patterns`](results/spiral-tip-patterns) | 0.2 | 1/3 | 1/4 | 0/3 | verifier agrees with the expert's blinded review on 10 of 11 drawings |
 
-[`agentenv/register_task.py`](agentenv/register_task.py) registers a task directory as a runnable
-agent-env `Task` (sandbox VM -> task container -> claude-code A2A agent -> `/tests/test.sh`),
-`agent-env eval run --k N` runs it, and [`agentenv/passk.py`](agentenv/passk.py) aggregates
-pass@k. See [`agentenv/README.md`](agentenv/README.md).
+Reading the table: tier 2 and tier 3 task 2 are deliverable-style tasks where RMSE-only gates let work through that the
+domain expert rejects at a glance; their current verifiers add expert-calibrated gates (mask outline and map smoothness;
+straight drift runs, sharp linear-core cusps and a blinded VLM judge) without stating those standards in the
+instruction. Tier 3 task 1 no longer discriminates between the two leading agents; tier 1 keeps headroom (best known
+legitimate method about 0.62 normalised against an oracle at 1.0).
 
 ### Known issues to resolve before acceptance
 
-- **Tier 3 (`zebrafish-voltage-forecast`, now v0.10) follows the paper's setup causally, at the paper's size, budget and
-  statistic, with the paper withheld and its hybrid idea removed; both leading agents beat the paper in 3/3 attempts, so
-  the task no longer discriminates at the top (see v0.10 results). History of the tightening:** The stimulus is an input, as in the paper, but the paper's networks receive it one sample at
-  a time; under the closed-loop pacing protocol the *next* stimulus time reveals the current beat's
-  duration (repolarisation-to-stimulus gap 51 ± 1.4 ms), so releasing the whole test stimulus (v0.1-v0.4)
-  let a template score 0.0555 and frontier agents 0.022-0.042. v0.5 made the submission a model rolled out
-  by the verifier with the stimulus delivered sample by sample; frontier agents then passed with causal
-  beat templates and tree ensembles (0.055-0.065), which are not what the paper studies. v0.6 restricts
-  the method to echo state networks (declaration + import scan in the verifier, code audit afterwards);
-  the shipped framework covers the paper's whole family, and our reference, a stimulus-driven
-  multi-timescale ESN without voltage feedback, scores 0.071 against the paper's 0.0784. See its README §2.
-- **Tier 1 headroom:** no legitimate method above 0.62 normalised is known, while the oracle
-  sits at 1.0. Probe gap to a drive-only proxy is modest. See its README §4-5.
-- **Tier 2 APD80 definition** in the original instruction did not match the frozen ground truth;
-  the task instruction now matches the ground-truth code.
-- Data licences (tier 2, tier 3), second-expert sign-offs, expert solve times and frontier-model
-  calibration runs are pending for all three.
+- **Tier 3 (`zebrafish-voltage-forecast`, v0.10)** follows the paper's setup causally with the paper withheld and its hybrid
+  idea removed; both leading agents beat the paper in 3/3 attempts, so the task no longer discriminates at the top. The
+  v0.1 -> v0.10 history (stimulus leak, method-family restriction, no borrowing) is on the dev branch.
+- **Tier 1 headroom:** no legitimate method above 0.62 normalised is known while the oracle sits at 1.0 (task README §4-5).
+- **Tier 2 / tier 3 task 2 gates** encode one expert's judgement each; a second expert's sign-off is pending, as are the
+  data licences for tiers 2 and 3 and the expert solve times for tiers 1-3 (tier 3 task 2: under 5 min per pattern).
+
+## Branches
+
+- `main` (this branch): the Harbor tasks with their current verifier suites, `results/` (pass@1 and trajectories), and the
+  task owner's original material below.
+- [`dev`](https://github.com/William-XiaodongAn/Science-Agent-Bench/tree/dev): everything else, with history: verifier calibration write-ups (`calibration/RESULTS-*.md`), trajectory
+  audits (`calibration/trajectory-digests/`), the calibration and re-verification tooling, the agent-env adapter, and the
+  script that publishes the clean layout to `main` (`calibration/publish_main.sh`).
 
 ---
 

@@ -56,7 +56,7 @@ so that the suite reproduces the expert's decisions without a human in the loop:
 Calibration against the task owner's blinded review of the eleven v0.1 submissions: rules alone reproduce 10 of 11 trial
 verdicts (the exception, Fable Gj4rJgv, was accepted by the reviewer but its hidden sets H7/H8 are circles where the
 reference has linear cores; both stay failures); the judge's agreement is reported in
-`calibration/RESULTS-2026-09-06-tier3-task2-v02.md`. Human baseline: the expert draws one pattern in under five minutes
+[`calibration/RESULTS-2026-09-06-tier3-task2-v02.md`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/calibration/RESULTS-2026-09-06-tier3-task2-v02.md). Human baseline: the expert draws one pattern in under five minutes
 with the interactive tool (task owner, 2026-09-06); the pipeline replaces that step for arbitrary parameters. The instruction
 describes the patterns qualitatively (straight drift runs, sharp cusps) but not the thresholds or the judge's rubric, so
 that the statistics do not become optimization targets.
@@ -118,10 +118,10 @@ hard-codes the six reference outputs scores at most 6/14 and fails.
 - **Sandbox disk.** Harbor 0.22's Modal backend does not forward `storage_mb`; one Fable trial's verification hit ENOSPC
   (the agent had left ~10^2 MB of pickles in /tmp and the verifier keeps all 14 runs' frames). The verifier now deletes a
   set's frames once scored, writes the parameter file safely, and reports `verifier_disk_full` (unscored, re-run) instead
-  of charging the crashes to the submission. `calibration/reverify_t3t2.sh` re-verifies a captured submission on Modal.
+  of charging the crashes to the submission. [`calibration/reverify_t3t2.sh`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/calibration/reverify_t3t2.sh) re-verifies a captured submission on Modal.
 - **Rate limits.** The shared gateway key's token limit cut two agent phases short (429); a second key now serves Codex and
   Gemini. Harbor's stock gemini-cli agent cannot install itself under the network allowlist; use
-  `calibration/gemini_prebaked.py`.
+  [`calibration/gemini_prebaked.py`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/calibration/gemini_prebaked.py).
 - Data licence / attribution of the WebGL tool (A. Kaboudian) and of `ref.png` to be confirmed before release.
 
 ## 6. Reference run (Modal, 2026-09-05)
@@ -137,9 +137,9 @@ Codex K6Hb4Co, Fable fAYdiX5 and Fable Gj4rJgv, so the **final tally (verifier A
 Gemini 0/3**. The review rejected drift runs that are not straight and linear cores without sharp cusps, two shape
 properties the classifier does not test (v0.2 work item, see §5).
 Details, the two verifier corrections made during the run and the infrastructure notes:
-`calibration/RESULTS-2026-09-05-tier3-task2-v01.md`; run folders `calibration/runs/spiral-tip-patterns/`.
+[`calibration/RESULTS-2026-09-05-tier3-task2-v01.md`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/calibration/RESULTS-2026-09-05-tier3-task2-v01.md); run folders `results/spiral-tip-patterns/`.
 The v0.2 suite (section 3) reproduces 10 of the 11 review verdicts without a human and passes the reference 14/14 with a
-unanimous judge (`calibration/RESULTS-2026-09-06-tier3-task2-v02.md`).
+unanimous judge ([`calibration/RESULTS-2026-09-06-tier3-task2-v02.md`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/calibration/RESULTS-2026-09-06-tier3-task2-v02.md)).
 
 **Re-verification under v0.2 (Modal, 2026-09-06/07, no agent re-run):** the eleven captured submissions were re-run through
 the frozen v0.2 suite in fresh sandboxes. Passes: Fable fAYdiX5 and Codex K6Hb4Co (14/14, unanimous judge), exactly the two
@@ -147,7 +147,7 @@ the review accepted and the v0.1 grader passed, so the automatic tally is **Fabl
 passes the review had rejected fail on row C (curved drift runs) and, for 83EytP9, on the rounded linear-core ends of F, H7,
 H8. Agreement with the review: 10/11 (exception Gj4rJgv, circles on H7/H8). Modal sandbox speed varied 0.9-2.1x between runs;
 two runs hit the 900 s per-set cap for that reason and were repeated in fresh sandboxes (details in the results file). Run
-folders with the v0.2 verifier output: `calibration/runs/spiral-tip-patterns/` (trial-time and v0.1-final verdicts kept as
+folders with the v0.2 verifier output: `results/spiral-tip-patterns/` (trial-time and v0.1-final verdicts kept as
 `verifier_original/` and `verifier_previous/`).
 
 ## 8. Commands

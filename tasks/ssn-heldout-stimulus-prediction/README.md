@@ -72,7 +72,7 @@ cannot tell which columns a solver used, so the released file is now exactly wha
 - **Validity (DNF, not a low score):** shape `(49, 12001)`, all finite, non-negative, max below
   100x the true peak (catches clipped divergence).
 - `reward.txt` is the normalised score by default (`REWARD_MODE=normalized`, Harbor leaderboard
-  semantics) or 1.0/0.0 pass with `REWARD_MODE=binary` (what `agentenv/register_task.py` sets).
+  semantics) or 1.0/0.0 pass with `REWARD_MODE=binary` (what [`agentenv/register_task.py`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/agentenv/register_task.py) sets).
 
 ## 4. Validity probes (spec G2 / G7)
 
@@ -124,7 +124,7 @@ harbor run -p tasks/ssn-heldout-stimulus-prediction -a oracle -y
 harbor run -p tasks/ssn-heldout-stimulus-prediction -a claude-code -m claude-opus-5 -y
 # do-nothing anchor instead of the reference
 #   (edit solution/solve.sh to exec baseline.sh, or run baseline.sh inside the container)
-# agent-env / pass@k: see ../../agentenv/README.md
+# agent-env / pass@k: see agentenv/README.md on the dev branch (https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/agentenv/README.md)
 # regenerate a fresh instance (rolling private split)
 python3 generator/make_instance.py --seed 7 --install
 ( cd tests && find . -type f \( -name '*.npy' -o -name '*.json' -o -name grade.py \) -not -name validity_probes.json | sed 's#^\./##' | sort | xargs sha256sum > SHA256SUMS )
