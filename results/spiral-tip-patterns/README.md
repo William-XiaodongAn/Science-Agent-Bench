@@ -5,15 +5,16 @@ T3 open-ended discovery (build the systematic method the field lacks). Task vers
 
 The verifier moved to v0.2 after the runs (shape rules + VLM judge, calibrated on the task owner's blinded review of these very drawings). `verifier/` is the v0.2 suite applied to the captured pipelines in fresh Modal sandboxes (2026-09-06/07), `verifier_original/` the trial-time verdict, `verifier_previous/` the v0.1-final re-verification.
 
-## pass@1 (current verifier)
+## Mean pass@1 (current verifier)
 
-One-sample = outcome of the agent's first trial (what a single run measures); n-sample = passes / scored trials (the unbiased pass@1 estimate over n trials) with a 95% Wilson interval; pass@n = any of the n trials passed. Reward = the task's normalised score in [0, 1], mean +/- sd over trials.
+Mean pass@1 (resolution rate) = passes / scored trials, with a 95% Wilson interval; pass@n = any of the n trials passed. Reward = the task's normalised score in [0, 1], mean +/- sd over trials.
 
-| agent | scaffold / model id | n | pass@1 one-sample | pass@1 n-sample [95% CI] | pass@n | reward mean +/- sd | agent time (mean) |
+| agent | scaffold / model id | trials | passes | mean pass@1 [95% CI] | pass@n | reward mean +/- sd | agent time (mean) |
 |---|---|---|---|---|---|---|---|
-| Fable 5.1 | `claude-code` / `claude-fable-5-1` | 3 | 1 | **0.33** (1/3) [0.06, 0.79] | 1.00 | 0.810 +/- 0.180 | 114 min |
-| GPT-5.6 Sol | `codex` / `gpt-5.6-sol` | 4 | 0 | **0.25** (1/4) [0.05, 0.70] | 1.00 | 0.875 +/- 0.122 | 88 min |
-| Gemini 3.7 Flash | `gemini-cli` / `gemini-3.7-flash` | 3 | 0 | **0.00** (0/3) [0.00, 0.56] | 0.00 | 0.500 +/- 0.429 | 46 min |
+| Fable 5.1 | `claude-code` / `claude-fable-5-1` | 3 | 1 | **0.33** [0.06, 0.79] | 1.00 | 0.810 +/- 0.180 | 114 min |
+| GPT-5.6 Sol | `codex` / `gpt-5.6-sol` | 4 | 1 | **0.25** [0.05, 0.70] | 1.00 | 0.875 +/- 0.122 | 88 min |
+| Gemini 3.7 Flash | `gemini-cli` / `gemini-3.7-flash` | 3 | 0 | **0.00** [0.00, 0.56] | 0.00 | 0.500 +/- 0.429 | 46 min |
+| **mean over agents** | | 10 | 2 | **0.19** | 0.67 | | |
 
 ## Trials
 
