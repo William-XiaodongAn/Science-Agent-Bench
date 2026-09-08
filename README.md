@@ -95,7 +95,7 @@ say so, and the tasks can be run with `network_mode = "public"` for local checks
 runs a VLM judge inside its verifier and needs the judge credentials passed with `harbor --env-file`
 (see its README).
 
-## Results: frontier agents, pass@1 under the current verifiers
+## Results: frontier agents, mean pass@1 under the current verifiers
 
 Fable 5.1 (`claude-code`), GPT-5.6 Sol (`codex`) and Gemini 3.7 Flash (`gemini-cli`), k = 3 scored trials per agent, on
 Modal with each task's budget. Where a verifier changed after the runs, the captured submissions were re-verified with
@@ -103,13 +103,14 @@ the current verifier; the agents were not re-run. Full trajectories, submitted d
 trial: [`results/`](results).
 
 <!-- results-table -->
-| Task | Version | Fable 5.1 | GPT-5.6 Sol | Gemini 3.7 Flash | Human check |
-|---|---|---|---|---|---|
-| [`optical-mapping-activation-maps`](results/optical-mapping-activation-maps) | 0.3 | **0.00** (0/3; one-sample 0) | **0.00** (0/3; one-sample 0) | **0.00** (0/3; one-sample 0) | expert rejected all nine deliverables next to the lab's maps; the v0.3 gates encode that |
-| [`spiral-tip-patterns`](results/spiral-tip-patterns) | 0.2 | **0.33** (1/3; one-sample 1) | **0.25** (1/4; one-sample 0) | **0.00** (0/3; one-sample 0) | verifier agrees with the expert's blinded review on 10 of 11 drawings |
-| [`ssn-heldout-stimulus-prediction`](results/ssn-heldout-stimulus-prediction) | 0.1 | **0.33** (1/3; one-sample 1) | **0.33** (1/3; one-sample 1) | **0.33** (1/3; one-sample 1) | - |
+| Task | Version | Fable 5.1 | GPT-5.6 Sol | Gemini 3.7 Flash | Mean over agents | Human check |
+|---|---|---|---|---|---|---|
+| [`optical-mapping-activation-maps`](results/optical-mapping-activation-maps) | 0.3 | **0.00** (0/3) | **0.00** (0/3) | **0.00** (0/3) | **0.00** | expert rejected all nine deliverables next to the lab's maps; the v0.3 gates encode that |
+| [`spiral-tip-patterns`](results/spiral-tip-patterns) | 0.2 | **0.33** (1/3) | **0.25** (1/4) | **0.00** (0/3) | **0.19** | verifier agrees with the expert's blinded review on 10 of 11 drawings |
+| [`ssn-heldout-stimulus-prediction`](results/ssn-heldout-stimulus-prediction) | 0.1 | **0.33** (1/3) | **0.33** (1/3) | **0.33** (1/3) | **0.33** | - |
+| **Mean over tasks** | | **0.22** | **0.19** | **0.11** | | |
 
-Cells: n-sample pass@1 (passes / scored trials; one-sample = outcome of the first trial). Per-task confidence intervals, pass@n, rewards and agent times: `results/<task>/README.md`; benchmark-level aggregate: `results/README.md`.
+Cells: mean pass@1 = passes / scored trials (resolution rate, as Terminal-Bench-Science reports it). Per-task 95% intervals, pass@n, rewards and agent times: `results/<task>/README.md`; per-agent and per-task aggregates: `results/README.md`.
 <!-- /results-table -->
 
 Reading the table: tier 2 and tier 3 task 2 are deliverable-style tasks where RMSE-only gates let work through that the
