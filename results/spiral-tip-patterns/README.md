@@ -7,11 +7,13 @@ The verifier moved to v0.2 after the runs (shape rules + VLM judge, calibrated o
 
 ## pass@1 (current verifier)
 
-| agent | scaffold / model id | scored trials | passes | pass@1 |
-|---|---|---|---|---|
-| Fable 5.1 | `claude-code` / `claude-fable-5-1` | 3 | 1 | **0.33** |
-| GPT-5.6 Sol | `codex` / `gpt-5.6-sol` | 4 | 1 | **0.25** |
-| Gemini 3.7 Flash | `gemini-cli` / `gemini-3.7-flash` | 3 | 0 | **0.00** |
+One-sample = outcome of the agent's first trial (what a single run measures); n-sample = passes / scored trials (the unbiased pass@1 estimate over n trials) with a 95% Wilson interval; pass@n = any of the n trials passed. Reward = the task's normalised score in [0, 1], mean +/- sd over trials.
+
+| agent | scaffold / model id | n | pass@1 one-sample | pass@1 n-sample [95% CI] | pass@n | reward mean +/- sd | agent time (mean) |
+|---|---|---|---|---|---|---|---|
+| Fable 5.1 | `claude-code` / `claude-fable-5-1` | 3 | 1 | **0.33** (1/3) [0.06, 0.79] | 1.00 | 0.810 +/- 0.180 | 114 min |
+| GPT-5.6 Sol | `codex` / `gpt-5.6-sol` | 4 | 0 | **0.25** (1/4) [0.05, 0.70] | 1.00 | 0.875 +/- 0.122 | 88 min |
+| Gemini 3.7 Flash | `gemini-cli` / `gemini-3.7-flash` | 3 | 0 | **0.00** (0/3) [0.00, 0.56] | 0.00 | 0.500 +/- 0.429 | 46 min |
 
 ## Trials
 
