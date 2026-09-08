@@ -100,7 +100,7 @@ the label's precision; when the second expert processes the recording (G6, pendi
 difference should be checked against the same bound, and the gate loosened only if two experts disagree
 by more than a frame.
 
-**Secondary track: forced-choice judgement against the expert.** `calibration/pairwise_judge.py` renders the
+**Secondary track: forced-choice judgement against the expert.** [`calibration/pairwise_judge.py`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/calibration/pairwise_judge.py) renders the
 agent's and the expert's maps identically, blinds them, and asks an LLM judge (and, via the packaged folders, a human
 judge) which deliverable an expert would trust more, with ties disallowed. This is the GDPval-style "did the agent's
 work beat the human's" signal; it is reported alongside the gates, never used for pass/fail, because a judge cannot
@@ -182,5 +182,5 @@ invalid on IoU), which matches the owner's judgement. Limits: the expert's outli
 boundary (per-pixel SNR inside and outside it overlap), so the best systematic IoU is about 0.81 and the gate is set where
 the upgraded reference passes with margin; the instruction does not disclose the gates or the standard: an agent is expected to infer
 expert-quality work from the task (the deliverable is compared with the expert's), otherwise the gate values would become
-optimization targets. `tests/mask_metrics_probe.py` and the sweep in `calibration/RESULTS-2026-09-04-tier2-v02.md` document the
-calibration; `calibration/RESULTS-2026-09-06-tier2-v03.md` the outcome.
+optimization targets. `tests/mask_metrics_probe.py` and the sweep in [`calibration/RESULTS-2026-09-04-tier2-v02.md`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/calibration/RESULTS-2026-09-04-tier2-v02.md) document the
+calibration; [`calibration/RESULTS-2026-09-06-tier2-v03.md`](https://github.com/William-XiaodongAn/Science-Agent-Bench/blob/dev/calibration/RESULTS-2026-09-06-tier2-v03.md) the outcome.

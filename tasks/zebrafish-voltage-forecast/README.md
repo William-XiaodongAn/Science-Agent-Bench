@@ -160,6 +160,7 @@ unranked); a declaration with a disallowed input (unranked); `methods.md` withou
 harbor run -p tasks/zebrafish-voltage-forecast -a oracle -y       # reference ESN (passes, 0.071 < 0.0745)
 harbor run -p tasks/zebrafish-voltage-forecast -a claude-code -m claude-opus-5 -y
 python3 tests/validity_probes.py
+# calibration/method_audit.py and calibration/aggregate.py live on the dev branch
 python3 calibration/method_audit.py jobs/<dir> --env-file ~/.sciagent-keys.env && python3 calibration/aggregate.py jobs/<dir> --audit --details
 # inside the container: the framework and the dev harness
 python3 /workspace/baseline/esn.py --layers 128,96,64,48,32 --i --o --kb cn && python3 /workspace/selfcheck.py
