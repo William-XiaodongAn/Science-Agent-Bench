@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>dq: Harbor task data-quality verifier</title>
+<style>
+ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;display:grid;grid-template-columns:320px 1fr;height:100vh;color:#1a1a1a}
+ aside{border-right:1px solid #ddd;padding:14px;overflow:auto;background:#fafafa}
+ main{padding:18px 26px;overflow:auto}
+ h1{font-size:18px;margin:0 0 10px} h2{font-size:17px;margin:14px 0 6px} label{display:block;margin:8px 0 3px;font-size:13px;color:#444}
+ input[type=text]{width:100%;padding:6px;border:1px solid #bbb;border-radius:4px} button{padding:7px 12px;border:0;border-radius:5px;background:#1f5fbf;color:#fff;cursor:pointer}
+ button.secondary{background:#666} .run{padding:7px 8px;border-bottom:1px solid #eee;font-size:13px;cursor:pointer} .run:hover{background:#eef}
+ .badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:12px;font-weight:600;color:#fff}
+ .pass{background:#2e8b57}.fail{background:#c0392b}.warn{background:#d68910}.info{background:#5d6d7e}.skip{background:#95a5a6}.error{background:#8e44ad}
+ .verdict-PASS{background:#2e8b57}.verdict-FAIL{background:#c0392b}.verdict-NEEDS_REVIEW{background:#d68910}
+ table.dq{border-collapse:collapse;width:100%;font-size:13.5px} table.dq th,table.dq td{border-bottom:1px solid #e5e5e5;padding:6px 8px;vertical-align:top;text-align:left}
+ table.dq ul{margin:4px 0 0 14px;padding:0;color:#444} code{background:#f2f2f2;padding:1px 4px;border-radius:3px}
+ .muted{color:#777;font-size:12.5px} .filters button{background:#eee;color:#333;margin-right:4px;padding:4px 8px} .filters button.on{background:#1f5fbf;color:#fff}
+ .dl a{margin-right:10px;font-size:13px}
+</style></head>
+<body>
+<aside>
+ <h1>dq verifier</h1>
+ <form id="f">
+  <label>Upload a Harbor task (.zip of the task folder)</label><input type="file" name="file" accept=".zip">
+  <label>…or a local path / git URL (optionally <code>url@branch</code>)</label><input type="text" name="source" placeholder="/path/to/task or https://github.com/org/repo">
+  <label>Task folder inside the zip/repo (optional)</label><input type="text" name="subdir" placeholder="tasks/my-task">
+  <label><input type="checkbox" name="urls" checked> check URLs (network)</label>
+  <label><input type="checkbox" name="llm"> advisory LLM judge (needs DQ_LLM_API_KEY / ANTHROPIC_API_KEY in the server env)</label>
+  <label><input type="checkbox" name="exec_checks"> build + oracle/nop through harbor (slow; needs harbor + Docker)</label>
+  <div style="margin-top:10px"><button type="submit">Run checks</button></div>
+ </form>
+ <h2>Runs</h2><div id="runs"></div>
+</aside>
+<main>
+ <div id="out"><p class="muted">Upload a task or choose a run. Every check reports pass / warn / fail with a reason; blocking failures make the task FAIL, warnings send it to NEEDS_REVIEW. Checks and severities are configured in <code>dq/config.yaml</code>.</p></div>
+</main>
+<script>
+const $=s=>document.querySelector(s); let current=null, filter='all';
+async function refreshRuns(){const r=await fetch('/api/runs');const runs=await r.json();
+ $('#runs').innerHTML=runs.map(x=>`<div class="run" onclick="show('${x.run_id}')"><span class="badge ${x.state==='done'?'verdict-'+x.verdict:(x.state==='error'?'error':'skip')}">${x.state==='done'?x.verdict:x.state}</span> ${x.task_name||x.source||''}<br><span class="muted">${x.run_id} · ${x.finished_at||''}</span></div>`).join('')||'<p class="muted">none yet</p>';}
+function render(d){const rep=d.report, st=d.status;
+ if(!rep){$('#out').innerHTML=`<h2>${st.source||''}</h2><p>state: <b>${st.state}</b> ${st.error?'<pre>'+st.error+'\n'+(st.trace||'')+'</pre>':''}</p>`;return;}
+ const order={fail:0,error:1,warn:2,info:3,pass:4,skip:5};
+ const rows=rep.results.slice().sort((a,b)=>order[a.status]-order[b.status]).filter(r=>filter==='all'||r.status===filter||(filter==='issues'&&['fail','warn','error'].includes(r.status)))
+  .map(r=>`<tr><td><span class="badge ${r.status}">${r.status.toUpperCase()}</span></td><td>${r.severity}</td><td><code>${r.id}</code><br><small class="muted">${r.name}</small></td><td>${esc(r.reason)}${r.evidence&&r.evidence.length?'<ul>'+r.evidence.map(e=>'<li>'+esc(e)+'</li>').join('')+'</ul>':''}</td></tr>`).join('');
+ const counts=Object.entries(rep.counts).filter(([k,v])=>v).map(([k,v])=>`${k} ${v}`).join(' · ');
+ $('#out').innerHTML=`<h2>${esc(rep.task_name)} <span class="badge verdict-${rep.verdict}">${rep.verdict}</span></h2>
+  <p class="muted">${esc(rep.source)} · ${counts} · ${rep.started_at} → ${rep.finished_at}</p>
+  <ul>${rep.verdict_reasons.map(x=>'<li>'+esc(x)+'</li>').join('')}</ul>
+  <p class="dl"><a href="/api/runs/${current}/report.md" target="_blank">report.md</a><a href="/api/runs/${current}/report.json" target="_blank">report.json</a><a href="/api/runs/${current}/report.html" target="_blank">report.html</a></p>
+  <p class="filters">${['all','issues','fail','warn','info','pass','skip'].map(f=>`<button class="${filter===f?'on':''}" onclick="setFilter('${f}')">${f}</button>`).join('')}</p>
+  <table class="dq"><thead><tr><th>status</th><th>severity</th><th>check</th><th>reason / evidence</th></tr></thead><tbody>${rows}</tbody></table>`;}
+function esc(s){return String(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function setFilter(f){filter=f;if(current)show(current);}
+async function show(id){current=id;const r=await fetch('/api/runs/'+id);const d=await r.json();render(d);if(d.status.state==='queued'||d.status.state==='running'){setTimeout(()=>show(id),2000);}}
+$('#f').addEventListener('submit',async e=>{e.preventDefault();const fd=new FormData(e.target);
+ for(const k of ['urls','llm','exec_checks']){fd.set(k,fd.get(k)?'true':'false');}
+ const r=await fetch('/api/run',{method:'POST',body:fd});const d=await r.json();if(d.run_id){await refreshRuns();show(d.run_id);}else{alert(JSON.stringify(d));}});
+refreshRuns();setInterval(refreshRuns,5000);
+</script></body></html>

@@ -13,3 +13,6 @@ __pycache__/
 /jobs/
 .venv*/
 out/
+
+# dq verifier runs
+/dq_runs/
